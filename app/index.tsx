@@ -1,4 +1,8 @@
 import { Text, View } from "react-native";
+import { AppleMaps } from "expo-maps";
+
+// @ts-ignore
+import FlavorList from "../assets/FlavorList.json";
 
 export default function Index() {
   return (

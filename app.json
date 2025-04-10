@@ -9,7 +9,8 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.brents.hot-chocolate"
     },
     "android": {
       "adaptiveIcon": {
@@ -32,10 +33,20 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-sqlite"
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "remoteBuildCache": {
+        "provider": "eas"
+      }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "355e9a75-384b-4185-aefc-893ac990a771"
+      }
     }
   }
 }
