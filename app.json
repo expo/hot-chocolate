@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "hot-chocolate",
-    "slug": "hot-chocolate",
+    "slug": "hot-chocolate-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
