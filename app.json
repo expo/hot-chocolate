@@ -5,24 +5,21 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "hot-chocolate",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.brents.hot-chocolate",
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": true
     },
     "web": {
-      "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
@@ -37,22 +34,11 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      "expo-sqlite",
-      "expo-font",
-      "expo-maps",
-      "expo-web-browser"
+      "expo-maps"
     ],
     "experiments": {
       "typedRoutes": true,
-      "remoteBuildCache": {
-        "provider": "eas"
-      }
-    },
-    "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "355e9a75-384b-4185-aefc-893ac990a771"
-      }
+      "reactCompiler": true
     }
   }
 }
