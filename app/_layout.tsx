@@ -1,60 +1,32 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Tabs } from 'expo-router';
+import { Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
 import { StatusBar } from 'expo-status-bar';
-import { SymbolView } from 'expo-symbols';
-import { Platform, useColorScheme } from 'react-native';
 
-import HapticTab from '@/components/HapticTab';
-import TabBarBackground from '@/components/TabBarBackground';
+import { useColorScheme } from 'react-native';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Tabs
-        screenOptions={{
-          headerShown: false,
-          tabBarButton: HapticTab,
-          tabBarBackground: TabBarBackground,
-          tabBarStyle: Platform.select({
-            ios: {
-              // Use a transparent background on iOS to show the blur effect
-              position: 'absolute',
-            },
-            default: {},
-          }),
-        }}>
-        <Tabs.Screen
-          name="(flavours)"
-          options={{
-            title: 'Flavour List',
-            tabBarIcon: ({ color }) => <SymbolView name="cup.and.saucer.fill" tintColor={color} />,
-          }}
-        />
-        <Tabs.Screen
-          name="(locations)"
-          options={{
-            title: 'Locations',
-            tabBarIcon: ({ color }) => <SymbolView name="mappin.and.ellipse" tintColor={color} />,
-          }}
-        />
-        <Tabs.Screen
-          name="(map)"
-          options={{
-            title: 'Map',
-            tabBarIcon: ({ color }) => <SymbolView name="map.fill" tintColor={color} />,
-          }}
-        />
-        <Tabs.Screen
-          name="(about)"
-          options={{
-            title: 'About',
-            tabBarIcon: ({ color }) => <SymbolView name="info.circle.fill" tintColor={color} />,
-          }}
-        />
-      </Tabs>
-
+      <NativeTabs>
+        <NativeTabs.Trigger name="(flavours)">
+          <Icon sf={{ default: 'cup.and.saucer', selected: 'cup.and.saucer.fill' }} />
+          <Label>Flavours</Label>
+        </NativeTabs.Trigger>
+        <NativeTabs.Trigger name="(locations)">
+          <Icon sf={{ default: 'mappin.and.ellipse', selected: 'mappin.and.ellipse' }} />
+          <Label>Locations</Label>
+        </NativeTabs.Trigger>
+        <NativeTabs.Trigger name="(map)">
+          <Icon sf={{ default: 'map', selected: 'map.fill' }} />
+          <Label>Map</Label>
+        </NativeTabs.Trigger>
+        <NativeTabs.Trigger name="(about)">
+          <Icon sf={{ default: 'info.circle', selected: 'info.circle.fill' }} />
+          <Label>About</Label>
+        </NativeTabs.Trigger>
+      </NativeTabs>
       <StatusBar style="auto" />
     </ThemeProvider>
   );
