@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { FlavourList, LocationList } from '@/model';
+import { padding } from '@expo/ui/swift-ui/modifiers';
 
 export default function FlavourDetails() {
   const { id } = useLocalSearchParams();
@@ -17,7 +18,7 @@ export default function FlavourDetails() {
   if (!flavour) {
     return (
       <Host style={{ flex: 1 }} colorScheme={colorScheme}>
-        <VStack padding={{ top: 16, leading: 16, bottom: 16, trailing: 16 }}>
+        <VStack modifiers={[padding({ top: 16, leading: 16, bottom: 16, trailing: 16 })]}>
           <Text>Flavour not found</Text>
         </VStack>
       </Host>
@@ -31,7 +32,7 @@ export default function FlavourDetails() {
       <Stack.Screen options={{ title: label }} />
       <Host style={{ flex: 1 }} colorScheme={colorScheme}>
         <VStack
-          padding={{ top: 16, leading: 16, bottom: 16, trailing: 16 }}
+          modifiers={[padding({ top: 16, leading: 16, bottom: 16, trailing: 16 })]}
           spacing={16}
           alignment="leading">
           {location ? (

@@ -16,6 +16,7 @@ import { useWindowDimensions } from 'react-native';
 
 import FlavourGroup from '@/components/FlavourGroup';
 import { type Flavour, FlavourList, LocationList, type Store } from '@/model';
+import { frame, padding } from '@expo/ui/swift-ui/modifiers';
 
 // Add backtraced location data to the store.
 // When clicking on a store, we can display the location metadata directly.
@@ -76,11 +77,13 @@ export default function Tab() {
           isOpened={!!selectedStore}
           onIsOpenedChange={(e) => setSelectedStore(e ? selectedStore : null)}>
           <VStack
-            padding={{ top: 16, leading: 2, bottom: 2, trailing: 2 }}
-            frame={{ height: windowHeight * 0.5 }}
+            modifiers={[
+              padding({ top: 16, leading: 2, bottom: 2, trailing: 2 }),
+              frame({ height: windowHeight * 0.5 }),
+            ]}
             spacing={8}
             alignment="leading">
-            <HStack padding={{ trailing: 8, bottom: 8 }}>
+            <HStack modifiers={[padding({ trailing: 8, bottom: 8 })]}>
               <Spacer />
               <Image
                 systemName="xmark.circle.fill"

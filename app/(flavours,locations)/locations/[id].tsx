@@ -6,6 +6,7 @@ import { useColorScheme, useWindowDimensions } from 'react-native';
 
 import FlavourGroup from '@/components/FlavourGroup';
 import { FlavourList, LocationList, type Store } from '@/model';
+import { frame, padding } from '@expo/ui/swift-ui/modifiers';
 
 export default function LocationDetails() {
   const { id, hideStorePicker } = useLocalSearchParams();
@@ -25,7 +26,7 @@ export default function LocationDetails() {
   if (!location) {
     return (
       <Host style={{ flex: 1 }} colorScheme={colorScheme}>
-        <VStack padding={{ top: 16, leading: 16, bottom: 16, trailing: 16 }}>
+        <VStack modifiers={[padding({ top: 16, leading: 16, bottom: 16, trailing: 16 })]}>
           <Text>Location not found</Text>
         </VStack>
       </Host>
@@ -46,9 +47,11 @@ export default function LocationDetails() {
         <VStack alignment="leading">
           {!hideStorePicker ? (
             <VStack
-              padding={{ top: 16, leading: 16, bottom: 16, trailing: 16 }}
+              modifiers={[
+                padding({ top: 16, leading: 16, bottom: 16, trailing: 16 }),
+                frame({ maxWidth: windowWidth, alignment: 'leading' }),
+              ]}
               alignment="leading"
-              frame={{ maxWidth: windowWidth, alignment: 'leading' }}
               spacing={4}
               backgroundColor={colorScheme === 'dark' ? 'black' : 'white'}>
               <Text size={28}>{location.name}</Text>
