@@ -3,6 +3,7 @@ import { Link, Stack } from 'expo-router';
 import { useColorScheme } from 'react-native';
 
 import { FlavourList } from '@/model';
+import { frame } from '@expo/ui/swift-ui/modifiers';
 
 export default function Index() {
   const colorScheme = useColorScheme();
@@ -18,7 +19,7 @@ export default function Index() {
           },
           headerRight: () => {
             return (
-              <Host style={{ width: 28, height: 28 }}>
+              <Host matchContents>
                 <ContextMenu>
                   <ContextMenu.Items>
                     <Button onPress={() => {}}>Show Favourites Only</Button>
@@ -31,7 +32,11 @@ export default function Index() {
                     <Button onPress={() => {}}>Show Alcohol Free Only</Button>
                   </ContextMenu.Items>
                   <ContextMenu.Trigger>
-                    <Image systemName="line.3.horizontal.decrease.circle" size={24} />
+                    {/* iOS 26 header buttons have height and width of 36, so we add static width 
+                    and height to keep the entire area tappable */}
+                    <HStack modifiers={[frame({ width: 36, height: 36 })]}>
+                      <Image systemName="line.3.horizontal.decrease.circle" size={28} />
+                    </HStack>
                   </ContextMenu.Trigger>
                 </ContextMenu>
               </Host>

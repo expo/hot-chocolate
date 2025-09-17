@@ -3,6 +3,7 @@ import { Link, Stack } from 'expo-router';
 import { useColorScheme } from 'react-native';
 
 import { LocationList } from '@/model';
+import { fixedSize, frame, padding } from '@expo/ui/swift-ui/modifiers';
 
 const MY_FIXED_LOCATION = {
   latitude: 49.282729,
@@ -46,12 +47,25 @@ export default function Locations() {
           },
           headerRight: () => {
             return (
-              <Host style={{ width: 220, height: 20 }}>
-                <HStack>
-                  <Spacer />
+              <Host matchContents>
+                <HStack
+                  modifiers={[
+                    // iOS 26 header buttons have height of 36,
+                    // so we set it to 36 so it aligns vertically center
+                    frame({
+                      height: 36,
+                    }),
+                    // Picker has a default padding left and right so we add padding left here
+                    // to make it look horizontally center
+                    padding({ leading: 12 }),
+                    fixedSize(),
+                  ]}
+                  alignment="center">
+                  {/* TODO: Add a label support for Picker */}
                   <Text>Sort by:</Text>
                   <Picker
                     variant="menu"
+                    label="Sort by:"
                     options={['Name', 'Distance']}
                     selectedIndex={0}
                     onOptionSelected={({ nativeEvent: { index } }) => {
