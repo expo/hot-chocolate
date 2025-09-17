@@ -1,22 +1,11 @@
-import {
-  BottomSheet,
-  Form,
-  Group,
-  HStack,
-  Host,
-  Image,
-  Spacer,
-  Text,
-  VStack,
-} from '@expo/ui/swift-ui';
-import * as Linking from 'expo-linking';
+import { BottomSheet, Form, Host, HStack, Image, Spacer, Text, VStack } from '@expo/ui/swift-ui';
 import { AppleMaps } from 'expo-maps';
 import { useState } from 'react';
-import { useWindowDimensions } from 'react-native';
+import { Linking, useWindowDimensions } from 'react-native';
 
 import FlavourGroup from '@/components/FlavourGroup';
 import { type Flavour, FlavourList, LocationList, type Store } from '@/model';
-import { frame, padding } from '@expo/ui/swift-ui/modifiers';
+import { background, frame, padding } from '@expo/ui/swift-ui/modifiers';
 
 // Add backtraced location data to the store.
 // When clicking on a store, we can display the location metadata directly.
@@ -77,13 +66,10 @@ export default function Tab() {
           isOpened={!!selectedStore}
           onIsOpenedChange={(e) => setSelectedStore(e ? selectedStore : null)}>
           <VStack
-            modifiers={[
-              padding({ top: 16, leading: 2, bottom: 2, trailing: 2 }),
-              frame({ height: windowHeight * 0.5 }),
-            ]}
-            spacing={8}
-            alignment="leading">
-            <HStack modifiers={[padding({ trailing: 8, bottom: 8 })]}>
+            modifiers={[frame({ height: windowHeight * 0.5 })]}
+            alignment="leading"
+            spacing={16}>
+            <HStack modifiers={[padding({ top: 16, trailing: 16 })]}>
               <Spacer />
               <Image
                 systemName="xmark.circle.fill"
@@ -92,10 +78,11 @@ export default function Tab() {
                 onPress={() => setSelectedStore(null)}
               />
             </HStack>
-            <Group padding={{ leading: 16, trailing: 16 }}>
-              <Text size={24} weight="bold">
-                {selectedStore?.locationName ?? ''}
-              </Text>
+            <VStack
+              alignment="leading"
+              spacing={4}
+              modifiers={[padding({ leading: 16, trailing: 16 })]}>
+              <Text size={32}>{selectedStore?.locationName ?? ''}</Text>
               <HStack
                 onPress={() =>
                   Linking.openURL(
@@ -104,11 +91,11 @@ export default function Tab() {
                 }>
                 <Text color="#007AFF">{selectedStore?.address ?? ''}</Text>
               </HStack>
-              <Text size={14} color="secondary">
+              <Text size={16} color="secondary">
                 {selectedStore?.hours ?? ''}
               </Text>
-            </Group>
-            <Form>
+            </VStack>
+            <Form modifiers={[background('white')]}>
               {selectedStore?.locationFlavours.map((flavour) => (
                 <FlavourGroup key={flavour.id} flavour={flavour} />
               ))}
@@ -119,3 +106,42 @@ export default function Tab() {
     </>
   );
 }
+
+// <VStack
+//             modifiers={[
+//               padding({ top: 16, leading: 2, bottom: 2, trailing: 2 }),
+//               frame({ height: windowHeight * 0.5 }),
+//             ]}
+//             spacing={8}
+//             alignment="leading">
+//             <HStack modifiers={[padding({ trailing: 8, bottom: 8 })]}>
+//               <Spacer />
+//               <Image
+//                 systemName="xmark.circle.fill"
+//                 color="secondary"
+//                 size={24}
+//                 onPress={() => setSelectedStore(null)}
+//               />
+//             </HStack>
+//             <Group padding={{ leading: 16, trailing: 16 }}>
+//               <Text size={24} weight="bold">
+//                 {selectedStore?.locationName ?? ''}
+//               </Text>
+//               <HStack
+//                 onPress={() =>
+//                   Linking.openURL(
+//                     `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
+//                   )
+//                 }>
+//                 <Text color="#007AFF">{selectedStore?.address ?? ''}</Text>
+//               </HStack>
+//               <Text size={14} color="secondary">
+//                 {selectedStore?.hours ?? ''}
+//               </Text>
+//             </Group>
+//             <Form>
+//               {selectedStore?.locationFlavours.map((flavour) => (
+//                 <FlavourGroup key={flavour.id} flavour={flavour} />
+//               ))}
+//             </Form>
+//           </VStack>

@@ -13,9 +13,10 @@ export default function FlavourGroup({ flavour }: { flavour: Flavour }) {
 
   const label = `#${flavour.id} - ${flavour.name}`;
   const date = `${formatDate(flavour.startDate)} to ${formatDate(flavour.endDate)}`;
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <DisclosureGroup label={label}>
+    <DisclosureGroup label={label} isExpanded={isExpanded} onStateChange={setIsExpanded}>
       <VStack spacing={8} alignment="leading">
         <HStack spacing={8}>
           <Text size={24} weight="bold">
