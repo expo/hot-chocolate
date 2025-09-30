@@ -4,7 +4,7 @@
     "": {
       "name": "sdk541",
       "dependencies": {
-        "@expo/ui": "~0.2.0-beta.3",
+        "@expo/ui": "0.2.0-beta.4",
         "@expo/vector-icons": "^15.0.2",
         "@react-navigation/bottom-tabs": "^7.4.0",
         "@react-navigation/elements": "^2.6.3",
@@ -45,8 +45,8 @@
     },
   },
   "patchedDependencies": {
+    "@expo/ui@0.2.0-beta.4": "patches/@expo%2Fui@0.2.0-beta.4.patch",
     "react-native@0.81.4": "patches/react-native@0.81.4.patch",
-    "@expo/ui@0.2.0-canary-20250912-b5ce2a8": "patches/@expo%2Fui@0.2.0-canary-20250912-b5ce2a8.patch",
     "expo-modules-core@3.0.18": "patches/expo-modules-core@3.0.18.patch",
   },
   "packages": {
@@ -316,7 +316,7 @@
 
     "@expo/sudo-prompt": ["@expo/sudo-prompt@9.3.2", "", {}, "sha512-HHQigo3rQWKMDzYDLkubN5WQOYXJJE2eNqIQC2axC2iO3mHdwnIR7FgZVvHWtBwAdzBgAP0ECp8KqS8TiMKvgw=="],
 
-    "@expo/ui": ["@expo/ui@0.2.0-canary-20250912-b5ce2a8", "", { "peerDependencies": { "expo": "*", "react": "*", "react-native": "*" } }, "sha512-2ErUSlwxaxJmiyNSDCeJjwiHWFBv4YNBGYiQW/+MRiHQMEwXpJo3GAHma6jqn1TFy7so8jxTgppAXYZUOrkCtg=="],
+    "@expo/ui": ["@expo/ui@0.2.0-beta.4", "", { "dependencies": { "sf-symbols-typescript": "^2.1.0" }, "peerDependencies": { "expo": "*", "react": "*", "react-native": "*" } }, "sha512-49DoNCQ5jyLFvnTZpVU1aMSbfgRtX4QQtnX7WM97A7dJhocvaF7g7MA3LBeoZ07MMVKuuwfcIBM2F/f52S+6zw=="],
 
     "@expo/vector-icons": ["@expo/vector-icons@15.0.2", "", { "peerDependencies": { "expo-font": ">=14.0.4", "react": "*", "react-native": "*" } }, "sha512-IiBjg7ZikueuHNf40wSGCf0zS73a3guJLdZzKnDUxsauB8VWPLMeWnRIupc+7cFhLUkqyvyo0jLNlcxG5xPOuQ=="],
 
