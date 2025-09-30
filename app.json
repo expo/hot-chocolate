@@ -9,8 +9,7 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.nishan-expo.hot-chocolate"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
