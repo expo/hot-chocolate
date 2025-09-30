@@ -48,5 +48,10 @@
     "prettier": "^3.6.2",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "private": true,
+  "patchedDependencies": {
+    "expo-modules-core@3.0.18": "patches/expo-modules-core@3.0.18.patch",
+    "@expo/ui@0.2.0-canary-20250912-b5ce2a8": "patches/@expo%2Fui@0.2.0-canary-20250912-b5ce2a8.patch",
+    "react-native@0.81.4": "patches/react-native@0.81.4.patch"
+  }
 }

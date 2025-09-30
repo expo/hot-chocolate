@@ -49,6 +49,7 @@ export default function Locations() {
             return (
               <Host matchContents>
                 <HStack
+                  fixedSize
                   modifiers={[
                     // iOS 26 header buttons have height of 36,
                     // so we set it to 36 so it aligns vertically center
