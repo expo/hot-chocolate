@@ -48,10 +48,5 @@
     "prettier": "^3.6.2",
     "typescript": "~5.9.2"
   },
-  "patchedDependencies": {
-    "expo-modules-core@3.0.16": "patches/expo-modules-core@3.0.16.patch",
-    "@expo/ui@0.2.0-beta.3": "patches/@expo%2Fui@0.2.0-beta.3.patch",
-    "react-native@0.81.4": "patches/react-native@0.81.4.patch"
-  },
   "private": true
 }
