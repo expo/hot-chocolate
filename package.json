@@ -10,13 +10,14 @@
     "lint": "expo lint"
   },
   "dependencies": {
-    "@expo/ui": "~0.2.0-beta.3",
+    "@expo/ui": "0.2.0-beta.4",
     "@expo/vector-icons": "^15.0.2",
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/elements": "^2.6.3",
     "@react-navigation/native": "^7.1.8",
-    "expo": "54.0.7",
+    "expo": "~54.0.10",
     "expo-blur": "~15.0.7",
+    "expo-build-properties": "^1.0.9",
     "expo-constants": "~18.0.8",
     "expo-font": "~14.0.8",
     "expo-haptics": "~15.0.7",
@@ -47,5 +48,10 @@
     "prettier": "^3.6.2",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "private": true,
+  "patchedDependencies": {
+    "expo-modules-core@3.0.18": "patches/expo-modules-core@3.0.18.patch",
+    "react-native@0.81.4": "patches/react-native@0.81.4.patch",
+    "@expo/ui@0.2.0-beta.4": "patches/@expo%2Fui@0.2.0-beta.4.patch"
+  }
 }
