@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Hot Chocolate",
+    "name": "Hot Chocolate (Expo)",
     "slug": "hot-chocolate",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,7 +10,10 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.brents.hot-chocolate"
+      "bundleIdentifier": "com.brents.hot-chocolate",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -43,6 +46,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "355e9a75-384b-4185-aefc-893ac990a771"
+      }
     }
   }
 }
