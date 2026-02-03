@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Hot Chocolate (Expo)",
+    "name": "Hot Chocolate App",
     "slug": "hot-chocolate",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,19 +15,15 @@
         "ITSAppUsesNonExemptEncryption": false
       }
     },
-    "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#000000"
+          }
         }
       ],
       "expo-maps",
