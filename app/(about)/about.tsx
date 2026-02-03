@@ -2,16 +2,15 @@ import {
   Button,
   Form,
   Host,
-  RNHostView,
   Section,
   Text,
   Image as UIImage,
   VStack,
 } from '@expo/ui/swift-ui';
-import { containerRelativeFrame, font, foregroundStyle, padding } from '@expo/ui/swift-ui/modifiers';
+import { font, foregroundStyle, padding } from '@expo/ui/swift-ui/modifiers';
 import * as Linking from 'expo-linking';
 import { Stack } from 'expo-router';
-import { Image, useColorScheme } from 'react-native';
+import { useColorScheme } from 'react-native';
 
 export default function AboutPage() {
   const colorScheme = useColorScheme();
@@ -22,16 +21,7 @@ export default function AboutPage() {
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
         <Form>
           <Section>
-            <VStack
-              alignment="center"
-              modifiers={[padding({ vertical: 20 }), containerRelativeFrame({ axes: 'horizontal', alignment: 'center' })]}
-              spacing={8}>
-              <RNHostView matchContents>
-                <Image
-                  source={require('@/assets/images/icon.png')}
-                  style={{ width: 80, height: 80, borderRadius: 16, backgroundColor: 'red' }}
-                />
-              </RNHostView>
+            <VStack alignment="center" modifiers={[padding({ vertical: 20 })]} spacing={8}>
               <UIImage systemName="sparkles" size={28} color="#007AFF" />
               <Text modifiers={[font({ size: 20, weight: 'semibold' })]}>Expo UI Demo</Text>
               <Text modifiers={[foregroundStyle({ type: 'color', color: 'secondaryLabel' })]}>
