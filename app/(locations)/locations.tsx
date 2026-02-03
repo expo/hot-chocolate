@@ -9,7 +9,7 @@ import {
   Spacer,
   Text,
 } from '@expo/ui/swift-ui';
-import { buttonStyle, fixedSize, foregroundStyle, frame, padding, pickerStyle, tag } from '@expo/ui/swift-ui/modifiers';
+import { buttonStyle, fixedSize, font, foregroundStyle, frame, padding, pickerStyle, tag } from '@expo/ui/swift-ui/modifiers';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
@@ -236,15 +236,17 @@ export default function Locations() {
               <HStack>
                 <Text>{item.name}</Text>
                 <Spacer />
-                <Text modifiers={[foregroundStyle({ type: 'color', color: 'secondaryLabel' })]}>
-                  {formatDistance(
-                    getDistanceKm(userLocation, {
-                      latitude: item.stores[0].point[0],
-                      longitude: item.stores[0].point[1],
-                    })
-                  )}
-                </Text>
-                <Image systemName="chevron.right" size={14} color="secondary" />
+                <HStack spacing={8} alignment="center">
+                  <Text modifiers={[font({ size: 14 }), foregroundStyle('#8E8E93')]}>
+                    {formatDistance(
+                      getDistanceKm(userLocation, {
+                        latitude: item.stores[0].point[0],
+                        longitude: item.stores[0].point[1],
+                      })
+                    )}
+                  </Text>
+                  <Image systemName="chevron.right" size={14} color="secondary" />
+                </HStack>
               </HStack>
             </Button>
           ))}

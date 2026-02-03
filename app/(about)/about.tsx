@@ -46,7 +46,7 @@ export default function AboutPage() {
             }>
             <Text>
               This demo app showcases Expo UI components using data from the Vancouver Hot Chocolate
-              Festival. The design is inspired by the official YVR Hot Chocolate Fest app.
+              Festival 2026. The design is inspired by the official YVR Hot Chocolate Fest app.
             </Text>
           </Section>
 
