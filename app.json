@@ -29,7 +29,8 @@
       "expo-maps",
       "expo-font",
       "expo-web-browser",
-      "expo-image"
+      "expo-image",
+      "expo-sqlite"
     ],
     "experiments": {
       "typedRoutes": true,
