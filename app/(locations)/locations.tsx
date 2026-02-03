@@ -1,9 +1,10 @@
 import { Button, HStack, Host, Image, List, Picker, Spacer, Text } from '@expo/ui/swift-ui';
+import { font, foregroundStyle, fixedSize, frame, padding, pickerStyle, tag } from '@expo/ui/swift-ui/modifiers';
 import { Link, Stack } from 'expo-router';
+import { useState } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { LocationList } from '@/model';
-import { fixedSize, frame, padding } from '@expo/ui/swift-ui/modifiers';
 
 const MY_FIXED_LOCATION = {
   latitude: 49.282729,
@@ -33,8 +34,11 @@ function getDistance(location: { latitude: number; longitude: number }): string 
   return `${distanceInKm.toFixed(1)} km`;
 }
 
+const SORT_OPTIONS = ['Name', 'Distance'] as const;
+
 export default function Locations() {
   const colorScheme = useColorScheme();
+  const [sortBy, setSortBy] = useState<(typeof SORT_OPTIONS)[number]>('Name');
 
   return (
     <>
@@ -61,32 +65,36 @@ export default function Locations() {
                     fixedSize(),
                   ]}
                   alignment="center">
-                  {/* TODO: Add a label support for Picker */}
                   <Text>Sort by:</Text>
                   <Picker
-                    variant="menu"
-                    label="Sort by:"
-                    options={['Name', 'Distance']}
-                    selectedIndex={0}
-                    onOptionSelected={({ nativeEvent: { index } }) => {
-                      console.log(index);
-                    }}
-                  />
+                    selection={sortBy}
+                    onSelectionChange={(value) => setSortBy(value as (typeof SORT_OPTIONS)[number])}
+                    modifiers={[pickerStyle('menu')]}>
+                    {SORT_OPTIONS.map((option) => (
+                      <Text key={option} modifiers={[tag(option)]}>
+                        {option}
+                      </Text>
+                    ))}
+                  </Picker>
                 </HStack>
               </Host>
             );
           },
         }}
       />
-      <Host style={{ flex: 1 }} colorScheme={colorScheme}>
-        <List scrollEnabled>
+      <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
+        <List>
           {LocationList.map((item) => (
             <Link href={`/locations/${item.id}`} asChild key={item.id}>
               <Button>
                 <HStack spacing={8}>
-                  <Text size={14} color="primary">{`${item.name}`}</Text>
+                  <Text modifiers={[font({ size: 14 })]}>{`${item.name}`}</Text>
                   <Spacer />
-                  <Text size={14} color="secondary">
+                  <Text
+                    modifiers={[
+                      font({ size: 14 }),
+                      foregroundStyle({ type: 'hierarchical', style: 'secondary' }),
+                    ]}>
                     {getDistance({
                       // For demo purposes, use the first store's location
                       latitude: item.stores[0].point[0],

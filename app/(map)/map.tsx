@@ -1,11 +1,11 @@
-import { BottomSheet, Form, Host, HStack, Image, Spacer, Text, VStack } from '@expo/ui/swift-ui';
+import { BottomSheet, Button, Form, Host, HStack, Image, Spacer, Text, VStack } from '@expo/ui/swift-ui';
+import { background, font, foregroundStyle, frame, onTapGesture, padding } from '@expo/ui/swift-ui/modifiers';
 import { AppleMaps } from 'expo-maps';
 import { useState } from 'react';
 import { Linking, useWindowDimensions } from 'react-native';
 
 import FlavourGroup from '@/components/FlavourGroup';
 import { type Flavour, FlavourList, LocationList, type Store } from '@/model';
-import { background, frame, padding } from '@expo/ui/swift-ui/modifiers';
 
 // Add backtraced location data to the store.
 // When clicking on a store, we can display the location metadata directly.
@@ -63,8 +63,8 @@ export default function Tab() {
       />
       <Host>
         <BottomSheet
-          isOpened={!!selectedStore}
-          onIsOpenedChange={(e) => setSelectedStore(e ? selectedStore : null)}>
+          isPresented={!!selectedStore}
+          onIsPresentedChange={(isPresented) => setSelectedStore(isPresented ? selectedStore : null)}>
           <VStack
             modifiers={[frame({ height: windowHeight * 0.5 })]}
             alignment="leading"
@@ -82,16 +82,22 @@ export default function Tab() {
               alignment="leading"
               spacing={4}
               modifiers={[padding({ leading: 16, trailing: 16 })]}>
-              <Text size={32}>{selectedStore?.locationName ?? ''}</Text>
+              <Text modifiers={[font({ size: 32 })]}>{selectedStore?.locationName ?? ''}</Text>
               <HStack
-                onPress={() =>
-                  Linking.openURL(
-                    `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
-                  )
-                }>
-                <Text color="#007AFF">{selectedStore?.address ?? ''}</Text>
+                modifiers={[
+                  onTapGesture(() =>
+                    Linking.openURL(
+                      `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
+                    )
+                  ),
+                ]}>
+                <Text modifiers={[foregroundStyle('#007AFF')]}>{selectedStore?.address ?? ''}</Text>
               </HStack>
-              <Text size={16} color="secondary">
+              <Text
+                modifiers={[
+                  font({ size: 16 }),
+                  foregroundStyle({ type: 'hierarchical', style: 'secondary' }),
+                ]}>
                 {selectedStore?.hours ?? ''}
               </Text>
             </VStack>

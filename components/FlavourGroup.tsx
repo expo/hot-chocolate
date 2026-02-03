@@ -1,4 +1,5 @@
 import { DisclosureGroup, HStack, Image, Text, VStack } from '@expo/ui/swift-ui';
+import { font, foregroundStyle } from '@expo/ui/swift-ui/modifiers';
 import { useState } from 'react';
 
 import { type Flavour } from '@/model';
@@ -16,12 +17,10 @@ export default function FlavourGroup({ flavour }: { flavour: Flavour }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <DisclosureGroup label={label} isExpanded={isExpanded} onStateChange={setIsExpanded}>
+    <DisclosureGroup label={label} isExpanded={isExpanded} onIsExpandedChange={setIsExpanded}>
       <VStack spacing={8} alignment="leading">
         <HStack spacing={8}>
-          <Text size={24} weight="bold">
-            {label}
-          </Text>
+          <Text modifiers={[font({ size: 24, weight: 'bold' })]}>{label}</Text>
           <Image
             systemName={isFavourite ? 'star.fill' : 'star'}
             size={18}
@@ -35,10 +34,14 @@ export default function FlavourGroup({ flavour }: { flavour: Flavour }) {
             onPress={() => setIsTasted(!isTasted)}
           />
         </HStack>
-        <Text size={14} color="secondary">
+        <Text
+          modifiers={[
+            font({ size: 14 }),
+            foregroundStyle({ type: 'hierarchical', style: 'secondary' }),
+          ]}>
           {date}
         </Text>
-        <Text size={16}>{flavour.description}</Text>
+        <Text modifiers={[font({ size: 16 })]}>{flavour.description}</Text>
       </VStack>
     </DisclosureGroup>
   );

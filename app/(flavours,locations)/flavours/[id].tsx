@@ -1,10 +1,10 @@
 import { Button, HStack, Host, Image, Spacer, Text, VStack } from '@expo/ui/swift-ui';
+import { font, foregroundStyle, padding } from '@expo/ui/swift-ui/modifiers';
 import { Link, Stack, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { FlavourList, LocationList } from '@/model';
-import { padding } from '@expo/ui/swift-ui/modifiers';
 
 export default function FlavourDetails() {
   const { id } = useLocalSearchParams();
@@ -17,7 +17,7 @@ export default function FlavourDetails() {
 
   if (!flavour) {
     return (
-      <Host style={{ flex: 1 }} colorScheme={colorScheme}>
+      <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
         <VStack modifiers={[padding({ top: 16, leading: 16, bottom: 16, trailing: 16 })]}>
           <Text>Flavour not found</Text>
         </VStack>
@@ -30,7 +30,7 @@ export default function FlavourDetails() {
   return (
     <>
       <Stack.Screen options={{ title: label }} />
-      <Host style={{ flex: 1 }} colorScheme={colorScheme}>
+      <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
         <VStack
           modifiers={[padding({ top: 16, leading: 16, bottom: 16, trailing: 16 })]}
           spacing={16}
@@ -39,7 +39,7 @@ export default function FlavourDetails() {
             <Link href={`/locations/${location.id}?hideStorePicker=true`} asChild>
               <Button>
                 <HStack>
-                  <Text size={20} color="#007AFF">
+                  <Text modifiers={[font({ size: 20 }), foregroundStyle('#007AFF')]}>
                     {location.name}
                   </Text>
                 </HStack>
@@ -47,9 +47,7 @@ export default function FlavourDetails() {
             </Link>
           ) : null}
           <HStack spacing={8}>
-            <Text size={24} weight="bold">
-              {label}
-            </Text>
+            <Text modifiers={[font({ size: 24, weight: 'bold' })]}>{label}</Text>
             <Image
               systemName={isFavourite ? 'star.fill' : 'star'}
               size={18}
@@ -64,11 +62,15 @@ export default function FlavourDetails() {
             />
           </HStack>
 
-          <Text size={14} color="secondary">
+          <Text
+            modifiers={[
+              font({ size: 14 }),
+              foregroundStyle({ type: 'hierarchical', style: 'secondary' }),
+            ]}>
             {dateRange}
           </Text>
 
-          <Text size={16}>{flavour.description}</Text>
+          <Text modifiers={[font({ size: 16 })]}>{flavour.description}</Text>
           <Spacer />
         </VStack>
       </Host>
