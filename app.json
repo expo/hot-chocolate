@@ -15,14 +15,6 @@
         "ITSAppUsesNonExemptEncryption": false
       }
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": true
-    },
     "web": {
       "output": "static",
       "favicon": "./assets/images/favicon.png"
@@ -58,6 +50,12 @@
       "eas": {
         "projectId": "355e9a75-384b-4185-aefc-893ac990a771"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/355e9a75-384b-4185-aefc-893ac990a771"
     }
   }
 }
