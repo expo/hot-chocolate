@@ -1,8 +1,9 @@
 import { BottomSheet, Button, Form, Group, Host, HStack, Image, Spacer, Text, VStack } from '@expo/ui/swift-ui';
 import { background, font, foregroundStyle, onTapGesture, padding, presentationBackgroundInteraction, presentationDetents, presentationDragIndicator } from '@expo/ui/swift-ui/modifiers';
+import * as Haptics from 'expo-haptics';
 import { AppleMaps } from 'expo-maps';
 import { useState } from 'react';
-import { Linking } from 'react-native';
+import { ActivityIndicator, Linking, StyleSheet, View } from 'react-native';
 
 import FlavourGroup from '@/components/FlavourGroup';
 import { type Flavour, FlavourList, LocationList, type Store } from '@/model';
@@ -33,6 +34,7 @@ const STORES: ExtendedStore[] = LocationList.flatMap((location) =>
 
 export default function Tab() {
   const [selectedStore, setSelectedStore] = useState<ExtendedStore | null | undefined>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <>
@@ -48,7 +50,10 @@ export default function Tab() {
           title: `${store.locationName} - ${store.name}`,
         }))}
         onMarkerClick={(e) => {
+          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+          setIsLoading(true);
           setSelectedStore(STORES.find((store) => String(store.locationId) === e.id));
+          setTimeout(() => setIsLoading(false), 500);
         }}
         cameraPosition={{
           // At proper place to cover most of the stores
@@ -58,8 +63,14 @@ export default function Tab() {
           },
           zoom: 10,
         }}
-        uiSettings={{ myLocationButtonEnabled: false }}
+        uiSettings={{ myLocationButtonEnabled: true }}
+        properties={{ isMyLocationEnabled: true }}
       />
+      {isLoading && (
+        <View style={styles.loadingOverlay}>
+          <ActivityIndicator size="large" color="#007AFF" />
+        </View>
+      )}
       <Host>
         <BottomSheet
           isPresented={!!selectedStore}
@@ -109,3 +120,13 @@ export default function Tab() {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  loadingOverlay: {
+    position: 'absolute',
+    bottom: 40,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+  },
+});
