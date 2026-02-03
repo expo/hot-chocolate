@@ -6,7 +6,7 @@
       "name": "Campfire Cocoa",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-29T08:00:00Z",
-      "description": "",
+      "description": "Toasted marshmallow and chocolate blend together in this hot chocolate with a velvety topping of toffee-flavoured cold foam. Accompanied by a mini brioche doughnut filled with chocolate pastry cream, dipped in toffee glaze, and topped with a toasted marshmallow.",
       "location": 1,
       "tags": []
     },
@@ -15,7 +15,7 @@
       "name": "Raspberry Zing Cocoa",
       "startDate": "2026-01-30T08:00:00Z",
       "endDate": "2026-02-12T08:00:00Z",
-      "description": "",
+      "description": "A creamy white chocolate and raspberry cocoa with a spark of pink peppercorn berry. Served with a mini brioche doughnut, filled with raspberry jam, dipped in a white chocolate glaze, topped with raspberries and pink peppercorn.",
       "location": 1,
       "tags": []
     },
@@ -24,7 +24,7 @@
       "name": "Angel on Cloud 9",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-29T08:00:00Z",
-      "description": "",
+      "description": "Hot white chocolate infused with pomegranate, cherry compote, and port, crowned with an angel-hair mousse angel cake sitting on a torched meringue halo. A sophisticated indulgence that tastes like a blissful delight. Paired with a Figgy Ume Cruffin: butter-flaked cruffin filled with fig and ume plum reduction, finished with spun angel hair. A golden bite of East-meets-West serenity.",
       "location": 2,
       "tags": []
     },
@@ -33,7 +33,7 @@
       "name": "Brie My Swiss Valentine",
       "startDate": "2026-01-30T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Hot bittersweet cocoa entwined with molten brie and Swiss, torched cheddar brûlée and passion-mango marshmallow. A sultry twist where fondue meets dessert. Served alongside a Pear Brûlée Blue Cheese Tart: caramelized pear over whipped blue cheese infused with cinnamon and candied ginger bits on flaky puff pastry. Sweet, smoky, and quietly sophisticated.",
       "location": 2,
       "tags": []
     },
@@ -42,7 +42,7 @@
       "name": "Chiikawa Mogumogu Matcha",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Uji Kyoto matcha latte made with Callebaut white chocolate and sweet potato puree. On the side, a spiced red bean chocolate truffle. Gluten free friendly. Dairy-free/vegan options available upon request.",
       "location": 3,
       "tags": [
         "Gluten-free",
@@ -55,7 +55,7 @@
       "name": "Keeping Warm Under the Kotatsu",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Japanese mikan mandarin orange juice with okaki rice crackers and dark chocolate. Served alongside a hojicha and sea salt chocolate truffle. Gluten-free friendly. Dairy-free/vegan options available upon request.",
       "location": 3,
       "tags": [
         "Gluten-free",
@@ -68,7 +68,7 @@
       "name": "Miso Moon",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Toasty houjicha and dark, silky chocolate come together in this cozy winter cup, topped with fluffy cardamom whipped cream and a miso caramel drizzle for the perfect balance of sweet and umami warmth. Served with a cardamom cookie. Dairy-free or vegan option available upon request.",
       "location": 4,
       "tags": [
         "Dairy-free",
@@ -80,7 +80,7 @@
       "name": "Pom Noir",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Smooth dark chocolate meets tangy pomegranate, topped with a bright yuzu whipped cream and a hint of aromatic rosemary for a refreshing twist on a winter classic. Paired with a cinnamon cookie. Contains nuts. Dairy-free or vegan option available upon request.",
       "location": 4,
       "tags": [
         "Dairy-free",
@@ -93,7 +93,7 @@
       "name": "Butterscotch Budino Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A luscious toasted sugar hot chocolate infused with brown butter warmth. Paired with a delicate shortbread biscuit featuring subtle amaretti notes.",
       "location": 5,
       "tags": []
     },
@@ -102,7 +102,7 @@
       "name": "Love Potion Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A dark chocolate elixir steeped with fragrant cardamom. Served with a hand cut, artisanal rose scented marshmallow.",
       "location": 5,
       "tags": []
     },
@@ -111,7 +111,7 @@
       "name": "Dark Sesame Choccy",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Meet Obsidian Dark Choccy — our deep, roasty take on hot chocolate. Belgian dark chocolate, your milk of choice, and topped with a silky layer of house-made black sesame cold foam. Roasty. Toasty. Choccy. Each Obsidian Dark Choccy includes a serving of our freshly made Nama Dark Chocolates. Silky, rich, and slow-melted for a naturally soft texture; a melt-in-your-mouth bite to deepen the whole dark chocolate experience. Gluten-free friendly.",
       "location": 6,
       "tags": [
         "Gluten-free"
@@ -122,7 +122,7 @@
       "name": "White Mocha Snow",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Snow day in a cup: Belgian white chocolate and AVIK espresso, milk of choice, topped with our house-made vanilla cold foam, and a snowfall of white chocolate snow. White. Creamy. Snowy. Each White Mocha Snow comes with a serving of our exclusive Nama White Chocolates. Soft, velvety, and creamy-smooth. A little snowy company to complete the white chocolate experience. Gluten-free friendly.",
       "location": 6,
       "tags": [
         "Gluten-free"
@@ -133,7 +133,7 @@
       "name": "Bak’d Birthday Brownie",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Treat yourself to a sweet and salty caramel dark hot chocolate topped with salted caramel whip cream and caramel. Complete with a dark chocolate Skor rim and a sprinkle of flaky sea salt. Served with an ooey gooey 3-oz Salted Caramel Brownie Cookie. Dairy-free option available upon request.",
       "location": 7,
       "tags": []
     },
@@ -142,7 +142,7 @@
       "name": "Straw-Berry Sweet 16",
       "startDate": "2026-01-18T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Enjoy the berry-sweet strawberry-infused white hot chocolate topped with strawberry cream whip. Complete with a white chocolate and sprinkle rim! Served with a perfectly sweet 5-oz Strawberry Shortcake Cookie. Dairy-free option available upon request.",
       "location": 7,
       "tags": []
     },
@@ -151,7 +151,7 @@
       "name": "Berry Sweet 16",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "Milk hot chocolate with almond praline and raspberry whipped cream. Served with a raspberry macaron. Contains nuts.",
       "location": 8,
       "tags": [
         "Nuts"
@@ -162,7 +162,7 @@
       "name": "Cherry on Top",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Dark hot chocolate with cherry syrup and rose whipped cream. Served with a cherry truffle. Contains nuts.",
       "location": 8,
       "tags": [
         "Nuts"
@@ -173,7 +173,7 @@
       "name": "The IGP Emerald",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A luxurious blend of silky Callebaut white chocolate and roasted Sicili D.O.P. pistachios, served with a bright, tangy hint of raspberry to cut through the nutty sweetness. Paired with house-made raspberry sorbetto served on a mini-tart. Contains nuts. Vegan and gluten-free friendly options available upon request.",
       "location": 9,
       "tags": [
         "Gluten-free",
@@ -186,7 +186,7 @@
       "name": "The Piedmont Promise",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Velvety premium milk chocolate from Cluizel of Paris with roasted IGP Hazelnuts. Grounded, rich, and nutty; balanced perfectly with the bright notes of the side treat. Paired with house-made raspberry sorbetto served on a mini-tart. Contains nuts. Vegan and gluten-free friendly options available upon request.",
       "location": 9,
       "tags": [
         "Gluten-free",
@@ -199,7 +199,7 @@
       "name": "16 Karat Kiss",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "An indulgent embrace of silk-smooth milk chocolate and salted caramel, crowned with a kiss of gold. 16 Karat Kiss celebrates warmth, elegance, and comfort in every sip- rich without being overly sweet. Finished with golden whipped cream and shimmering accents, it’s a classic caramel romance reimagined for grown-up taste buds. Served with a mini beignet with brown butter glaze and sea salt flakes. The glaze adds a nutty, caramel-like depth while the salt enhances every bite.",
       "location": 10,
       "tags": []
     },
@@ -208,7 +208,7 @@
       "name": "Cherry Blossom Crumble",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Inspired by the fleeting bloom of spring, Cherry Blossom Crumble blends tart cherry syrup with our house milk-chocolate base and a touch of salt for harmony. Topped with almond-essence whipped cream, cherry dust, and dark chocolate shavings, it’s a delicate dance between fruity brightness and chocolate warmth — elegant, nostalgic, and quietly indulgent. Paired with a mini beignet with dark chocolate drizzle and toasted almonds. The nutty crunch and rich chocolate echo the drink’s cherry-almond harmony. Contains nuts.",
       "location": 10,
       "tags": [
         "Nuts"
@@ -219,7 +219,7 @@
       "name": "Crush at First Sip",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A bold and sultry twist on comfort — Crush at First Sip blends our house milk-chocolate base with smoked honey, vanilla, and warming spices like clove, nutmeg, and cardamom. Finished with a splash of St-Rémy brandy, it’s velvety, aromatic, and irresistibly smooth. Topped with vanilla whipped cream, dark-chocolate shavings, and a pinch of sea salt, this drink flirts with your senses from the very first taste. Served with a mini beignet with rosemary- and thyme-infused brown butter glaze. The savoury aroma and buttery depth complement the drink’s smoky, spiced notes perfectly. Contains alcohol; café service only.",
       "location": 10,
       "tags": [
         "Alcoholic"
@@ -230,7 +230,7 @@
       "name": "The Nordic Malt",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Dark chocolate infused with toasted rye and a touch of molasses, topped with a layer of cocoa dust. Served with a spiced rye ginger cookie.",
       "location": 11,
       "tags": []
     },
@@ -239,7 +239,7 @@
       "name": "Hygge in a Mug",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Lightly spiced cardamom vanilla hot chocolate finished with a cinnamon heart on top. Served with a heart-shaped cinnamon shortbread cookie.",
       "location": 11,
       "tags": []
     },
@@ -248,7 +248,7 @@
       "name": "Sweet 16 Party",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-01T08:00:00Z",
-      "description": "",
+      "description": "In honour of Hot Chocolate Festival’s 16th birthday, we’re celebrating with hot chocolate and cake! Indulge in our classic vanilla dark hot chocolate, made with 70.5% dark couverture chocolate. Rich, creamy, and bursting with decadent chocolate goodness! It is topped with a smooth vanilla bean whip and a shower of colourful sprinkles that shout PARTY! Paired with a charming two-tier mini rosette birthday cake, layered with fluffy, light sponge and silky Swiss meringue buttercream and finished with a classic buttercream rosette. Make a wish and blow out the candle for the full birthday moment! Enjoy complimentary boba on us to sweeten the celebration.",
       "location": 12,
       "tags": []
     },
@@ -257,7 +257,7 @@
       "name": "Coco Boba Katsu",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A rich coconut hot chocolate made with 54.5% couverture dark chocolate, topped with a smooth layer of house-made salted coconut cold foam and a sprinkle of toasted coconut flakes. It is paired with our playful cereal-coated “pork tonkatsu” ice cream, chocolate “gravy”, coconut sticky rice and a side of “cabbage salad” of candied young coconut shreds. Adorably kawaii, like a meal sprung straight from your favourite manga scene! And of course, you can enjoy free boba in your hot chocolate as per usual! Gluten-free friendly option available upon request.",
       "location": 12,
       "tags": [
         "Gluten-free"
@@ -268,7 +268,7 @@
       "name": "Postcards from Japan",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "A twist on our first year’s submission, back by popular demand. Salted white Belgian hot chocolate with a bit of salted kinako powder (roasted soybean powder). Topped with toasted house-made marshmallow cream. Served with a liege mini mochi waffle stuffed with mochi, drizzled with white chocolate, and kinako powder.",
       "location": 13,
       "tags": []
     },
@@ -277,7 +277,7 @@
       "name": "Postcards from Belgium",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A hot chocolate made with milk and semi-sweet Callebaut chocolate. Topped with our house-made toasted marshmallow cream. Topped with cookie butter and Biscoff cookie crumble. Paired with a warm mini liege waffle stuffed with mochi, topped with Biscoff cookie crumble and caramel.",
       "location": 13,
       "tags": []
     },
@@ -286,7 +286,7 @@
       "name": "What Dream Are Made Of",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Imagine you are 5 years old again…Imagine you get your bowl of cereal with chocolate milk, and this is the best day… We are bringing that memory back with our creation! Mixed with cereal milk, your hot chocolate will be as sweet as ever. Served with mini croissant cereal. Vegan and dairy-free.",
       "location": 14,
       "tags": [
         "Dairy-free",
@@ -298,7 +298,7 @@
       "name": "Chick’n and Waffle. And Hot Chocolate!",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Half of our team here at Bonus leans more savoury than sweet, so we are bringing you the Chick’n N Waffle slider, Maple Hot Chocolate combo! The slider will be exactly that, a mini chick’n and waffle sandwich with a pickle and spicy mayo. We have paired it with a maple-forward hot chocolate (no mayo in that one), but the smoothness of the maple will be the ideal buddy for the slider. We can’t wait for you to try it! Vegan and dairy-free.",
       "location": 14,
       "tags": [
         "Dairy-free",
@@ -310,7 +310,7 @@
       "name": "Saigon After Dark – Pho Spice 2.0",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Key Flavours of dark chocolate and new pho spice. When Saigon falls asleep, its spices awaken. Dark chocolate infused with cinnamon, star anise, black pepper… and orange zest A midnight symphony: bold, layered, and endlessly seductive. Served with Pâté Chaud: flaky puff pastry filled with savoury ground pork and smooth pâté — a golden, buttery blend of French craft and Vietnamese comfort. Alternative option: Takoyaki Croissant. Dairy-free option available upon request.",
       "location": 15,
       "tags": []
     },
@@ -319,7 +319,7 @@
       "name": "Echo of Light",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "White chocolate, lemongrass, ginger, coconut milk, wild honey, lemon zest. A soft echo in gold and green. Lemongrass and wild honey shimmer through white chocolate and coconut milk, lifted by ginger and citrus zest. The taste of light returning — quiet, bright, alive. On the side, we’re serving Mochi Melonpan on weekends or any Moissant or Croissant of your choice. Dairy-free option available upon request.",
       "location": 15,
       "tags": []
     },
@@ -328,7 +328,7 @@
       "name": "Roasted Silence",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Key flavours of dark chocolate, oolong and genmaicha infusion, brown butter, and sea salt. Where warmth meets stillness. Oolong Genmaicha and roasted rice whisper through dark chocolate and browned butter, grounded by sea salt and quiet smoke. A meditative sip — humble, deep, and infinitely calm. On the side, a delicate single-serve strawberry shortcake layered with soft sponge, light cream, and sweet strawberry for a fresh, comforting dessert. Alternative options: Matcha Tiramisu or Ubemisu cake box. Dairy-free option available upon request.",
       "location": 15,
       "tags": []
     },
@@ -337,7 +337,7 @@
       "name": "Hopping in a Minter Bunderland",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "A decadent dark hot chocolate infused with peppermint and orange, topped with coconut whipped cream, chocolate sauce, and a peppermint candy bunny, served with a mini chocolate-orange soft serve sundae with crushed candy canes. Dairy-free, vegan, and gluten-free friendly.",
       "location": 76,
       "tags": [
         "Gluten-free",
@@ -350,7 +350,7 @@
       "name": "Ears of Corn",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A buttery corn-infused dark hot chocolate topped with coconut whipped cream, sea salt, freshly ground pepper, and a popcorn ball bunny, accompanied by freshly popped popcorn. Dairy-free, vegan, and gluten-free friendly.",
       "location": 76,
       "tags": [
         "Gluten-free",
@@ -363,7 +363,7 @@
       "name": "Kardashamon Season 16",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "This cardamom dark hot chocolate with a hint of lemon is a deeply aromatic and sophisticated take on classic cocoa. Rich dark chocolate infused with warm cardamom and bright lemon zest. Silky, spiced, and perfectly balanced between cozy and refreshing. Served with our chocolate-dipped cardamom “teabag” shortbread.",
       "location": 16,
       "tags": []
     },
@@ -372,7 +372,7 @@
       "name": "Hot Girl Butter",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "This brown butter salted white hot chocolate blends a nutty browned butter, creamy white chocolate, and a hint of sea salt for the perfect balance of sweet and toasty. Rich, cozy, and irresistibly smooth — pure winter indulgence in a mug. Paired with a brown buttered rice krispie.",
       "location": 16,
       "tags": []
     },
@@ -381,7 +381,7 @@
       "name": "&nbsp; Lil’ Choc",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A cozy twist on a childhood classic. This cereal milk white hot chocolate is rich, creamy, and gently sweet, made with smooth white chocolate infused with nostalgic cereal-milk flavour. Comes with a cloud of lightly toasted vanilla meringue, then finished with a playful sprinkle of Lucky Charms for a pop of colour, crunch, and whimsy. It’s warm, comforting, and fun, like a hug in a mug with a magical finish.",
       "location": 16,
       "tags": []
     },
@@ -390,7 +390,7 @@
       "name": "Umami Socolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Hot chocolate infused with a hint of soy sauce for a subtle umami twist. Paired with a soy garlic biscotti inspired by a previous gochujang collaboration. Contains nuts.",
       "location": 17,
       "tags": [
         "Nuts"
@@ -401,7 +401,7 @@
       "name": "Injeolmi White Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "White chocolate hot drink blended with roasted soybean powder (injeolmi) for a protein-rich, nutty, and flavorful twist. Served alongside a white chocolate injeolmi biscotti. Contains nuts.&nbsp;",
+      "description": "White chocolate hot drink blended with roasted soybean powder (injeolmi) for a protein-rich, nutty, and flavorful twist. Served alongside a white chocolate injeolmi biscotti. Contains nuts.",
       "location": 17,
       "tags": [
         "Nuts"
@@ -412,7 +412,7 @@
       "name": "Fame",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Our play on one of the most famous food crazes to come onto the scene in recent memory and into the spotlight. Roasted sesame tahini dark chocolate ganache steamed with coconut milk, served with a dark chocolate pistachio rim. Paired with a Pistachio Kataifi Crunch. Dairy-free and vegan. Contains nuts.",
       "location": 18,
       "tags": [
         "Dairy-free",
@@ -425,7 +425,7 @@
       "name": "Fortune",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Manifest riches with this golden coloured, sweet and salty white hot chocolate blended with fresh vanilla and salted duck yolk. Finished with Chantilly whip, brown sugar drizzle and gold. Served with a house-made Fortune Cookie. Get extra lucky, and you might draw a fortune for a free pastry!",
       "location": 18,
       "tags": []
     },
@@ -434,7 +434,7 @@
       "name": "I Choose You!",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "An Oranberry-inspired drink from the world of pocket monsters for fans old and new! White Chocolate infused with lemon and blueberry, topped with Chantilly and Poké-inspired decor. Play the Gacha and find your starter! This drink is served with a mystery flavour Pokéball macaron. Will you get Grass (lemongass & lime), Water (honeyed current & sea salt) or Fire (orange peppercorn)? Contains nuts.",
       "location": 18,
       "tags": [
         "Nuts"
@@ -445,7 +445,7 @@
       "name": "For Good",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "All things good and wicked coming together, this drink will leave you changed, for good ♫. Dark chocolate strawberry matcha hot chocolate, finished in a perfectly pink strawberry Chantilly, matcha drizzle and rose. On the side, a coconut lychee macaron. Contains nuts.",
       "location": 18,
       "tags": [
         "Nuts"
@@ -456,7 +456,7 @@
       "name": "The Fluffernutter Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Dark chocolate sauce and homemade peanut butter sauce hot chocolate topped with a toasted cloud of marshmallow fluff, salted peanuts and chocolate drizzle. Served with a dark chocolate peanut butter chip cookie. Gluten-free. Contains nuts.",
       "location": 19,
       "tags": [
         "Gluten-free",
@@ -468,7 +468,7 @@
       "name": "Classic Nanaimo Bar Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "A twist on the classic Nanaimo bar in a drink! Coconut syrup and dark chocolate, topped with a custard whipped cream, coconut and dark chocolate sauce. Served with a vegan Nanaimo bar donut. Gluten-free, vegan option available upon request.",
       "location": 19,
       "tags": [
         "Gluten-free",
@@ -480,7 +480,7 @@
       "name": "Confetti Cake Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "White chocolate sauce and housemade cake batter syrup hot chocolate, topped with pink whipped cream and sprinkles. Served with a Pink Confetti Cupcake: vanilla cake filled with rainbow sprinkles, topped with house-made buttercream. Gluten-free.",
       "location": 19,
       "tags": [
         "Gluten-free"
@@ -491,7 +491,7 @@
       "name": "Milk Chocolate Almond Mocha",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Milk chocolate ganache, milk, almond syrup and Moja espresso in hot chocolate, topped with chocolate whipped cream and chocolate-covered almonds. Paired with a chocolate brownie topped with chocolate drizzle and toasted almonds. Gluten-free. Contains nuts.",
       "location": 19,
       "tags": [
         "Gluten-free",
@@ -503,7 +503,7 @@
       "name": "Dolce Latte",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Indulge in pure decadence with our Dolce Latte, a velvety chocolate–caramel latte crowned with a crisp stroopwafel cookie, a swirl of fresh whipped cream, and a delicate sprinkle of sea salt. Accompanied by a stroopwafel cookie. Contains nuts.",
       "location": 20,
       "tags": [
         "Nuts"
@@ -514,7 +514,7 @@
       "name": "Black Forest Delight",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Cherry-infused milk with rich chocolate ganache, topped with whipped cream, a chocolate shortbread cookie, and a maraschino cherry. Paired with chocolate shortbread. Contains nuts.",
       "location": 20,
       "tags": [
         "Nuts"
@@ -525,7 +525,7 @@
       "name": "Strawberry Snuggle Jelly Cat Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-01T08:00:00Z",
-      "description": "",
+      "description": "A strawberry cheesecake white hot chocolate with a graham cracker whipped cream. Accompanied by a Jelly Cat Amusable Birthday Cake macaron – make a wish and blow out the candle! It’s an almond macaron with a vanilla bean swiss meringue buttercream and strawberry compote. Contains nuts. Gluten-free friendly option available upon request.",
       "location": 21,
       "tags": [
         "Gluten-free",
@@ -537,7 +537,7 @@
       "name": "Food Network Fav!",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Inspired by one of Cassandra’s Food Network championship-winning flavours, a Pandan lime white hot chocolate with a brown butter cream cheese whipped cream, accompanied by the winning flavour-blondie style! It’s a pandan lime blondie topped with sugar cookie crumble and candied graham cracker.",
       "location": 21,
       "tags": []
     },
@@ -546,7 +546,7 @@
       "name": "Chicago Cinema Duo",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "This Chicago-style popcorn hot chocolate has house-made chocolate ganache sauce with steamed milk, popcorn-infused cheese cream, house-made Chicago-style popcorn garnish, cheddar cheese powder and sea salt. Sweet, savoury, and crunchy in every sip! Paired with a Caramel Cheese Popcorn Cookie: a classic chewy cookie with caramel, cheddar cheese, and Chicago-style popcorn clusters.",
       "location": 22,
       "tags": []
     },
@@ -555,7 +555,7 @@
       "name": "Tea Time in Paris",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A house-made Earl Grey tea-infused chocolate sauce with steamed milk, créme brûlée cream, and caramelized sugar crust. Accompanied by an Earl Grey Madeleine: Earl Grey tea, French-style Madeleine sponge cake, and chocolate glaze.",
       "location": 22,
       "tags": []
     },
@@ -564,7 +564,7 @@
       "name": "Garfield in Paradise",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "Mango-infused hot cocoa with steamed milk, topped with coconut whip, mango dust and chocolate stripes. Accompanied by Chocolate Lasagne. Dairy-free or vegan option available upon request.",
       "location": 23,
       "tags": [
         "Dairy-free",
@@ -576,7 +576,7 @@
       "name": "Le Chat Noir",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Simple, smooth and sleek as a black cat, this black sesame- and walnut-infused hot chocolate comes topped with a one-of-a-kind kitty drawn in microfoam. Paired with a sesame bite dipped in dark chocolate. Contains nuts. Dairy-free or vegan option available upon request.",
       "location": 23,
       "tags": [
         "Dairy-free",
@@ -589,7 +589,7 @@
       "name": "Chrysanthe-YUM",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Rich dark chocolate meets delicate chrysanthemum with whipped cream. Served with a mini heart-shaped honey chrysanthemum mochi cake. Gluten-free friendly.",
       "location": 24,
       "tags": [
         "Gluten-free"
@@ -611,7 +611,7 @@
       "name": "Midnight Kiss",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "This indulgent blend of Callebaut dark chocolate and velvety coconut milk is spiked with a shot of Bols cherry brandy for a grown-up twist. Topped with whipped cream and soft grape jelly pieces to add a subtle, chewy pop of fruit in every sip, it’s rich, daring, and unapologetically extra, like a first crush after curfew. Served with a savoury lava cheesecake tart. Contains alcohol; non-alcoholic version available upon request. Dairy-free or vegan option also available upon request.",
       "location": 25,
       "tags": [
         "Dairy-free",
@@ -623,7 +623,7 @@
       "name": "Morning Whisper",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "This Callebaut white hot chocolate features cozy chai-spiced tea syrup and a light splash of Disaronno almond liqueur, finished with whipped cream and a scattering of brown sugar tapioca pearls, like miniature moons drifting down to make way for day. With a gentle kick of warmth, every comforting sip is the perfect calm after a Midnight Kiss. Served with a savoury lava cheesecake tart. Contains nuts and alcohol; non-alcoholic version available upon request.&nbsp;",
+      "description": "This Callebaut white hot chocolate features cozy chai-spiced tea syrup and a light splash of Disaronno almond liqueur, finished with whipped cream and a scattering of brown sugar tapioca pearls, like miniature moons drifting down to make way for day. With a gentle kick of warmth, every comforting sip is the perfect calm after a Midnight Kiss. Served with a savoury lava cheesecake tart. Contains nuts and alcohol; non-alcoholic version available upon request.",
       "location": 25,
       "tags": [
         "Nuts"
@@ -634,7 +634,7 @@
       "name": "Christophe Super Regno",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "Cookie and cream infused milk hot chocolate combined with a 36% Swiss milk chocolate. Topped with a mushroom-shaped marshmallow and whipped cream. Paired with a pretzel croissant cube.",
       "location": 26,
       "tags": []
     },
@@ -655,7 +655,7 @@
       "name": "Paris Brest",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "A rich, dark hot chocolate blended with our homemade hazelnut praliné. Served alongside a classic Paris-Brest pastry for a touch of French tradition. Contains nuts.",
       "location": 27,
       "tags": [
         "Nuts"
@@ -675,7 +675,7 @@
       "name": "Red Velvet Kooky Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Red velvet hot chocolate topped with whipped cream, cream cheese icing and white chocolate shavings. On the side is one small piece of red velvet cake with cream cheese icing.",
       "location": 28,
       "tags": []
     },
@@ -684,7 +684,7 @@
       "name": "Maple Butter Kooky Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Maple butter hot chocolate topped with whipped cream, caramel sauce and maple flakes. Accompanied by a Nun’s Fart (also called a Pet de soeur). This is a French-Canadian dessert made from pie dough, layered with brown sugar and butter. And yes, it translates to a nun’s fart!",
       "location": 28,
       "tags": []
     },
@@ -693,7 +693,7 @@
       "name": "Midnight Mochi Horchata",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A nutty horchata hot chocolate infused with a hint of black sesame, complemented by mochi ice cream on top. All components are crafted in-house. Gluten-free friendly. Contains nuts.",
       "location": 29,
       "tags": [
         "Gluten-free",
@@ -705,7 +705,7 @@
       "name": "The Chocoflan Dream",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Secret recipe dark hot chocolate, topped with a brulee flan cold foam. This is accompanied by a choco flan cookie (chocolate cookie filled with flan).",
       "location": 29,
       "tags": []
     },
@@ -714,7 +714,7 @@
       "name": "Hot Chocolate Affagato",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A distinctive affogato experience. A shot of hot chocolate is poured over a scoop of our signature Café con Leche ice cream, and then finished with a delicate chocolate lattice designed to be broken into. Gluten-free friendly.",
       "location": 29,
       "tags": [
         "Gluten-free"
@@ -725,7 +725,7 @@
       "name": "Cherry Bomb",
       "startDate": "2026-01-19T08:00:00Z",
       "endDate": "2026-02-13T08:00:00Z",
-      "description": "",
+      "description": "Made with real black cherries and silky 54% dark chocolate, this decadent hot chocolate is topped with cherry whipped cream and a light dusting of cocoa powder. Served with a mini citrus poppyseed shortbread",
       "location": 30,
       "tags": []
     },
@@ -734,7 +734,7 @@
       "name": "The After-School Special",
       "startDate": "2026-01-19T08:00:00Z",
       "endDate": "2026-02-13T08:00:00Z",
-      "description": "",
+      "description": "Nostalgia in a cup! Organic strawberries, smooth peanut butter and 54% dark chocolate make this peanut butter & jam hot chocolate a decadent treat. Served with a mini almond financier. Contains nuts.",
       "location": 30,
       "tags": [
         "Nuts"
@@ -745,7 +745,7 @@
       "name": "Negroni Caldo",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-01T08:00:00Z",
-      "description": "",
+      "description": "Keeping close to our Di Beppe roots with our love for the Negroni, pairing it with an orange zesty hot chocolate for a warming, aromatic yet sophisticated winter drink. Orange dark chocolate cookie, crunchy on the outside with a soft interior – perfect companion to our zesty Negroni Caldo. Dine-in only. Gluten-free friendly; contains alcohol and nuts.",
       "location": 31,
       "tags": [
         "Gluten-free",
@@ -757,7 +757,7 @@
       "name": "Spice Road to Rome",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "House-made spiced persimmon dark hot chocolate with a hint of citrus for a cozy indulgence. Served with a candied ginger almond biscotti – well paired with spiced, fruity richness of the drink without overpowering it. Contains nuts.",
       "location": 31,
       "tags": [
         "Nuts"
@@ -768,7 +768,7 @@
       "name": "It’s a Canadian Thing!",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "It’s a Canadian Thing! We will offer a dark hot chocolate, laced with caramel goo and all the comforts of tradition – real maple whipped cream. Served with a Sweet 16 double fudge brownie.",
       "location": 32,
       "tags": []
     },
@@ -777,7 +777,7 @@
       "name": "It’s an Italian Thing!",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Italians love their Cioccolata Calda Fondente, a thick and intense dark chocolate with panna. Accompanied by traditional almond Cantucci. Contains nuts.",
       "location": 32,
       "tags": [
         "Nuts"
@@ -788,7 +788,7 @@
       "name": "Velvet Vibes",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Red velvet hot chocolate made with red Dutch cocoa powder and Callebaut milk chocolate, with a tangy cream cheese whipped cream. Served with a mini Blue Velvet Old Fashion featuring a milk chocolate old-fashioned donut with a hint of blueberry and cream cheese frosting. Vegan and gluten-free friendly options available upon request.",
       "location": 33,
       "tags": [
         "Gluten-free",
@@ -800,7 +800,7 @@
       "name": "Sticky Business – Sticky Toffee Pudding",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Featuring Earl Grey and date-infused steamed milk with Callebaut milk hot chocolate, drizzled with a house-made caramel. Served with a mini Sticky Toffee Pudding doughnut. Vegan and gluten-free friendly options available upon request.",
       "location": 33,
       "tags": [
         "Gluten-free",
@@ -812,7 +812,7 @@
       "name": "This Is Not Matcha (But Better, Toasty, and Still Green)",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Our 75% dark chocolate with two types of green tea (genmaicha and gyokuro) plus genmai (toasted rice) powder. Paired with genmaicha dark chocolate clusters. Dairy-free, vegan and gluten-free friendly.",
       "location": 34,
       "tags": [
         "Gluten-free",
@@ -825,7 +825,7 @@
       "name": "If Hong Kong Milk Tea Had a Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Our special blend of HK milk tea and our 42% malted milk chocolate with black sesame foam. Paired with a black sesame condensed milk stroopwafel. Gluten-free friendly option available upon request.",
       "location": 34,
       "tags": [
         "Gluten-free"
@@ -836,7 +836,7 @@
       "name": "I Feel a Chill Coming On",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Our 75% lemon ginger dark hot chocolate (with Seed to Culture Farm’s local ginger) with Jane’s Honey Bees Wildflower Honey and lemon. Paired with a pei pa koa chocolate truffle. Dairy-free, gluten-free friendly.",
       "location": 34,
       "tags": [
         "Gluten-free",
@@ -848,7 +848,7 @@
       "name": "Black Black Heart",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Our house-made 90% dark chocolate with black cardamom, grains of paradise, Mandair Farms blackberries, and black tea. Paired with a black cocoa stroopwafel. Vegan, dairy-free, or gluten-free friendly options available upon request.",
       "location": 34,
       "tags": [
         "Gluten-free",
@@ -861,7 +861,7 @@
       "name": "Holy Smokes!",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A 70% wood-smoked dark chocolate drinking chocolate and a hint of smoked sea salt. Served with graham cracker chocolate bark. Dairy-free and gluten-free friendly options available upon request.",
       "location": 35,
       "tags": [
         "Gluten-free",
@@ -873,7 +873,7 @@
       "name": "Zest Intentions",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Lemongrass and chili-infused 70% dark chocolate drinking chocolate. Served with ginger shortbread. Dairy-free, vegan, and gluten-free friendly options available upon request.",
       "location": 35,
       "tags": [
         "Gluten-free",
@@ -886,7 +886,7 @@
       "name": "Exotic Bramble",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "The depth of ripe organic BC blackberries melds with dark hot chocolate, a hint of orange and an exotic twist of star anise, topped with coconut whipping cream and blackberry drizzle. Refined sugar free! Served with a chewy, melt-in-your-mouth blackberry thumbprint oatmeal cookie. Dairy-free, vegan, organic, and low gluten (with oat flour).",
       "location": 36,
       "tags": [
         "Dairy-free",
@@ -898,7 +898,7 @@
       "name": "Sweet Green Duo",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Green tea lovers unite! The naturally chocolate toasted undertones of organic Hojicha tea melt into our rich milk chocolate base. Topped with coconut whipping cream. Refined sugar free. Served with a fudgie matcha blondie. Dairy-free, vegan, organic, and gluten-free friendly.",
       "location": 36,
       "tags": [
         "Gluten-free",
@@ -911,7 +911,7 @@
       "name": "Tira-Mess-Su",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A set of 3 components consists of a creamy mascarpone cup, a rich, dark & sweet chocolate and a house-made, handcrafted tiramisu ball rolled in cocoa powder. This concept represents a reimagined drink-dessert where you could either add mascarpone and the tiramisu ball to cream up your chocolate, or enjoy your cup of chocolate while snacking on the tiramisu ball. Every combination lets you savour your treat and discover new, balanced flavours. Served with a traditional Madeleine. Takeout available but dine-in recommended for a full experience.",
       "location": 37,
       "tags": []
     },
@@ -920,7 +920,7 @@
       "name": "EggQuisite Cocoa",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Hot Chocolate… but a Sphere of hot chocolate that bursts open? A new concept of molecular gastronomy with the exploding hot chocolate spheres! Using a blend of calcium lactate and sodium alginate, this technique encapsulates rich liquid chocolate inside a delicate sphere that would burst open when pressed against – a playful, exciting twist! Served with a traditional Madeleine.",
       "location": 37,
       "tags": []
     },
@@ -929,7 +929,7 @@
       "name": "Smokey Rose",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A richer, extra chocolatey 8 oz drinking chocolate with cracked black pepper, rose and locally harvested juniper berries, topped with toasted marshmallow and served with rose and pepper cupcake.",
       "location": 77,
       "tags": []
     },
@@ -938,7 +938,7 @@
       "name": "Lulu’s Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "An 8-ounce cup milk chocolate house-made chocolate syrup, topped with a rainbow sprinkle marshmallow, designed for children. Served with chocolate buttercream cupcake.",
       "location": 77,
       "tags": []
     },
@@ -947,7 +947,7 @@
       "name": "Willy Tonka",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-29T08:00:00Z",
-      "description": "",
+      "description": "Tonka bean and cherry beverage blending dark, milk and white chocolates in a 12oz cup with toasted tonka bean marshmallow and candied hazelnut rim. Paired with tonka bean buttercream cupcake topped with sour cherry. Contains nuts.",
       "location": 77,
       "tags": [
         "Nuts"
@@ -958,7 +958,7 @@
       "name": "Mother Tree",
       "startDate": "2026-01-30T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Dark chocolate infused with locally foraged spruce tips, orange blossom, and brown sugar, topped with brown butter marshmallow and spruce tip sugar rim. Served with spruce tip buttercream cupcake.",
       "location": 77,
       "tags": []
     },
@@ -967,7 +967,7 @@
       "name": "Hong Kong Classics: Sweet Almond Tea (白朱古力杏仁茶)",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-01T08:00:00Z",
-      "description": "",
+      "description": "Rich almonds and apricot kernels blended with creamy Cacao Barry 34% Zephyr white chocolate with a sprinkling of kinako. Served with a traditional Chinese almond cookie. Contains nuts.",
       "location": 38,
       "tags": [
         "Nuts"
@@ -978,7 +978,7 @@
       "name": "Hong Kong Classics: Mango Pudding (芒果布丁奶朱古力)",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Sweet mango blended with Cacao Barry 41% Alunga milk chocolate, with evaporated milk cream top. Served with a mochi mango muffin.",
       "location": 38,
       "tags": []
     },
@@ -987,7 +987,7 @@
       "name": "The Gilded Gaggle",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "A rich Biscoff hot chocolate crowned with an edible chocolate nest, gold flakes and golden chocolate egg. Survive the Canada Place geese, and it’s all yours! Served with a rich fudge brownie to level up the chocolate indulgence.",
       "location": 39,
       "tags": []
     },
@@ -996,7 +996,7 @@
       "name": "Icelandic Molten Mocha",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Our tribute to the land of fire and ice: a tiramisu-flavoured white hot chocolate topped with a whipped cream volcano and espresso drizzle. Served with a mini ladyfinger cookie drizzled with espresso sauce, perfect for dunking.",
       "location": 39,
       "tags": []
     },
@@ -1005,7 +1005,7 @@
       "name": "Choconana",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Rich 56% Latin American dark chocolate meets our house-made fresh banana puree. This decadent drink offers a perfectly balanced sip of sweet banana and velvety cocoa. Complete your treat with Fufú’s twist on New York Banana Pudding. This delightful side is topped with crunchy wafer cookie bits and rich dark chocolate bark.",
       "location": 40,
       "tags": []
     },
@@ -1014,7 +1014,7 @@
       "name": "Yuzu Hoji Forest",
       "startDate": "2026-01-27T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Creamy milk chocolate and roasted hōjicha meet bright yuzu purée. This unique hot drink is finished with yuzu whipped cream and a dusting of pink peppercorn for a perfect sip. Complete your treat with our Yuzu Almond Financier. This classic French mini cake features rich brown-butter and nutty almond flavour brightened with a hint of citrus. Contains nuts.",
       "location": 40,
       "tags": [
         "Nuts"
@@ -1025,7 +1025,7 @@
       "name": "Pop Rocks Demon Hunter Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Classic dark hot chocolate. Topped with your treat: a chocolate disk with Pop Rocks and pink cotton candy. Gluten-free friendly.",
       "location": 41,
       "tags": [
         "Gluten-free"
@@ -1036,7 +1036,7 @@
       "name": "Mexican Diablo Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "“Devil’s” hot chocolate with hints of chili, cinnamon, cayenne and warm spices. Served with a Diablo cookie.",
       "location": 41,
       "tags": []
     },
@@ -1045,7 +1045,7 @@
       "name": "Exotic Durian White Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "White hot chocolate made with exotic fruit, durian cream. Served with a durian mochi. Gluten-free friendly.",
       "location": 41,
       "tags": [
         "Gluten-free"
@@ -1056,7 +1056,7 @@
       "name": "Sogno Fiorito",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A creamy ruby chocolate drink with a hint of elderflower, topped with whipped cream and a rose petal. Served with a canestrelli (Italian shortbread cookie). Contains nuts.",
       "location": 42,
       "tags": [
         "Nuts"
@@ -1067,7 +1067,7 @@
       "name": "Bacio di Zenzero",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A hint of ginger mixed with the signature Kitchen Table Group dark cocoa blend, topped with house-made orange whipped cream. Served with a mini candied ginger biscotti. Contains nuts.",
       "location": 42,
       "tags": [
         "Nuts"
@@ -1078,7 +1078,7 @@
       "name": "Big Bang Brownie",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "Dark chocolate hot chocolate with dark chocolate whipped cream. Garnished with rainbow candy-covered chocolate chips On the side, a mini fudge brownie with chocolate ganache. Gluten-free friendly.",
       "location": 43,
       "tags": [
         "Gluten-free"
@@ -1089,7 +1089,7 @@
       "name": "Snap, Crackle, Cocoa",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "Crispy rice cereal-infused Callebaut milk chocolate hot chocolate. Topped with a brown-butter Rice Krispie marshmallow treat.",
       "location": 43,
       "tags": []
     },
@@ -1098,7 +1098,7 @@
       "name": "When Figs Fly",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Dark chocolate hot chocolate with spiced fig preserves. Served with house-made fig newtons.",
       "location": 43,
       "tags": []
     },
@@ -1107,7 +1107,7 @@
       "name": "Ready Teddy",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Graham cracker-infused milk chocolate topped with cinnamon whipped cream. Served with house-made mini bear-shaped cookies.",
       "location": 43,
       "tags": []
     },
@@ -1116,7 +1116,7 @@
       "name": "The Story of Gianduja – A Taste of Italian Magic",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Born in the 19th century on the cobblestone streets of Turin, Gianduja is the legendary love affair between rich chocolate and toasted hazelnuts. This dark hot chocolate combines single-origin organic chocolate with hazelnut notes, finished with Salt Spring Island sea salt. Served with chocolate-hazelnut spread and caramelized hazelnut crunch on waffle brioche. Contains nuts.",
       "location": 78,
       "tags": [
         "Nuts"
@@ -1127,7 +1127,7 @@
       "name": "Prairie to Plate – Saskatoon Berry Juniper",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-01T08:00:00Z",
-      "description": "",
+      "description": "A vegan dark hot chocolate pairing wild Canadian Saskatoon berries with foraged juniper. The berries provide distinctive sweet-almond notes, while juniper adds botanical brightness. Accompanied by Saskatoon berry chocolate ganache and gluten-free pretzel sticks. Dairy-free, vegan, gluten-free friendly.",
       "location": 78,
       "tags": [
         "Gluten-free",
@@ -1140,7 +1140,7 @@
       "name": "A Yuzu Passion Fruit Staycation",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A vegan white chocolate creation blending Japanese yuzu citrus with tropical passion fruit. The yuzu offers fresh notes of lemon, lime, and mandarin, with delicate floral undertones. Includes a house-made vegan yuzu coconut lemon square rolled in toasted coconut. Dairy-free, vegan, gluten-free friendly.",
       "location": 78,
       "tags": [
         "Gluten-free",
@@ -1153,7 +1153,7 @@
       "name": "Saffron Rose Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Hot chocolate made with organic dark chocolate, house-brewed saffron infusion, and a light rose aroma. On the side, a pistachio cookie with rose. Contains nuts.",
       "location": 44,
       "tags": [
         "Nuts"
@@ -1164,7 +1164,7 @@
       "name": "Butterfly Pea White Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "White hot chocolate made with almond milk and naturally coloured with butterfly pea flower. Smooth, lightly floral, and warm. Served with a classic Persian date pastry with walnuts and saffron. Contains nuts.",
       "location": 44,
       "tags": [
         "Nuts"
@@ -1175,7 +1175,7 @@
       "name": "Sesame Please",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A roasted black sesame hot chocolate made with dark chocolate and smooth black sesame cream. Served with a bold, elevated rice crispy made with roasted black sesame, brown butter marshmallow, rizzled in dark chocolate, and topped with roasted white sesame. Deep, nutty, slightly savory, and insanely addictive.",
       "location": 45,
       "tags": []
     },
@@ -1184,7 +1184,7 @@
       "name": "Shall We Dip?",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A 70% dark chocolate hot chocolate with cinnamon and a mild cayenne warmth, balanced with maple syrup for a smooth finish and topped with chocolate sauce. Served with mini churros for dipping.",
       "location": 46,
       "tags": []
     },
@@ -1193,7 +1193,7 @@
       "name": "What’s the Plot?",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A 70% dark chocolate hot chocolate with buttery popcorn notes. Paired with caramel-sweet popcorn atop your drink. A movie-night inspired cup!",
       "location": 46,
       "tags": []
     },
@@ -1202,7 +1202,7 @@
       "name": "Jack goes to the Woods",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "An earthy dark chocolate infusion layered with umami depth from wild mushroom powder, topped with delicate shaved white button mushrooms – a wander through the woods in every sip. Served with a dark chocolate mushroom bonbon made with infusing a wild mushroom powder into dark chocolate callets. Gluten-free friendly.",
       "location": 47,
       "tags": [
         "Gluten-free"
@@ -1213,7 +1213,7 @@
       "name": "Jack and Doraemon",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Meet Jack and Doraemon, a cozy cup where bold dark chocolate meets the soft, dreamy sweetness of the Japanese Red Bean “anko”. Served with Doraemon’s dorayaki with a twist – a dorayaki pancake filled with an orange dark chocolate hazelnut filling. Dairy-free option available upon request.",
       "location": 47,
       "tags": []
     },
@@ -1222,7 +1222,7 @@
       "name": "That Flan-tastic Purple Yam",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Alfonso’s chocolate tablea steamed in taro milk and served in an ube ganache-coated cup. Topped with taro whipped cream and a caramel drizzle. Served with a Filipino dessert trio: a mini ube cupcake, leche flan, and pandesal.",
       "location": 48,
       "tags": []
     },
@@ -1231,7 +1231,7 @@
       "name": "Tiki Torched Brûlée Bliss",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Alfonso’s chocolate tablea steamed in milk and served in a crème brûlée–coated cup. Topped with Chantilly cream and a caramelized (torched) crust. Served with a fruit ensemble and a crème brûlée malasada.",
       "location": 48,
       "tags": []
     },
@@ -1240,7 +1240,7 @@
       "name": "Pistachio Rose Velvet",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "White hot chocolate infused with rose water and pistachio sauce. Topped with whipped cream, crushed pistachio and rose petals. Paired with a shortbread cookie with rose water, covered with white chocolate and pistachio crumbs. Contains nuts.",
       "location": 49,
       "tags": [
         "Nuts"
@@ -1251,7 +1251,7 @@
       "name": "Hot-Choc-Nana",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Dark hot chocolate infused with our house-made banana cinnamon sauce. Topped with whipped cream, cocoa powder, chocolate shavings and a banana gummy on top. Paired with two banana shortbread cookies with chocolate cream filling.",
       "location": 49,
       "tags": []
     },
@@ -1260,7 +1260,7 @@
       "name": "Wednesday’s Mood",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A rich, dark-hot chocolate infused with toasted black sesame paste and finished with black cocoa whipped cream. Paired with a black sesame macaron. Contains nuts.",
       "location": 50,
       "tags": [
         "Nuts"
@@ -1271,7 +1271,7 @@
       "name": "Enid’s Coconut Cloud",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A cozy, white-hot chocolate made with creamy coconut milk and finished with fluffy cotton candy on top. Paired with a raspberry macaron. Contains nuts.",
       "location": 50,
       "tags": [
         "Nuts"
@@ -1282,7 +1282,7 @@
       "name": "Kyoto Cherry Rose",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "For this special hot chocolate drink, we roasted our cacao beans in-house, then de-shelled them and slowly stone ground them for 24 hours with cherry rose sencha tea to create a smooth dark chocolate with hints of rose and sweet cherry. It is topped with a house-made cherry rose cordial and rose petals. Served with Cherry Blossom Sablé: weaving together blush-pink pickled cherry blossoms and preserved Montmorency cherries.",
       "location": 51,
       "tags": []
     },
@@ -1311,7 +1311,7 @@
       "name": "Sapphire Strawberry Fog",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "This delightfully smooth Hot Chocolate Fest creation is a collab drink brought to you by KILLER ICE CREAM x OATSIDE, which brings the distinctive zest of a blue Earl Grey tea latte to fresh and fruity heights with real strawberry essence, sweetened with vanilla syrup and steamed with real milk or dark chocolate & OATSIDE oat milk, topped with real whip cream and sprinkles. On the side, a sidecar sundae drizzled in milk or dark chocolate, topped with sprinkles and a toasted marshmallow. Substitute 3% BC dairy milk or vegan cashew coconut ice cream upon request.",
       "location": 52,
       "tags": [
         "Gluten-free",
@@ -1326,7 +1326,7 @@
       "name": "The Golden Ticket",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Your golden ticket awaits! Rich cocoa mix layered with honey, cardamom, and vanilla, crowned with golden whipped cream. Served with house-made honeycomb.",
       "location": 53,
       "tags": []
     },
@@ -1335,7 +1335,7 @@
       "name": "Wonka Whirl",
       "startDate": "2026-01-30T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Candy magic in a cup! White chocolate, strawberry puree, whipped cream, fizzy Pop Rocks, and sparkling candy shards. Served with dark chocolate candy bark.",
       "location": 53,
       "tags": []
     },
@@ -1344,7 +1344,7 @@
       "name": "Retired Gingerbread Man",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Winter-spiced hot chocolate with whipped ganache. Served with a gingerbread cookie.",
       "location": 54,
       "tags": []
     },
@@ -1353,7 +1353,7 @@
       "name": "Her Majesty Choco- Saint-Honoré",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "House-made milk hot chocolate with vanilla whipped ganache. Paired with a caramelized chou cream and custard puff pastry sandwich.",
       "location": 54,
       "tags": []
     },
@@ -1362,7 +1362,7 @@
       "name": "Dark Indulgence",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Rich dark chocolate made with milk, cocoa, cinnamon, ginger, and a touch of orange zest. Includes buffet-style toppings and a pastry choice.",
       "location": 55,
       "tags": []
     },
@@ -1371,7 +1371,7 @@
       "name": "White Velvet (Vegan)",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Creamy vegan white chocolate made with almond milk, vanilla, cinnamon, and a hint of cardamom. Gluten-free, dairy-free, and vegan, paired with a chocolate raspberry cookie.",
       "location": 55,
       "tags": [
         "Gluten-free",
@@ -1384,7 +1384,7 @@
       "name": "Lavender Dream",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "White chocolate blended with milk, vanilla, and a subtle hint of lavender, finished with a soft purple tone. Served with pastry options and buffet toppings.",
       "location": 55,
       "tags": []
     },
@@ -1393,7 +1393,7 @@
       "name": "Pink Phase",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Watch carefully as the soft pink milk bleeds away into a deep, rich hot chocolate. With a blend of tart strawberries, black tea and fragrant lychees that pair beautifully with a black chocolate ganache and a cloud of whipped cream, Pink Phase perfectly embodies the coming-of-age story we’re all so familiar with. Served with a strawberry cookie chocolate bar.",
       "location": 56,
       "tags": []
     },
@@ -1402,7 +1402,7 @@
       "name": "Grounded in Kyoto",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Roasted green tea and soybean flour, sweetened delicately with brown sugar and topped with a decadent sea salt cream foam, Grounded in Kyoto invokes a memory of walking down a snowfallen path, clutching onto a hot cup of chocolate to warm frostbitten fingers. Served with a hojicha sable sandwich.",
       "location": 56,
       "tags": []
     },
@@ -1411,7 +1411,7 @@
       "name": "Chocolat Épicé",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A 70 % dark chocolate with added notes of orange, citrus, cinnamon and salt, layered with chocolate Chantilly, cocoa nibs, cinnamon and orange curls. Served with the limited edition Spiced Chocolate Marshmallow macaron – truly created by Ladurée to be paired with a Hot Chocolate! Contains nuts.",
       "location": 57,
       "tags": [
         "Nuts"
@@ -1422,7 +1422,7 @@
       "name": "Nuage Rose",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Reminiscent of a pink cloud (Nuage Rose), this drink combines white chocolate, strawberry, vanilla, with a touch of elderflower layered with vanilla Chantilly, strawberry coulis and a touch of cotton candy. The drink is served with a Ladurée limited edition cotton candy macaron. Gluten-free friendly. Contains nuts.",
       "location": 57,
       "tags": [
         "Gluten-free",
@@ -1434,7 +1434,7 @@
       "name": "L’Amandine & Fleur D’Oranger",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A 70% dark hot chocolate, almond milk, marzipan with added notes of orange blossom and citrus, layered with vanilla Chantilly and sprinkles of almond. The drink is served with a choice of a Ladurée signature almond or orange blossom macaron. Gluten-free friendly. Contains nuts.",
       "location": 57,
       "tags": [
         "Gluten-free",
@@ -1446,7 +1446,7 @@
       "name": "Bunny Butt White Rabbit Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A white hot chocolate that incorporates the nostalgic taste of white rabbit candy – can be made with either dairy or oat milk. Topped with a generous amount of torched marshmallow fluff in the shape of an adorable fluffy bunny butt! Served with two mini Nutella taiyakis (fish-shaped waffles) on a skewer, perfect for dipping.",
       "location": 58,
       "tags": []
     },
@@ -1455,7 +1455,7 @@
       "name": "Get That Banana Bread Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Your favourite banana bread meets a rich and creamy hot chocolate – can be made with either dairy or oat milk. Topped with a generous amount of torched marshmallow fluff! Served with two mini Nutella taiyakis (fish-shaped waffles) on a skewer, perfect for dipping.",
       "location": 58,
       "tags": []
     },
@@ -1464,7 +1464,7 @@
       "name": "Pina Cocoalada Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "We’re bringing the tropical taste of Hawaii to Vancouver with a pineapple hot chocolate – can be made with dairy or oat milk. Topped with a generous amount of torched marshmallow fluff! Served with two mini Nutella taiyakis (fish-shaped waffles) on a skewer, perfect for dipping.",
       "location": 58,
       "tags": []
     },
@@ -1473,7 +1473,7 @@
       "name": "Mary Had A Little Lamington",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-03T08:00:00Z",
-      "description": "",
+      "description": "Using a fave Aussie treat – the lamington – as inspiration, this dark chocolate, coconut and sponge cake drink is topped with vanilla whip and punctuated with a light raspberry coulis. Served with a mini lamington – a classic sponge cake with a layer of house-made raspberry jam in the middle. Coated in chocolate icing and rolled in coconut shavings. Vegan and gluten-free friendly options available upon request.",
       "location": 59,
       "tags": [
         "Gluten-free",
@@ -1485,7 +1485,7 @@
       "name": "Carrot Got Ya Tongue",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A dream white hot chocolate mixed with house-made carrot cake syrup, brimming with warm spices. Topped with a cream cheese whip. Served with a carrot white chocolate cookie. Vegan and gluten-free friendly options available upon request.",
       "location": 59,
       "tags": [
         "Gluten-free",
@@ -1497,7 +1497,7 @@
       "name": "Jasmine Blossom",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Inspired by Dominique Ansel… we have crafted this white hot chocolate infused with jasmine tea specifically to create a blossoming marshmallow flower that blooms in your hot chocolate. Served with a chocolate flowerpot. Gluten-free friendly, dairy-free option available upon request.",
       "location": 60,
       "tags": [
         "Gluten-free"
@@ -1508,7 +1508,7 @@
       "name": "Malt, Stout & Bailey",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Another collab with a friend of the shop: SUBO BAKES. A sweet and malty dark-milk hot chocolate with a malty stout caramel and Baileys-inspired whip to pair with one of our favourite subobakes. Served with a miniature chocolate-glazed stout loaf. Almost too adorable to eat. Contains alcohol, but there is the option to have it without.",
       "location": 60,
       "tags": [
         "Alcoholic"
@@ -1519,7 +1519,7 @@
       "name": "It’s The Vegans’ Turn! (Cookie Butter)",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A return of the favourite from last year… Biscoff cookie butter hot chocolate, but make it vegan! We make our own cookie butter, so why not?! This time it will be an oak milk chocolate Biscoff butter hot chocolate, spiced whip and cookie butter chocolate drizzle Served with an ooey-gooey, rich and chewy chocolate borderline-brownie-kind-of-cookie.",
       "location": 60,
       "tags": [
         "Vegan"
@@ -1530,7 +1530,7 @@
       "name": "Enzo Gorlomi",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Pistachio dark hot chocolate with ricotta whipped cream. It’s a cannoli in a mug. Served with a fig and honey mini biscotti. Contains nuts.",
       "location": 61,
       "tags": [
         "Nuts"
@@ -1541,7 +1541,7 @@
       "name": "Fragnocci",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Hazelnut flavoured hot chocolate with pieces of fresh strawberries. Served with balsamic strawberries with crushed hazelnut topping. Contains nuts.",
       "location": 61,
       "tags": [
         "Nuts"
@@ -1552,7 +1552,7 @@
       "name": "Holy Cocoa, Rosemary!",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A three-layered beverage combining dark chocolate ganache, salted rosemary caramel sauce and rosemary-vanilla whipped cream. Paired with a pecan and salted caramel truffle. Contains nuts.",
       "location": 62,
       "tags": [
         "Nuts"
@@ -1563,7 +1563,7 @@
       "name": "Chai Me Crazy",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A dessert drink that combines white chocolate, vanilla gelato and spiced masala chai. Comes with a chai-vanilla truffle on the side.",
       "location": 62,
       "tags": []
     },
@@ -1572,7 +1572,7 @@
       "name": "London Snow",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A decadent hot chocolate infused with our house-steeped Earl Grey milk, blending rich cocoa with delicate bergamot notes. Finished with a cloud of Earl Grey cream foam flash-cooled in liquid nitrogen. Served with an Earl Grey Ice Cream Sandwich.",
       "location": 63,
       "tags": []
     },
@@ -1581,7 +1581,7 @@
       "name": "Purple Dinosaur",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A creamy blend of ube and white chocolate mixed with Milo milk. Finished with silky Milo cold cream foam. Paired with an Ube Ice Cream Sandwich.",
       "location": 63,
       "tags": []
     },
@@ -1590,7 +1590,7 @@
       "name": "Rummy Banoffee Toffee",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "A decadent balance of medium dark chocolate infused with banana and house-made toffee, finished with a seasonally fit rum whip. Served with a levelled-up shortbread: whole wheat sable topped with Maldon salt. Contains alcohol.",
       "location": 64,
       "tags": [
         "Alcoholic"
@@ -1601,7 +1601,7 @@
       "name": "Champorado Cocoa Meets Crispy Biko",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A spin on the Filipino savoury rice pudding, Champorado. Thick dark chocolate with puffed rice and coconut. Served with a crispy biko-inspired rice krispie to dip.",
       "location": 64,
       "tags": []
     },
@@ -1610,7 +1610,7 @@
       "name": "Strawberry Gochujang Hot Choco",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Sweet meets heat! A decadently rich hot chocolate infused with bold Korean gochujang and sweet strawberries. Served with an iconic sweet Korean traditional snack with a geometric shape. Please note that BYOC (Bring Your Own Cup) is required for to-go orders as part of our sustainability policy.",
       "location": 65,
       "tags": []
     },
@@ -1619,7 +1619,7 @@
       "name": "Shine Muscat Hot Choco",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Velvety hot chocolate infused with the floral sweetness of premium Shine Muscat grapes. Served with a soft, buttery cookie dipped in sweet, aromatic Shine Muscat chocolate. The crisp edges and chewy center pair perfectly with the burst of fruity Shine Muscat flavour in every bite. Please note that BYOC (Bring Your Own Cup) is required for to-go orders as part of our sustainability policy.",
       "location": 65,
       "tags": []
     },
@@ -1628,7 +1628,7 @@
       "name": "Hojicha’s Lover",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Hojicha, with its warm, earthy (low in caffeine) flavour notes snuck out one night and secretly met matcha with its energizing and umami flavour, and they instantly knew that they would collide in a perfect romance. Our Sencha Hojicha has a naturally sweet and mild nutty flavour profile reminiscent of roasted chocolate and coffee, often with smoky or caramel undertones. Together, they decided they both loved chocolate, so the romance began over a bite of a Bak’d Matcha Latte Cookie. Your side is the Bak’d ever popular ‘Matcha Latte Cookie’ made with premium matcha powder that gives each bite a vibrant green hue and a distinct, delicate flavour. The soft, chewy texture is perfectly balanced by the subtle sweetness that lets the rich, grassy notes of matcha shine through. Finished with a drizzle of white chocolate, this cookie is a must-try for matcha lovers and anyone seeking a refined, flavourful treat. Dine-in only. Avalon milk is used in the drink, with dairy-free oat milk available upon request.",
       "location": 66,
       "tags": [
         "Dairy-free"
@@ -1639,7 +1639,7 @@
       "name": "Grand Flame",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A dark and dangerously delicious Italian cocoa from world-famous chocolatier, Pernigotti, from Northwest Italy, with refreshing orange notes. For those choosing the spiked version, we set it on fire for you with Grand Marnier (cognac and bitter, orange-flavoured liqueur). We add a touch of Vancouver’s own world-famous, Canadian Champion, Maestro James, chocolate gelato (vegan option is available). Topped with orange foam, a slice of candied orange and a spritz of Italian Sicilian orange oil essence oil. Served with our house-made Bigné or choux filled with our own 70% dark chocolate orange mousse cream topped with an orange-flavoured craquelin. Dine-in only. Alcohol optional. Avalon milk is used in the drink.",
       "location": 66,
       "tags": [
         "Vegan"
@@ -1650,7 +1650,7 @@
       "name": "Go Nuts!",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A warming and nutty combination of Texas pecans and Italian chocolate. Designed around Maestro James’ International Award-winning gelato flavour ‘Texas Pecan with Italian Soul’, we add our pecan paste for the depth, melted rich dark chocolate, a rim of Amarena sour cherry sauce and candied pecans on top of our Chantilly cream. We finish the show, topping it up with a scoop of our pecan gelato. Accompanied by a house-baked dessert of warmed chocolate focaccia with a slathering of Nutella, crushed hazelnuts and well, go nuts, you’re going to want another! I doubt you’re going to share this with your bff! Dine-in only. Contains nuts.",
       "location": 66,
       "tags": [
         "Nuts"
@@ -1661,7 +1661,7 @@
       "name": "Diablo Biscotti and Chocolate Elixir",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Thick and rich chocolate elixir. Paired with a spicy Diablo chocolate biscotti. Dairy-free.",
       "location": 67,
       "tags": [
         "Dairy-free"
@@ -1672,7 +1672,7 @@
       "name": "Très Leche White Hot Chocolate with Caramel Foam Whip",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A white hot chocolate topped with a house-made caramel whip and caramel crunch. Paired with a Creamy Tres Lèches frosted donut.",
       "location": 67,
       "tags": []
     },
@@ -1681,7 +1681,7 @@
       "name": "Horchata Inferno",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-28T08:00:00Z",
-      "description": "",
+      "description": "Valhrona chocolate unites with horchata, almond, cinnamon, and Mexican chilli to create a rich, gentle warmth. Finished with whipped cream and tangy tamarind caramel. Served with a mini churro. Contains nuts.",
       "location": 68,
       "tags": [
         "Nuts"
@@ -1692,7 +1692,7 @@
       "name": "Silk Road Sip",
       "startDate": "2026-01-29T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A luxurious fusion of French chocolate and invigorating Chinese five spice, enriched with coconut milk that enhances the blend’s aromatic sweetness. Served with an edible red “envelope”.",
       "location": 68,
       "tags": []
     },
@@ -1701,7 +1701,7 @@
       "name": "RohliCzech",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "Traditional vanilla Czech walnut crescent (Rohlíček) made with Nut Hut walnuts in liquid form mixed with 55% chocolate. Cream infused with walnuts, tonka bean, vanilla sugar, lemon zest and a pinch of sea salt steamed together with chocolate. Topped with tonka whipped cream, crunchy grilias (a brittle made from caramelized sugar and walnuts) and a hint of lemon zest. On the side, you’ll get our Czech walnut crescent in pastry form. It is a tender, buttery pastry enriched with finely ground walnuts and finished with a veil of vanilla sugar. Contains nuts.",
       "location": 69,
       "tags": [
         "Nuts"
@@ -1712,7 +1712,7 @@
       "name": "Dark Current",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A 70 % dark chocolate meets the tartness of black currant with a hint of juniper, crafted by East Van Jam. It’s combined with thyme-infused cream, a pinch of sea salt, topped with thyme whipped cream, and finished with sugared thyme and freeze-dried currant dust. Served with a traditional buttery Linz cookie filled with tart black currant jam and dipped in dark chocolate for a perfect sweet-tart balance.",
       "location": 69,
       "tags": []
     },
@@ -1721,7 +1721,7 @@
       "name": "The Big (Caramel) Apple Cocoa",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-28T08:00:00Z",
-      "description": "",
+      "description": "A cozy blend of our signature hot chocolate and the flavours of our Classic Caramel Apple. Rich chocolate meets smooth caramel and crisp apple notes. Finished with a chocolate-dipped caramel marshmallow on the side.",
       "location": 70,
       "tags": []
     },
@@ -1730,7 +1730,7 @@
       "name": "The Cookie Butter Club",
       "startDate": "2026-01-29T08:00:00Z",
       "endDate": "2026-02-10T08:00:00Z",
-      "description": "",
+      "description": "Creamy cookie butter stirred into our signature hot chocolate for a warm, spiced and ultra-comforting sip. Served with a chocolate-dipped caramel marshmallow on the side.",
       "location": 70,
       "tags": []
     },
@@ -1739,7 +1739,7 @@
       "name": "Pandan Paradise Duo",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "This drink (and combo) can be best described as an experimental take on a classic. We created a pandan white chocolate paste, mixed that with your milk of choice and topped it with ube-coated shredded coconut. On the side is another experimental take on a classic: a marbled ube pandan shortbread cookie.",
       "location": 71,
       "tags": []
     },
@@ -1748,7 +1748,7 @@
       "name": "Mighty Thai Tea",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Taking the bold taste of Thai tea and mixing it with a high-quality chocolate sauce to create a velvety new take on a hot chocolate, it is then topped with a Thai tea dust. Served with a sesame cookie. Contains nuts.",
       "location": 71,
       "tags": [
         "Nuts"
@@ -1759,7 +1759,7 @@
       "name": "Fico e Timo",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Thyme meets fig and dark chocolate. A rich blend with a touch of salt to balance the tangy and sweet notes of this drink. Served with an Almond Cantucci. Contains nuts.",
       "location": 72,
       "tags": [
         "Nuts"
@@ -1770,7 +1770,7 @@
       "name": "Frutti di Bosco",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Dark chocolate and mixed berries make this drink a true dessert. Made with coconut milk and topped with coconut whipped cream. A vegan treat in a cup. Served with a Vegan Strawberry Meringue. Dairy-free and vegan.",
       "location": 72,
       "tags": [
         "Dairy-free",
@@ -1782,7 +1782,7 @@
       "name": "Toasty Caramel Oolong Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Rich hot chocolate blended with fragrant roasted Oolong (Da Hong Pao) tea and caramel cookie butter, topped with a burnt marshmallow and a premium chocolate caramel cookie from La Lula Pastries for extra texture and aroma. Dine-in only.",
       "location": 73,
       "tags": []
     },
@@ -1791,7 +1791,7 @@
       "name": "Cheesy UBE Boba Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A dreamy fusion of rich hot chocolate, chewy brown sugar pearls, and our signature UBE cheese foam — smooth, sweet, and slightly savoury. Comes with a premium UBE butter cookie from La Lula Pastries for the perfect finish. A purple delight that warms the soul. Dine-in only.",
       "location": 73,
       "tags": []
     },
@@ -1800,7 +1800,7 @@
       "name": "Meringue My Day",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "The perfect fusion of our homemade creamy white chocolate, infused with vibrant lemon zest, and crowned with a fluffy layer of our signature house meringue. Served with our classic lemon meringue tart — golden crust, vibrant lemon curd, and perfectly toasted meringue.",
       "location": 74,
       "tags": []
     },
@@ -1809,7 +1809,7 @@
       "name": "Berry Good Time",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "An irresistible fusion of raspberry, coconut, and rich dark chocolate, perfectly layered with cream cheese whipped cream and a sprinkle of graham cracker crumbs, capturing the essence of a perfect cheesecake slice. Served with our famous Bird’s Nest Cookie — a sweet, buttery coconut cookie topped with our signature homemade raspberry jam nestled in the center.",
       "location": 74,
       "tags": []
     },
@@ -1818,7 +1818,7 @@
       "name": "The Royal Mess",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A white hot chocolate infused with strawberry, topped with shaved meringue and freeze-dried strawberries. Inspired by the classic Eton Mess dessert. Served with a strawberry macaron. Contains nuts.",
       "location": 75,
       "tags": [
         "Nuts"
@@ -1829,7 +1829,7 @@
       "name": "Prohibition",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "A dark hot chocolate infused with bourbon, topped with smoked caramel whipping cream. Served with a dark chocolate cigar filled with 70% bourbon-infused ganache. Gluten-free friendly, contains alcohol.",
       "location": 75,
       "tags": [
         "Gluten-free",
@@ -1863,7 +1863,7 @@
       "name": "Maple Me Crazy!",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "A 48% milk hot chocolate infused with Maple Chantilly and a touch of sea salt. Served with brown butter walnut cake. Gluten-free friendly option available upon request.",
       "location": 80,
       "tags": [
         "Gluten-free"
@@ -1874,7 +1874,7 @@
       "name": "Apple-y Ever After",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-12T08:00:00Z",
-      "description": "",
+      "description": "Warm cinnamon roasted apple infused in white hot chocolate. Served with a mini apple pie. Gluten-free friendly option available upon request.",
       "location": 80,
       "tags": [
         "Gluten-free"
@@ -1885,7 +1885,7 @@
       "name": "Potato Chip Crunch",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "A sweet and salty hot chocolate served in a cup rimmed with dark chocolate and crushed potato chips. Topped with chocolate whipped cream and sea salt. Served with a classic chocolate chip cookie riddled with potato chips, topped with a sprinkle of sea salt. Dairy-free and vegan.",
       "location": 81,
       "tags": [
         "Dairy-free",
@@ -1897,7 +1897,7 @@
       "name": "Choca-Cherry Cola",
       "startDate": "2026-01-31T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Cherry cola hot chocolate with a beautiful light pink whip (naturally coloured) and a cherry on top. Paired with a decadent cola brownie. Dairy-free and vegan.",
       "location": 81,
       "tags": [
         "Dairy-free",
@@ -1909,7 +1909,7 @@
       "name": "Heavenly Heat",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-25T08:00:00Z",
-      "description": "",
+      "description": "Aji Amarillo (Peruvian pepper), mango and white chocolate create a flavour rollercoaster in your mouth that will at once surprise and delight you. Served with a mango pâte de fruit coated in Tajin spice.",
       "location": 82,
       "tags": []
     },
@@ -1918,7 +1918,7 @@
       "name": "Cereal Daydream",
       "startDate": "2026-01-27T08:00:00Z",
       "endDate": "2026-02-01T08:00:00Z",
-      "description": "",
+      "description": "Velvety milk chocolate blended with nutty tahini and the nostalgic sweetness of cereal-infused milk, creating a smooth, dreamy indulgence. Served with a buttery, crispy, umami cornflake sesame cookie.",
       "location": 82,
       "tags": []
     },
@@ -1927,7 +1927,7 @@
       "name": "Campfire Crush",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-30T08:00:00Z",
-      "description": "",
+      "description": "A rich cookie butter hot chocolate that tastes like nostalgia by the fire — creamy, spiced, and topped with a toasted S’mores cookie. Sweet, smoky, and a little bit flirty. The S’mores cookie is a buckwheat cookie topped with a housemade toasted marshmallow. May contain nuts.",
       "location": 83,
       "tags": [
         "Nuts"
@@ -1950,7 +1950,7 @@
       "name": "La Dolce Notte",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Indulge in the art of simplicity. La Dolce Notte is a silky vegan hot chocolate crafted with Belgian Dark 54% 811 Slab Vegan Chocolate and creamy oat milk, delicately infused with marzipan for a nutty, aromatic sweetness. Finished with a sprinkle of toasted sliced almonds, this creation is a warm invitation to slow down and savour the night. Served with a little scoop of our Almond Lemon Siciliano Sorbetto — or a sorbetto of your choice, to brighten your palate with a refreshing citrus contrast that complements the drink’s deep, velvety richness. Vegan, dairy-free, gluten-free friendly. Contains nuts.",
       "location": 84,
       "tags": [
         "Gluten-free",
@@ -1973,7 +1973,7 @@
       "name": "Finding Cocoa",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Creamy peppermint white hot chocolate, topped with whipped cream and orange sprinkles. Served in Nemo’s own souvenir take-home mug. Paired with a clownfish cookie.",
       "location": 86,
       "tags": []
     },
@@ -1982,7 +1982,7 @@
       "name": "Red Fortune Hot Chocolate",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Made with ruby chocolate and served with Mississippi chocolate cake. Located in the USA Terminal, before security. Operating hours: 6 a.m. to 10 p.m., daily Instagram: fairmontvancouverairport",
       "location": 87,
       "tags": []
     },
@@ -1991,7 +1991,7 @@
       "name": "Mocha & Morsel",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "White chocolate mocha with an almond shortbread cookie. Contains nuts. Located near Gate C45 and E88, after security Operating hours: 6:30 a.m. to 10:30 p.m., daily",
       "location": 87,
       "tags": [
         "Nuts"
@@ -2002,7 +2002,7 @@
       "name": "Matcha Moonlight",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "White hot chocolate, kinako latte with a black sesame milk tea cookie.",
+      "description": "White hot chocolate, kinako latte with a black sesame milk tea cookie. Located at Domestic Departures, before security Operating hours: 7 a.m. to 7 p.m., daily Instagram: paragontearoom",
       "location": 87,
       "tags": []
     },
@@ -2011,7 +2011,7 @@
       "name": "Big MAC",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-01-31T08:00:00Z",
-      "description": "",
+      "description": "Toasted, house-made macadamia nut praline with our custom house-made hot chocolate blend of dark chocolate, cinnamon, whipping cream, sugar, and milk, all steamed together and frothed to order. Topped with a light white chocolate foam and ground toasted macadamia nuts to finish. Served with a macadamia white chocolate cookie.",
       "location": 88,
       "tags": []
     },
@@ -2020,7 +2020,7 @@
       "name": "S’morsgasbord",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-01T08:00:00Z",
-      "description": "",
+      "description": "Our delicious, thick hot chocolate base, made in-house with cinnamon, sugar, whipping cream, milk and dark chocolate. Topped with a marshmallow foam that we will roast in front of you! Served with a garnish of our sweet honey graham cracker. Dairy-free option available upon request.",
       "location": 88,
       "tags": [
         "Vegan"
@@ -2031,7 +2031,7 @@
       "name": "Hojicha Murasaki",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "This combination has been the most requested one since we opened, and we’re excited to make it happen through the Hot Chocolate Festival. Hojicha Murasaki is a soothing hojicha white chocolate oat milk latte with real purple yam paste, served in a cup dipped in sweet UBE white chocolate, and topped with a cloud of velvety UBE whip. Paired with a delicate hojicha black sesame tart (gf), this drink brings together two earthy flavours so harmoniously — the warm, nutty, and slightly smoky notes of roasted hojicha and the subtly sweet, nutty richness of vibrant purple ube. Dairy-free, vegan, and gluten-free friendly.",
       "location": 89,
       "tags": [
         "Gluten-free",
@@ -2044,7 +2044,7 @@
       "name": "Lost Love Raspberrilicious Hot Chocolate Affogato",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "The main attraction is a scoop of our handmade raspberry sorbetto swimming in bold espresso and topped with our vanilla whipped cream and fresh raspberry coulis. Paired with rich, dark hot chocolate on the side. Available for cafe service only. Gluten-free friendly, dairy-free option available upon request.",
       "location": 90,
       "tags": [
         "Gluten-free"
@@ -2055,7 +2055,7 @@
       "name": "Hot Cocoa-Lanche",
       "startDate": "2026-01-17T08:00:00Z",
       "endDate": "2026-02-14T08:00:00Z",
-      "description": "",
+      "description": "Everything you want in a hot chocolate, just more, and more and more. Big enough to share, too good to give up! We are not re-inventing the wheel here, but this rich classic favourite is sure to please. Served with an avalanche of toasted marshmallows on top. We won’t tell you how we make it, but it may just be your favourite hot chocolate ever. Available for cafe service only. Gluten-free friendly, dairy-free option available upon request.",
       "location": 90,
       "tags": [
         "Gluten-free"

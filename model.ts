@@ -7,6 +7,8 @@ export interface Flavour {
   startDate: string;
   endDate: string;
   description: string;
+  location: number;
+  tags: string[];
 }
 
 export interface Location {

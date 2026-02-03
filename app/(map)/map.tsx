@@ -1,8 +1,8 @@
-import { BottomSheet, Button, Form, Host, HStack, Image, Spacer, Text, VStack } from '@expo/ui/swift-ui';
-import { background, font, foregroundStyle, frame, onTapGesture, padding } from '@expo/ui/swift-ui/modifiers';
+import { BottomSheet, Button, Form, Group, Host, HStack, Image, Spacer, Text, VStack } from '@expo/ui/swift-ui';
+import { background, font, foregroundStyle, onTapGesture, padding, presentationBackgroundInteraction, presentationDetents, presentationDragIndicator } from '@expo/ui/swift-ui/modifiers';
 import { AppleMaps } from 'expo-maps';
 import { useState } from 'react';
-import { Linking, useWindowDimensions } from 'react-native';
+import { Linking } from 'react-native';
 
 import FlavourGroup from '@/components/FlavourGroup';
 import { type Flavour, FlavourList, LocationList, type Store } from '@/model';
@@ -33,7 +33,6 @@ const STORES: ExtendedStore[] = LocationList.flatMap((location) =>
 
 export default function Tab() {
   const [selectedStore, setSelectedStore] = useState<ExtendedStore | null | undefined>(null);
-  const { height: windowHeight } = useWindowDimensions();
 
   return (
     <>
@@ -65,48 +64,46 @@ export default function Tab() {
         <BottomSheet
           isPresented={!!selectedStore}
           onIsPresentedChange={(isPresented) => setSelectedStore(isPresented ? selectedStore : null)}>
-          <VStack
-            modifiers={[frame({ height: windowHeight * 0.5 })]}
-            alignment="leading"
-            spacing={16}>
-            <HStack modifiers={[padding({ top: 16, trailing: 16 })]}>
-              <Spacer />
-              <Image
-                systemName="xmark.circle.fill"
-                color="secondary"
-                size={24}
-                onPress={() => setSelectedStore(null)}
-              />
-            </HStack>
-            <VStack
-              alignment="leading"
-              spacing={4}
-              modifiers={[padding({ leading: 16, trailing: 16 })]}>
-              <Text modifiers={[font({ size: 32 })]}>{selectedStore?.locationName ?? ''}</Text>
-              <HStack
-                modifiers={[
-                  onTapGesture(() =>
-                    Linking.openURL(
-                      `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
-                    )
-                  ),
-                ]}>
-                <Text modifiers={[foregroundStyle('#007AFF')]}>{selectedStore?.address ?? ''}</Text>
+          <Group
+            modifiers={[
+              presentationDetents(['medium', 'large']),
+              presentationDragIndicator('visible'),
+              presentationBackgroundInteraction('enabled'),
+            ]}>
+            <VStack alignment="leading" spacing={16}>
+              <HStack modifiers={[padding({ top: 16, trailing: 16 })]}>
+                <Spacer />
+                <Image
+                  systemName="xmark.circle.fill"
+                  color="secondary"
+                  size={28}
+                  onPress={() => setSelectedStore(null)}
+                />
               </HStack>
-              <Text
-                modifiers={[
-                  font({ size: 16 }),
-                  foregroundStyle({ type: 'hierarchical', style: 'secondary' }),
-                ]}>
-                {selectedStore?.hours ?? ''}
-              </Text>
+              <VStack
+                alignment="leading"
+                spacing={4}
+                modifiers={[padding({ leading: 16, trailing: 16 })]}>
+                <Text modifiers={[font({ size: 26, weight: 'semibold' })]}>{selectedStore?.locationName ?? ''}</Text>
+                <HStack
+                  modifiers={[
+                    onTapGesture(() =>
+                      Linking.openURL(
+                        `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
+                      )
+                    ),
+                  ]}>
+                  <Text modifiers={[foregroundStyle('#007AFF')]}>{selectedStore?.address ?? ''}</Text>
+                </HStack>
+                <Text>{selectedStore?.hours ?? ''}</Text>
+              </VStack>
+              <Form>
+                {selectedStore?.locationFlavours.map((flavour) => (
+                  <FlavourGroup key={flavour.id} flavour={flavour} />
+                ))}
+              </Form>
             </VStack>
-            <Form modifiers={[background('white')]}>
-              {selectedStore?.locationFlavours.map((flavour) => (
-                <FlavourGroup key={flavour.id} flavour={flavour} />
-              ))}
-            </Form>
-          </VStack>
+          </Group>
         </BottomSheet>
       </Host>
     </>

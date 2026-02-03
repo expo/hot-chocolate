@@ -56,7 +56,7 @@ export default function LocationDetails() {
               ]}
               alignment="leading"
               spacing={4}>
-              <Text modifiers={[font({ size: 28 })]}>{location.name}</Text>
+              <Text modifiers={[font({ size: 26, weight: 'semibold' })]}>{location.name}</Text>
               {location.stores.length > 1 ? (
                 <HStack>
                   <Text>Store: </Text>
