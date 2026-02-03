@@ -5,11 +5,10 @@ import {
   Image,
   List,
   Menu,
-  Picker,
   Spacer,
   Text,
 } from '@expo/ui/swift-ui';
-import { buttonStyle, fixedSize, font, foregroundStyle, frame, padding, pickerStyle, tag } from '@expo/ui/swift-ui/modifiers';
+import { buttonStyle, contentShape, font, foregroundStyle, frame, padding, shapes } from '@expo/ui/swift-ui/modifiers';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
@@ -182,48 +181,41 @@ export default function Locations() {
             barTintColor: colorScheme === 'dark' ? '#333335' : '#d0d0d5',
             onChangeText: (e) => setSearchText(e.nativeEvent.text),
           },
-          headerRight: () => {
-            return (
-              <Host matchContents>
-                <HStack
-                  modifiers={[
-                    frame({ height: 36 }),
-                    padding({ leading: 12 }),
-                    fixedSize(),
-                  ]}
-                  alignment="center"
-                  spacing={8}>
-                  <Menu
-                    label={
-                      <Image
-                        systemName={
-                          showOpenOnly
-                            ? 'line.3.horizontal.decrease.circle.fill'
-                            : 'line.3.horizontal.decrease.circle'
-                        }
-                        size={24}
-                      />
-                    }>
+          headerRight: () => (
+            <Host matchContents>
+              <HStack
+                modifiers={[frame({ height: 36 }), padding({ leading: 12 })]}
+                alignment="center"
+                spacing={8}>
+                <Menu
+                  label={<Image systemName="arrow.up.arrow.down.circle" size={24} />}>
+                  {SORT_OPTIONS.map((option) => (
                     <Button
-                      onPress={() => setShowOpenOnly(!showOpenOnly)}
-                      label={`${showOpenOnly ? '✓ ' : ''}Show Open Now`}
+                      key={option}
+                      onPress={() => setSortBy(option)}
+                      label={`${sortBy === option ? '✓ ' : ''}${option}`}
                     />
-                  </Menu>
-                  <Text>Sort:</Text>
-                  <Picker
-                    selection={sortBy}
-                    onSelectionChange={(value) => setSortBy(value as (typeof SORT_OPTIONS)[number])}
-                    modifiers={[pickerStyle('menu')]}>
-                    {SORT_OPTIONS.map((option) => (
-                      <Text key={option} modifiers={[tag(option)]}>
-                        {option}
-                      </Text>
-                    ))}
-                  </Picker>
-                </HStack>
-              </Host>
-            );
-          },
+                  ))}
+                </Menu>
+                <Menu
+                  label={
+                    <Image
+                      systemName={
+                        showOpenOnly
+                          ? 'line.3.horizontal.decrease.circle.fill'
+                          : 'line.3.horizontal.decrease.circle'
+                      }
+                      size={24}
+                    />
+                  }>
+                  <Button
+                    onPress={() => setShowOpenOnly(!showOpenOnly)}
+                    label={`${showOpenOnly ? '✓ ' : ''}Show Open Now Only`}
+                  />
+                </Menu>
+              </HStack>
+            </Host>
+          ),
         }}
       />
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
@@ -233,7 +225,7 @@ export default function Locations() {
               key={item.id}
               onPress={() => router.push(`/locations/${item.id}`)}
               modifiers={[buttonStyle('plain')]}>
-              <HStack>
+              <HStack modifiers={[contentShape(shapes.rectangle())]}>
                 <Text>{item.name}</Text>
                 <Spacer />
                 <HStack spacing={8} alignment="center">
