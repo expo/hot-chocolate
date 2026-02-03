@@ -10,7 +10,7 @@ import {
 import { font, foregroundStyle, padding } from '@expo/ui/swift-ui/modifiers';
 import * as Linking from 'expo-linking';
 import { Stack } from 'expo-router';
-import { Image, useColorScheme } from 'react-native';
+import { useColorScheme } from 'react-native';
 
 export default function AboutPage() {
   const colorScheme = useColorScheme();
@@ -22,10 +22,6 @@ export default function AboutPage() {
         <Form>
           <Section>
             <VStack alignment="center" modifiers={[padding({ vertical: 20 })]} spacing={8}>
-              <Image
-                source={require('@/assets/images/icon.png')}
-                style={{ width: 80, height: 80, borderRadius: 16 }}
-              />
               <UIImage systemName="sparkles" size={28} color="#007AFF" />
               <Text modifiers={[font({ size: 20, weight: 'semibold' })]}>Expo UI Demo</Text>
               <Text modifiers={[foregroundStyle({ type: 'color', color: 'secondaryLabel' })]}>
