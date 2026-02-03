@@ -36,7 +36,7 @@ export default function FlavourDetails() {
           spacing={8}
           alignment="leading">
           {location ? (
-            <Link href={`/locations/${location.id}?hideStorePicker=true`} asChild>
+            <Link href={`/locations/${location.id}?title=${encodeURIComponent(location.name)}`} asChild>
               <Button>
                 <Text modifiers={[font({ size: 17 }), foregroundStyle('#007AFF')]}>
                   {location.name}

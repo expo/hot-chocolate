@@ -9,7 +9,7 @@ import FlavourGroup from '@/components/FlavourGroup';
 import { FlavourList, LocationList, type Store } from '@/model';
 
 export default function LocationDetails() {
-  const { id, hideStorePicker } = useLocalSearchParams();
+  const { id, title } = useLocalSearchParams();
   const colorScheme = useColorScheme();
   const { width: windowWidth } = useWindowDimensions();
 
@@ -39,7 +39,7 @@ export default function LocationDetails() {
     <>
       <Stack.Screen
         options={{
-          title: '',
+          title: typeof title === 'string' ? title : '',
           headerLargeStyle: {
             backgroundColor: colorScheme === 'dark' ? 'black' : 'white',
           },
@@ -47,44 +47,44 @@ export default function LocationDetails() {
       />
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
         <VStack alignment="leading">
-          {!hideStorePicker ? (
-            <VStack
-              modifiers={[
-                padding({ top: 16, leading: 16, bottom: 16, trailing: 16 }),
-                frame({ maxWidth: windowWidth, alignment: 'leading' }),
-                background(colorScheme === 'dark' ? 'black' : 'white'),
-              ]}
-              alignment="leading"
-              spacing={4}>
+          <VStack
+            modifiers={[
+              padding({ top: 16, leading: 16, bottom: 16, trailing: 16 }),
+              frame({ maxWidth: windowWidth, alignment: 'leading' }),
+              background(colorScheme === 'dark' ? 'black' : 'white'),
+            ]}
+            alignment="leading"
+            spacing={4}>
+            {!title ? (
               <Text modifiers={[font({ size: 26, weight: 'semibold' })]}>{location.name}</Text>
-              {location.stores.length > 1 ? (
-                <HStack>
-                  <Text>Store: </Text>
-                  <Picker
-                    selection={selectedStoreName}
-                    onSelectionChange={(value) => setSelectedStoreName(value as string)}
-                    modifiers={[pickerStyle('menu')]}>
-                    {location.stores.map((store) => (
-                      <Text key={store.name} modifiers={[tag(store.name)]}>
-                        {store.name}
-                      </Text>
-                    ))}
-                  </Picker>
-                </HStack>
-              ) : null}
-              <HStack
-                modifiers={[
-                  onTapGesture(() =>
-                    Linking.openURL(
-                      `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
-                    )
-                  ),
-                ]}>
-                <Text modifiers={[foregroundStyle('#007AFF')]}>{selectedStore?.address ?? ''}</Text>
+            ) : null}
+            {location.stores.length > 1 ? (
+              <HStack>
+                <Text>Store: </Text>
+                <Picker
+                  selection={selectedStoreName}
+                  onSelectionChange={(value) => setSelectedStoreName(value as string)}
+                  modifiers={[pickerStyle('menu')]}>
+                  {location.stores.map((store) => (
+                    <Text key={store.name} modifiers={[tag(store.name)]}>
+                      {store.name}
+                    </Text>
+                  ))}
+                </Picker>
               </HStack>
-              <Text>{selectedStore?.hours ?? ''}</Text>
-            </VStack>
-          ) : null}
+            ) : null}
+            <HStack
+              modifiers={[
+                onTapGesture(() =>
+                  Linking.openURL(
+                    `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
+                  )
+                ),
+              ]}>
+              <Text modifiers={[foregroundStyle('#007AFF')]}>{selectedStore?.address ?? ''}</Text>
+            </HStack>
+            <Text>{selectedStore?.hours ?? ''}</Text>
+          </VStack>
           <Form>
             {flavours.map((flavour) => (
               <FlavourGroup key={flavour.id} flavour={flavour} />
