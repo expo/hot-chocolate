@@ -1,5 +1,5 @@
-import { Button, HStack, Host, Image, List, Menu, Spacer, Text, VStack } from '@expo/ui/swift-ui';
-import { buttonStyle, contentShape, font, foregroundStyle, menuActionDismissBehavior, shapes } from '@expo/ui/swift-ui/modifiers';
+import { Button, HStack, Host, Image, List, Spacer, Text, VStack } from '@expo/ui/swift-ui';
+import { buttonStyle, contentShape, font, foregroundStyle, shapes } from '@expo/ui/swift-ui/modifiers';
 import { Stack, useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { useColorScheme } from 'react-native';
@@ -161,65 +161,65 @@ export default function Index() {
             barTintColor: colorScheme === 'dark' ? '#333335' : '#d0d0d5',
             onChangeText: (e) => setSearchText(e.nativeEvent.text),
           },
-          headerRight: () => {
-            return (
-              <Host matchContents>
-                <Menu
-                  label={
-                    <Image
-                      systemName={
-                        activeFilterCount > 0
-                          ? 'line.3.horizontal.decrease.circle.fill'
-                          : 'line.3.horizontal.decrease.circle'
-                      }
-                      size={24}
-                    />
-                  }
-                  modifiers={[menuActionDismissBehavior('disabled')]}>
-                  <Button
-                    onPress={() => toggleFilter('showFavouritesOnly')}
-                    label={`${filters.showFavouritesOnly ? '✓ ' : ''}Show Favourites Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showCurrentOnly')}
-                    label={`${filters.showCurrentOnly ? '✓ ' : ''}Show Current Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showOpenNowOnly')}
-                    label={`${filters.showOpenNowOnly ? '✓ ' : ''}Show Open Now Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showVeganOnly')}
-                    label={`${filters.showVeganOnly ? '✓ ' : ''}Show Vegan Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showDairyFreeOnly')}
-                    label={`${filters.showDairyFreeOnly ? '✓ ' : ''}Show Dairy Free Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showGlutenFreeOnly')}
-                    label={`${filters.showGlutenFreeOnly ? '✓ ' : ''}Show Gluten Free Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showNutFreeOnly')}
-                    label={`${filters.showNutFreeOnly ? '✓ ' : ''}Show Nut Free Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showAlcoholFreeOnly')}
-                    label={`${filters.showAlcoholFreeOnly ? '✓ ' : ''}Show Alcohol Free Only`}
-                  />
-                  {activeFilterCount > 0 && (
-                    <Button
-                      onPress={() => setFilters(defaultFilters)}
-                      label="Clear All Filters"
-                    />
-                  )}
-                </Menu>
-              </Host>
-            );
-          },
         }}
       />
+      <Stack.Toolbar placement="right">
+        <Stack.Toolbar.Menu
+          tintColor="#007AFF"
+          icon={
+            activeFilterCount > 0
+              ? 'line.3.horizontal.decrease.circle.fill'
+              : 'line.3.horizontal.decrease.circle'
+          }>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showFavouritesOnly}
+            onPress={() => toggleFilter('showFavouritesOnly')}>
+            Show Favourites Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showCurrentOnly}
+            onPress={() => toggleFilter('showCurrentOnly')}>
+            Show Current Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showOpenNowOnly}
+            onPress={() => toggleFilter('showOpenNowOnly')}>
+            Show Open Now Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showVeganOnly}
+            onPress={() => toggleFilter('showVeganOnly')}>
+            Show Vegan Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showDairyFreeOnly}
+            onPress={() => toggleFilter('showDairyFreeOnly')}>
+            Show Dairy Free Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showGlutenFreeOnly}
+            onPress={() => toggleFilter('showGlutenFreeOnly')}>
+            Show Gluten Free Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showNutFreeOnly}
+            onPress={() => toggleFilter('showNutFreeOnly')}>
+            Show Nut Free Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showAlcoholFreeOnly}
+            onPress={() => toggleFilter('showAlcoholFreeOnly')}>
+            Show Alcohol Free Only
+          </Stack.Toolbar.MenuAction>
+          {activeFilterCount > 0 && (
+            <Stack.Toolbar.MenuAction
+              destructive
+              onPress={() => setFilters(defaultFilters)}>
+              Clear All Filters
+            </Stack.Toolbar.MenuAction>
+          )}
+        </Stack.Toolbar.Menu>
+      </Stack.Toolbar>
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
         <List>
           {filteredFlavours.map((item) => (
