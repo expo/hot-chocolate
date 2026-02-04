@@ -4,10 +4,9 @@ import {
   Host,
   Section,
   Text,
-  Image as UIImage,
   VStack,
 } from '@expo/ui/swift-ui';
-import { font, foregroundStyle, frame, padding } from '@expo/ui/swift-ui/modifiers';
+import { font, foregroundStyle } from '@expo/ui/swift-ui/modifiers';
 import * as Linking from 'expo-linking';
 import { Stack } from 'expo-router';
 import { useColorScheme } from 'react-native';
@@ -20,16 +19,6 @@ export default function AboutPage() {
       <Stack.Screen options={{ title: 'About', headerLargeTitle: true }} />
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
         <Form>
-          <Section>
-            <VStack alignment="center" modifiers={[frame({ maxWidth: 'infinity' }), padding({ vertical: 20 })]} spacing={8}>
-              <UIImage systemName="sparkles" size={28} color="#007AFF" />
-              <Text modifiers={[font({ size: 20, weight: 'semibold' })]}>Expo UI Demo</Text>
-              <Text modifiers={[foregroundStyle({ type: 'color', color: 'secondaryLabel' })]}>
-                Built with @expo/ui
-              </Text>
-            </VStack>
-          </Section>
-
           <Section
             header={
               <Text
