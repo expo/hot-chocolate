@@ -8,7 +8,7 @@ export default function RootLayout() {
     <Stack
       screenOptions={{
         ...SystemScreenStackPreset,
-        headerLargeTitle: true,
+        headerLargeTitle: false,
         title: 'Location Map',
         headerStyle: {
           backgroundColor: PlatformColor('systemGroupedBackground') as unknown as string,
