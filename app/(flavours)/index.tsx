@@ -230,11 +230,11 @@ export default function Index() {
               <HStack modifiers={[contentShape(shapes.rectangle())]} alignment="center">
                 <VStack alignment="leading" spacing={2}>
                   <HStack spacing={0}>
-                    <Text modifiers={[foregroundStyle({ type: 'color', color: 'secondaryLabel' })]}>{`#${item.id}: `}</Text>
+                    <Text modifiers={[foregroundStyle({ type: 'color', color: 'gray' })]}>{`#${item.id}: `}</Text>
                     <Text>{item.name}</Text>
                   </HStack>
                   {item.tags.length > 0 && (
-                    <Text modifiers={[font({ size: 13 }), foregroundStyle({ type: 'color', color: 'secondaryLabel' })]}>
+                    <Text modifiers={[font({ size: 13 }), foregroundStyle({ type: 'color', color: 'gray' })]}>
                       {item.tags.join(', ')}
                     </Text>
                   )}
