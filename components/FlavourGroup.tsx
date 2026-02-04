@@ -1,5 +1,5 @@
 import { DisclosureGroup, HStack, Image, Text, VStack } from '@expo/ui/swift-ui';
-import { font, foregroundStyle } from '@expo/ui/swift-ui/modifiers';
+import { font, foregroundStyle, listRowInsets } from '@expo/ui/swift-ui/modifiers';
 import { useState } from 'react';
 
 import { useFavourites } from '@/context/FavouritesContext';
@@ -23,12 +23,12 @@ export default function FlavourGroup({ flavour }: { flavour: Flavour }) {
   const { isFavourite, isTasted, toggleFavourite, toggleTasted } = useFavourites();
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const label = `#${flavour.id}: ${flavour.name}`;
+  const label = flavour.name;
   const date = formatDateRange(flavour.startDate, flavour.endDate);
 
   return (
     <DisclosureGroup label={label} isExpanded={isExpanded} onIsExpandedChange={setIsExpanded}>
-      <VStack spacing={6} alignment="leading">
+      <VStack spacing={6} alignment="leading" modifiers={[listRowInsets({ top: 16, leading: 0, trailing: 16, bottom: 32 })]}>
         <HStack spacing={8} alignment="center">
           <Image
             systemName={isFavourite(flavour.id) ? 'star.fill' : 'star'}
