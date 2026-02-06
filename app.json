@@ -39,6 +39,12 @@
         }
       ],
       "expo-maps",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "This app uses your location to show nearby hot chocolate spots on the map."
+        }
+      ],
       "expo-font",
       "expo-web-browser",
       "expo-image"

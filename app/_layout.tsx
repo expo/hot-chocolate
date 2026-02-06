@@ -20,7 +20,7 @@ export default function RootLayout() {
             <NativeTabs.Trigger.Icon sf="mappin.and.ellipse" />
             <NativeTabs.Trigger.Label>Locations</NativeTabs.Trigger.Label>
           </NativeTabs.Trigger>
-          <NativeTabs.Trigger name="(map)">
+          <NativeTabs.Trigger name="(map)" disableTransparentOnScrollEdge>
             <NativeTabs.Trigger.Icon sf="map" />
             <NativeTabs.Trigger.Label>Map</NativeTabs.Trigger.Label>
           </NativeTabs.Trigger>
