@@ -12,7 +12,8 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.brents.hot-chocolate",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to show nearby hot chocolate spots on the map."
       }
     },
     "android": {
@@ -21,7 +22,8 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": true
+      "predictiveBackGestureEnabled": true,
+      "package": "com.brents.hotchocolate"
     },
     "web": {
       "output": "static",
@@ -39,6 +41,12 @@
         }
       ],
       "expo-maps",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "This app uses your location to show nearby hot chocolate spots on the map."
+        }
+      ],
       "expo-font",
       "expo-web-browser",
       "expo-image"
