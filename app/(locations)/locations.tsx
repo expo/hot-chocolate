@@ -1,14 +1,15 @@
-import { Button, HStack, Host, Image, List, Menu, Picker, Spacer, Text } from '@expo/ui/swift-ui';
 import {
-  buttonStyle,
-  fixedSize,
-  font,
-  foregroundStyle,
-  frame,
-  padding,
-  pickerStyle,
-  tag,
-} from '@expo/ui/swift-ui/modifiers';
+  Button,
+  HStack,
+  Host,
+  Image,
+  List,
+  Menu,
+  Picker,
+  Spacer,
+  Text,
+} from '@expo/ui/swift-ui';
+import { buttonStyle, fixedSize, font, foregroundStyle, frame, padding, pickerStyle, tag } from '@expo/ui/swift-ui/modifiers';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
@@ -51,31 +52,19 @@ function isOpenNow(hoursStr: string): boolean {
 
   // Check if closed today
   const dayNames = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  const fullDayNames = [
-    'sunday',
-    'monday',
-    'tuesday',
-    'wednesday',
-    'thursday',
-    'friday',
-    'saturday',
-  ];
+  const fullDayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   const currentDayName = dayNames[currentDay];
   const currentFullDayName = fullDayNames[currentDay];
 
   // Check for explicit closure
-  if (
-    lower.includes(`closed ${currentDayName}`) ||
-    lower.includes(`closed ${currentFullDayName}`) ||
-    lower.includes(`closed on ${currentDayName}`)
-  ) {
+  if (lower.includes(`closed ${currentDayName}`) ||
+      lower.includes(`closed ${currentFullDayName}`) ||
+      lower.includes(`closed on ${currentDayName}`)) {
     return false;
   }
 
   // Try to find time range - look for patterns like "8 a.m. – 6 p.m." or "8am-6pm"
-  const timeRangeMatch = hoursStr.match(
-    /(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))\s*(?:–|-|to)\s*(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))/i
-  );
+  const timeRangeMatch = hoursStr.match(/(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))\s*(?:–|-|to)\s*(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))/i);
 
   if (timeRangeMatch) {
     const openTime = parseTime(timeRangeMatch[1]);
@@ -126,9 +115,7 @@ export default function Locations() {
   const [sortBy, setSortBy] = useState<(typeof SORT_OPTIONS)[number]>('Name');
   const [searchText, setSearchText] = useState('');
   const [showOpenOnly, setShowOpenOnly] = useState(false);
-  const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>(
-    DEFAULT_LOCATION
-  );
+  const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>(DEFAULT_LOCATION);
 
   useEffect(() => {
     (async () => {
@@ -159,7 +146,9 @@ export default function Locations() {
 
     // Filter by open now
     if (showOpenOnly) {
-      result = result.filter((item) => item.stores.some((store) => isOpenNow(store.hours)));
+      result = result.filter((item) =>
+        item.stores.some((store) => isOpenNow(store.hours))
+      );
     }
 
     // Sort
@@ -195,9 +184,13 @@ export default function Locations() {
           },
           headerRight: () => {
             return (
-              <Host matchContents style={{ minWidth: 178 }}>
+              <Host matchContents>
                 <HStack
-                  modifiers={[frame({ height: 36 }), padding({ leading: 12 }), fixedSize()]}
+                  modifiers={[
+                    frame({ height: 36 }),
+                    padding({ leading: 12 }),
+                    fixedSize(),
+                  ]}
                   alignment="center"
                   spacing={8}>
                   <Menu
