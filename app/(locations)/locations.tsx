@@ -4,15 +4,13 @@ import {
   Host,
   Image,
   List,
-  Menu,
-  Picker,
   Spacer,
   Text,
 } from '@expo/ui/swift-ui';
-import { buttonStyle, fixedSize, font, foregroundStyle, frame, padding, pickerStyle, tag } from '@expo/ui/swift-ui/modifiers';
+import { buttonStyle, contentShape, font, foregroundStyle, refreshable, shapes } from '@expo/ui/swift-ui/modifiers';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { LocationList } from '@/model';
@@ -117,19 +115,21 @@ export default function Locations() {
   const [showOpenOnly, setShowOpenOnly] = useState(false);
   const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>(DEFAULT_LOCATION);
 
-  useEffect(() => {
-    (async () => {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        return;
-      }
-      const location = await Location.getCurrentPositionAsync({});
-      setUserLocation({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-      });
-    })();
+  const updateLocation = useCallback(async () => {
+    const { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== 'granted') {
+      return;
+    }
+    const location = await Location.getCurrentPositionAsync({});
+    setUserLocation({
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude,
+    });
   }, []);
+
+  useEffect(() => {
+    updateLocation();
+  }, [updateLocation]);
 
   const filteredAndSortedLocations = useMemo(() => {
     let result = [...LocationList];
@@ -182,58 +182,41 @@ export default function Locations() {
             barTintColor: colorScheme === 'dark' ? '#333335' : '#d0d0d5',
             onChangeText: (e) => setSearchText(e.nativeEvent.text),
           },
-          headerRight: () => {
-            return (
-              <Host matchContents>
-                <HStack
-                  modifiers={[
-                    frame({ height: 36 }),
-                    padding({ leading: 12 }),
-                    fixedSize(),
-                  ]}
-                  alignment="center"
-                  spacing={8}>
-                  <Menu
-                    label={
-                      <Image
-                        systemName={
-                          showOpenOnly
-                            ? 'line.3.horizontal.decrease.circle.fill'
-                            : 'line.3.horizontal.decrease.circle'
-                        }
-                        size={24}
-                      />
-                    }>
-                    <Button
-                      onPress={() => setShowOpenOnly(!showOpenOnly)}
-                      label={`${showOpenOnly ? '✓ ' : ''}Show Open Now`}
-                    />
-                  </Menu>
-                  <Text>Sort:</Text>
-                  <Picker
-                    selection={sortBy}
-                    onSelectionChange={(value) => setSortBy(value as (typeof SORT_OPTIONS)[number])}
-                    modifiers={[pickerStyle('menu')]}>
-                    {SORT_OPTIONS.map((option) => (
-                      <Text key={option} modifiers={[tag(option)]}>
-                        {option}
-                      </Text>
-                    ))}
-                  </Picker>
-                </HStack>
-              </Host>
-            );
-          },
         }}
       />
+      <Stack.Toolbar placement="right">
+        <Stack.Toolbar.Menu icon="arrow.up.arrow.down.circle" tintColor="#007AFF">
+          {SORT_OPTIONS.map((option) => (
+            <Stack.Toolbar.MenuAction
+              key={option}
+              isOn={sortBy === option}
+              onPress={() => setSortBy(option)}>
+              {option}
+            </Stack.Toolbar.MenuAction>
+          ))}
+        </Stack.Toolbar.Menu>
+        <Stack.Toolbar.Menu
+          tintColor="#007AFF"
+          icon={
+            showOpenOnly
+              ? 'line.3.horizontal.decrease.circle.fill'
+              : 'line.3.horizontal.decrease.circle'
+          }>
+          <Stack.Toolbar.MenuAction
+            isOn={showOpenOnly}
+            onPress={() => setShowOpenOnly(!showOpenOnly)}>
+            Show Open Now Only
+          </Stack.Toolbar.MenuAction>
+        </Stack.Toolbar.Menu>
+      </Stack.Toolbar>
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-        <List>
+        <List modifiers={[refreshable(updateLocation)]}>
           {filteredAndSortedLocations.map((item) => (
             <Button
               key={item.id}
               onPress={() => router.push(`/locations/${item.id}`)}
               modifiers={[buttonStyle('plain')]}>
-              <HStack>
+              <HStack modifiers={[contentShape(shapes.rectangle())]}>
                 <Text>{item.name}</Text>
                 <Spacer />
                 <HStack spacing={8} alignment="center">

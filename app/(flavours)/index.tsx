@@ -1,5 +1,5 @@
-import { Button, HStack, Host, Image, List, Menu, Spacer, Text } from '@expo/ui/swift-ui';
-import { buttonStyle } from '@expo/ui/swift-ui/modifiers';
+import { Button, HStack, Host, Image, List, Spacer, Text, VStack } from '@expo/ui/swift-ui';
+import { buttonStyle, contentShape, font, foregroundStyle, shapes } from '@expo/ui/swift-ui/modifiers';
 import { Stack, useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { useColorScheme } from 'react-native';
@@ -10,6 +10,7 @@ import { FlavourList, LocationList } from '@/model';
 interface Filters {
   showFavouritesOnly: boolean;
   showCurrentOnly: boolean;
+  showOpenNowOnly: boolean;
   showVeganOnly: boolean;
   showDairyFreeOnly: boolean;
   showGlutenFreeOnly: boolean;
@@ -20,6 +21,7 @@ interface Filters {
 const defaultFilters: Filters = {
   showFavouritesOnly: false,
   showCurrentOnly: false,
+  showOpenNowOnly: false,
   showVeganOnly: false,
   showDairyFreeOnly: false,
   showGlutenFreeOnly: false,
@@ -32,6 +34,60 @@ function isCurrentlyAvailable(startDate: string, endDate: string): boolean {
   const start = new Date(startDate);
   const end = new Date(endDate);
   return now >= start && now <= end;
+}
+
+function parseTime(timeStr: string): { hours: number; minutes: number } | null {
+  const lower = timeStr.toLowerCase().trim();
+  if (lower === 'noon') return { hours: 12, minutes: 0 };
+  if (lower === 'midnight') return { hours: 0, minutes: 0 };
+
+  const match = lower.match(/(\d{1,2})(?::(\d{2}))?\s*(a\.?m\.?|p\.?m\.?)/);
+  if (!match) return null;
+
+  let hours = parseInt(match[1], 10);
+  const minutes = match[2] ? parseInt(match[2], 10) : 0;
+  const isPM = match[3].startsWith('p');
+
+  if (isPM && hours !== 12) hours += 12;
+  if (!isPM && hours === 12) hours = 0;
+
+  return { hours, minutes };
+}
+
+function isOpenNow(hoursStr: string): boolean {
+  const now = new Date();
+  const currentDay = now.getDay();
+  const currentHours = now.getHours();
+  const currentMinutes = now.getMinutes();
+
+  const lower = hoursStr.toLowerCase();
+  const dayNames = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  const fullDayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const currentDayName = dayNames[currentDay];
+  const currentFullDayName = fullDayNames[currentDay];
+
+  if (lower.includes(`closed ${currentDayName}`) ||
+      lower.includes(`closed ${currentFullDayName}`) ||
+      lower.includes(`closed on ${currentDayName}`)) {
+    return false;
+  }
+
+  const timeRangeMatch = hoursStr.match(/(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))\s*(?:–|-|to)\s*(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))/i);
+
+  if (timeRangeMatch) {
+    const openTime = parseTime(timeRangeMatch[1]);
+    const closeTime = parseTime(timeRangeMatch[2]);
+
+    if (openTime && closeTime) {
+      const currentTotalMinutes = currentHours * 60 + currentMinutes;
+      const openTotalMinutes = openTime.hours * 60 + openTime.minutes;
+      const closeTotalMinutes = closeTime.hours * 60 + closeTime.minutes;
+
+      return currentTotalMinutes >= openTotalMinutes && currentTotalMinutes < closeTotalMinutes;
+    }
+  }
+
+  return true;
 }
 
 export default function Index() {
@@ -69,6 +125,12 @@ export default function Index() {
     if (filters.showCurrentOnly) {
       result = result.filter((item) => isCurrentlyAvailable(item.startDate, item.endDate));
     }
+    if (filters.showOpenNowOnly) {
+      result = result.filter((item) => {
+        const location = LocationList.find((l) => l.id === item.location);
+        return location?.stores.some((store) => isOpenNow(store.hours)) ?? false;
+      });
+    }
     if (filters.showVeganOnly) {
       result = result.filter((item) => item.tags.includes('Vegan'));
     }
@@ -99,60 +161,65 @@ export default function Index() {
             barTintColor: colorScheme === 'dark' ? '#333335' : '#d0d0d5',
             onChangeText: (e) => setSearchText(e.nativeEvent.text),
           },
-          headerRight: () => {
-            return (
-              <Host matchContents>
-                <Menu
-                  label={
-                    <Image
-                      systemName={
-                        activeFilterCount > 0
-                          ? 'line.3.horizontal.decrease.circle.fill'
-                          : 'line.3.horizontal.decrease.circle'
-                      }
-                      size={24}
-                    />
-                  }>
-                  <Button
-                    onPress={() => toggleFilter('showFavouritesOnly')}
-                    label={`${filters.showFavouritesOnly ? '✓ ' : ''}Show Favourites Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showCurrentOnly')}
-                    label={`${filters.showCurrentOnly ? '✓ ' : ''}Show Current Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showVeganOnly')}
-                    label={`${filters.showVeganOnly ? '✓ ' : ''}Show Vegan Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showDairyFreeOnly')}
-                    label={`${filters.showDairyFreeOnly ? '✓ ' : ''}Show Dairy Free Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showGlutenFreeOnly')}
-                    label={`${filters.showGlutenFreeOnly ? '✓ ' : ''}Show Gluten Free Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showNutFreeOnly')}
-                    label={`${filters.showNutFreeOnly ? '✓ ' : ''}Show Nut Free Only`}
-                  />
-                  <Button
-                    onPress={() => toggleFilter('showAlcoholFreeOnly')}
-                    label={`${filters.showAlcoholFreeOnly ? '✓ ' : ''}Show Alcohol Free Only`}
-                  />
-                  {activeFilterCount > 0 && (
-                    <Button
-                      onPress={() => setFilters(defaultFilters)}
-                      label="Clear All Filters"
-                    />
-                  )}
-                </Menu>
-              </Host>
-            );
-          },
         }}
       />
+      <Stack.Toolbar placement="right">
+        <Stack.Toolbar.Menu
+          tintColor="#007AFF"
+          icon={
+            activeFilterCount > 0
+              ? 'line.3.horizontal.decrease.circle.fill'
+              : 'line.3.horizontal.decrease.circle'
+          }>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showFavouritesOnly}
+            onPress={() => toggleFilter('showFavouritesOnly')}>
+            Show Favourites Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showCurrentOnly}
+            onPress={() => toggleFilter('showCurrentOnly')}>
+            Show Current Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showOpenNowOnly}
+            onPress={() => toggleFilter('showOpenNowOnly')}>
+            Show Open Now Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showVeganOnly}
+            onPress={() => toggleFilter('showVeganOnly')}>
+            Show Vegan Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showDairyFreeOnly}
+            onPress={() => toggleFilter('showDairyFreeOnly')}>
+            Show Dairy Free Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showGlutenFreeOnly}
+            onPress={() => toggleFilter('showGlutenFreeOnly')}>
+            Show Gluten Free Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showNutFreeOnly}
+            onPress={() => toggleFilter('showNutFreeOnly')}>
+            Show Nut Free Only
+          </Stack.Toolbar.MenuAction>
+          <Stack.Toolbar.MenuAction
+            isOn={filters.showAlcoholFreeOnly}
+            onPress={() => toggleFilter('showAlcoholFreeOnly')}>
+            Show Alcohol Free Only
+          </Stack.Toolbar.MenuAction>
+          {activeFilterCount > 0 && (
+            <Stack.Toolbar.MenuAction
+              destructive
+              onPress={() => setFilters(defaultFilters)}>
+              Clear All Filters
+            </Stack.Toolbar.MenuAction>
+          )}
+        </Stack.Toolbar.Menu>
+      </Stack.Toolbar>
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
         <List>
           {filteredFlavours.map((item) => (
@@ -160,8 +227,18 @@ export default function Index() {
               key={item.id}
               onPress={() => router.push(`/flavours/${item.id}`)}
               modifiers={[buttonStyle('plain')]}>
-              <HStack>
-                <Text>{`#${item.id}: ${item.name}`}</Text>
+              <HStack modifiers={[contentShape(shapes.rectangle())]} alignment="center">
+                <VStack alignment="leading" spacing={2}>
+                  <HStack spacing={0}>
+                    <Text modifiers={[foregroundStyle({ type: 'color', color: 'gray' })]}>{`#${item.id}: `}</Text>
+                    <Text>{item.name}</Text>
+                  </HStack>
+                  {item.tags.length > 0 && (
+                    <Text modifiers={[font({ size: 13 }), foregroundStyle({ type: 'color', color: 'gray' })]}>
+                      {item.tags.join(', ')}
+                    </Text>
+                  )}
+                </VStack>
                 <Spacer />
                 <Image systemName="chevron.right" size={14} color="secondary" />
               </HStack>
