@@ -3,6 +3,9 @@
 # dependencies
 node_modules/
 
+# EAS
+eas.json
+
 # Expo
 .expo/
 dist/
