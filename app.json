@@ -11,6 +11,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.brents.hot-chocolate",
+      "icon": "./assets/app.icon",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
