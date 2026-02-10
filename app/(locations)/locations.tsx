@@ -7,10 +7,10 @@ import {
   Spacer,
   Text,
 } from '@expo/ui/swift-ui';
-import { buttonStyle, contentShape, font, foregroundStyle, shapes } from '@expo/ui/swift-ui/modifiers';
+import { buttonStyle, contentShape, font, foregroundStyle, refreshable, shapes } from '@expo/ui/swift-ui/modifiers';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { LocationList } from '@/model';
@@ -115,19 +115,21 @@ export default function Locations() {
   const [showOpenOnly, setShowOpenOnly] = useState(false);
   const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>(DEFAULT_LOCATION);
 
-  useEffect(() => {
-    (async () => {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        return;
-      }
-      const location = await Location.getCurrentPositionAsync({});
-      setUserLocation({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-      });
-    })();
+  const updateLocation = useCallback(async () => {
+    const { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== 'granted') {
+      return;
+    }
+    const location = await Location.getCurrentPositionAsync({});
+    setUserLocation({
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude,
+    });
   }, []);
+
+  useEffect(() => {
+    updateLocation();
+  }, [updateLocation]);
 
   const filteredAndSortedLocations = useMemo(() => {
     let result = [...LocationList];
@@ -208,7 +210,7 @@ export default function Locations() {
         </Stack.Toolbar.Menu>
       </Stack.Toolbar>
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-        <List>
+        <List modifiers={[refreshable(updateLocation)]}>
           {filteredAndSortedLocations.map((item) => (
             <Button
               key={item.id}

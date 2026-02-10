@@ -12,4 +12,5 @@ export const SystemScreenStackPreset: StackScreenOptions = {
   headerTransparent: hasLiquidGlass,
   headerBlurEffect: hasLiquidGlass ? undefined : 'systemMaterial',
   headerLargeTitleShadowVisible: false,
+  sharesBackground: false,
 };
