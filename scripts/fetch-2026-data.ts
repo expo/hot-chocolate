@@ -83,7 +83,7 @@ function findCoordinates(vendorName: string, address: string): [number, number] 
     }
     // Return first store if only one
     if (vendorStores.size === 1) {
-      return vendorStores.values().next().value;
+      return vendorStores.values().next().value ?? null;
     }
   }
 

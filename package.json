@@ -12,9 +12,6 @@
   "dependencies": {
     "@expo/ui": "~56.0.2",
     "@expo/vector-icons": "^15.0.2",
-    "@react-navigation/bottom-tabs": "^7.4.0",
-    "@react-navigation/elements": "^2.6.3",
-    "@react-navigation/native": "^7.1.8",
     "expo": "^56.0.0-preview.5",
     "expo-asset": "~56.0.4",
     "expo-blur": "~56.0.3",
