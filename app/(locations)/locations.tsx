@@ -1,17 +1,9 @@
-import {
-  Button,
-  HStack,
-  Host,
-  Image,
-  List,
-  Spacer,
-  Text,
-} from '@expo/ui/swift-ui';
-import { buttonStyle, contentShape, font, foregroundStyle, refreshable, shapes } from '@expo/ui/swift-ui/modifiers';
+import { Button, Icon, Row, Spacer, Text } from '@expo/ui';
+import { Host } from '@expo/ui/swift-ui';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useColorScheme } from 'react-native';
+import { FlatList, RefreshControl, StyleSheet, useColorScheme, View } from 'react-native';
 
 import { LocationList } from '@/model';
 
@@ -50,19 +42,31 @@ function isOpenNow(hoursStr: string): boolean {
 
   // Check if closed today
   const dayNames = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  const fullDayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const fullDayNames = [
+    'sunday',
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+  ];
   const currentDayName = dayNames[currentDay];
   const currentFullDayName = fullDayNames[currentDay];
 
   // Check for explicit closure
-  if (lower.includes(`closed ${currentDayName}`) ||
-      lower.includes(`closed ${currentFullDayName}`) ||
-      lower.includes(`closed on ${currentDayName}`)) {
+  if (
+    lower.includes(`closed ${currentDayName}`) ||
+    lower.includes(`closed ${currentFullDayName}`) ||
+    lower.includes(`closed on ${currentDayName}`)
+  ) {
     return false;
   }
 
   // Try to find time range - look for patterns like "8 a.m. – 6 p.m." or "8am-6pm"
-  const timeRangeMatch = hoursStr.match(/(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))\s*(?:–|-|to)\s*(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))/i);
+  const timeRangeMatch = hoursStr.match(
+    /(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))\s*(?:–|-|to)\s*(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))/i
+  );
 
   if (timeRangeMatch) {
     const openTime = parseTime(timeRangeMatch[1]);
@@ -113,18 +117,26 @@ export default function Locations() {
   const [sortBy, setSortBy] = useState<(typeof SORT_OPTIONS)[number]>('Name');
   const [searchText, setSearchText] = useState('');
   const [showOpenOnly, setShowOpenOnly] = useState(false);
-  const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>(DEFAULT_LOCATION);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>(
+    DEFAULT_LOCATION
+  );
 
   const updateLocation = useCallback(async () => {
-    const { status } = await Location.requestForegroundPermissionsAsync();
-    if (status !== 'granted') {
-      return;
+    setIsRefreshing(true);
+    try {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        return;
+      }
+      const location = await Location.getCurrentPositionAsync({});
+      setUserLocation({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      });
+    } finally {
+      setIsRefreshing(false);
     }
-    const location = await Location.getCurrentPositionAsync({});
-    setUserLocation({
-      latitude: location.coords.latitude,
-      longitude: location.coords.longitude,
-    });
   }, []);
 
   useEffect(() => {
@@ -146,9 +158,7 @@ export default function Locations() {
 
     // Filter by open now
     if (showOpenOnly) {
-      result = result.filter((item) =>
-        item.stores.some((store) => isOpenNow(store.hours))
-      );
+      result = result.filter((item) => item.stores.some((store) => isOpenNow(store.hours)));
     }
 
     // Sort
@@ -209,18 +219,20 @@ export default function Locations() {
           </Stack.Toolbar.MenuAction>
         </Stack.Toolbar.Menu>
       </Stack.Toolbar>
-      <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-        <List modifiers={[refreshable(updateLocation)]}>
-          {filteredAndSortedLocations.map((item) => (
-            <Button
-              key={item.id}
-              onPress={() => router.push(`/locations/${item.id}`)}
-              modifiers={[buttonStyle('plain')]}>
-              <HStack modifiers={[contentShape(shapes.rectangle())]}>
+      <FlatList
+        contentInsetAdjustmentBehavior="automatic"
+        data={filteredAndSortedLocations}
+        keyExtractor={(item) => String(item.id)}
+        ItemSeparatorComponent={Separator}
+        refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={updateLocation} />}
+        renderItem={({ item }) => (
+          <Host matchContents colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
+            <Button variant="text" onPress={() => router.push(`/locations/${item.id}`)}>
+              <Row style={{ paddingHorizontal: 16, paddingVertical: 12 }}>
                 <Text>{item.name}</Text>
                 <Spacer />
-                <HStack spacing={8} alignment="center">
-                  <Text modifiers={[font({ size: 14 }), foregroundStyle('#8E8E93')]}>
+                <Row spacing={8} alignment="center">
+                  <Text textStyle={{ fontSize: 14, color: '#8E8E93' }}>
                     {formatDistance(
                       getDistanceKm(userLocation, {
                         latitude: item.stores[0].point[0],
@@ -228,13 +240,25 @@ export default function Locations() {
                       })
                     )}
                   </Text>
-                  <Image systemName="chevron.right" size={14} color="secondary" />
-                </HStack>
-              </HStack>
+                  <Icon name="chevron.right" size={14} color="secondary" />
+                </Row>
+              </Row>
             </Button>
-          ))}
-        </List>
-      </Host>
+          </Host>
+        )}
+      />
     </>
   );
 }
+
+function Separator() {
+  return <View style={styles.separator} />;
+}
+
+const styles = StyleSheet.create({
+  separator: {
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#3C3C4329',
+    marginLeft: 16,
+  },
+});

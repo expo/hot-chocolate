@@ -1,5 +1,6 @@
-import { Form, HStack, Host, Picker, Text, VStack } from '@expo/ui/swift-ui';
-import { background, font, foregroundStyle, frame, onTapGesture, padding, pickerStyle, tag } from '@expo/ui/swift-ui/modifiers';
+import { Column, FieldGroup, Row, Text } from '@expo/ui';
+import { Host, Picker } from '@expo/ui/swift-ui';
+import { pickerStyle, tag } from '@expo/ui/swift-ui/modifiers';
 import * as Linking from 'expo-linking';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -28,9 +29,9 @@ export default function LocationDetails() {
   if (!location) {
     return (
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-        <VStack modifiers={[padding({ top: 16, leading: 16, bottom: 16, trailing: 16 })]}>
+        <Column style={{ padding: 16 }}>
           <Text>Location not found</Text>
-        </VStack>
+        </Column>
       </Host>
     );
   }
@@ -46,20 +47,20 @@ export default function LocationDetails() {
         }}
       />
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-        <VStack alignment="leading">
-          <VStack
-            modifiers={[
-              padding({ top: 16, leading: 16, bottom: 16, trailing: 16 }),
-              frame({ maxWidth: windowWidth, alignment: 'leading' }),
-              background(colorScheme === 'dark' ? 'black' : 'white'),
-            ]}
-            alignment="leading"
+        <Column alignment="start">
+          <Column
+            style={{
+              padding: 16,
+              width: windowWidth,
+              backgroundColor: colorScheme === 'dark' ? 'black' : 'white',
+            }}
+            alignment="start"
             spacing={4}>
             {!title ? (
-              <Text modifiers={[font({ size: 26, weight: 'semibold' })]}>{location.name}</Text>
+              <Text textStyle={{ fontSize: 26, fontWeight: '600' }}>{location.name}</Text>
             ) : null}
             {location.stores.length > 1 ? (
-              <HStack>
+              <Row>
                 <Text>Store: </Text>
                 <Picker
                   selection={selectedStoreName}
@@ -71,26 +72,24 @@ export default function LocationDetails() {
                     </Text>
                   ))}
                 </Picker>
-              </HStack>
+              </Row>
             ) : null}
-            <HStack
-              modifiers={[
-                onTapGesture(() =>
-                  Linking.openURL(
-                    `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
-                  )
-                ),
-              ]}>
-              <Text modifiers={[foregroundStyle('#007AFF')]}>{selectedStore?.address ?? ''}</Text>
-            </HStack>
+            <Row
+              onPress={() =>
+                Linking.openURL(
+                  `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
+                )
+              }>
+              <Text textStyle={{ color: '#007AFF' }}>{selectedStore?.address ?? ''}</Text>
+            </Row>
             <Text>{selectedStore?.hours ?? ''}</Text>
-          </VStack>
-          <Form>
+          </Column>
+          <FieldGroup>
             {flavours.map((flavour) => (
               <FlavourGroup key={flavour.id} flavour={flavour} />
             ))}
-          </Form>
-        </VStack>
+          </FieldGroup>
+        </Column>
       </Host>
     </>
   );

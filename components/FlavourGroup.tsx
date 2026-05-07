@@ -1,5 +1,5 @@
-import { DisclosureGroup, HStack, Image, Text, VStack } from '@expo/ui/swift-ui';
-import { font, foregroundStyle, listRowInsets } from '@expo/ui/swift-ui/modifiers';
+import { Column, Icon, Row, Text } from '@expo/ui';
+import { DisclosureGroup } from '@expo/ui/swift-ui';
 import { useState } from 'react';
 
 import { useFavourites } from '@/context/FavouritesContext';
@@ -28,32 +28,29 @@ export default function FlavourGroup({ flavour }: { flavour: Flavour }) {
 
   return (
     <DisclosureGroup label={label} isExpanded={isExpanded} onIsExpandedChange={setIsExpanded}>
-      <VStack spacing={6} alignment="leading" modifiers={[listRowInsets({ top: 16, leading: 0, trailing: 16, bottom: 32 })]}>
-        <HStack spacing={8} alignment="center">
-          <Image
-            systemName={isFavourite(flavour.id) ? 'star.fill' : 'star'}
+      <Column
+        spacing={6}
+        alignment="start"
+        style={{ paddingTop: 16, paddingRight: 16, paddingBottom: 32 }}>
+        <Row spacing={8} alignment="center">
+          <Icon
+            name={isFavourite(flavour.id) ? 'star.fill' : 'star'}
             size={18}
             color={isFavourite(flavour.id) ? '#FFD700' : 'secondary'}
             onPress={() => toggleFavourite(flavour.id)}
           />
-          <Image
-            systemName={isTasted(flavour.id) ? 'checkmark.seal.fill' : 'checkmark.seal'}
+          <Icon
+            name={isTasted(flavour.id) ? 'checkmark.seal.fill' : 'checkmark.seal'}
             size={18}
             color={isTasted(flavour.id) ? '#007AFF' : 'secondary'}
             onPress={() => toggleTasted(flavour.id)}
           />
-        </HStack>
-        <Text
-          modifiers={[
-            font({ size: 15 }),
-            foregroundStyle({ type: 'color', color: 'secondaryLabel' }),
-          ]}>
-          {date}
-        </Text>
+        </Row>
+        <Text textStyle={{ fontSize: 15, color: 'gray' }}>{date}</Text>
         {flavour.description ? (
-          <Text modifiers={[font({ size: 15 })]}>{flavour.description}</Text>
+          <Text textStyle={{ fontSize: 15 }}>{flavour.description}</Text>
         ) : null}
-      </VStack>
+      </Column>
     </DisclosureGroup>
   );
 }

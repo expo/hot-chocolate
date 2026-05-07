@@ -1,8 +1,8 @@
-import { Button, HStack, Host, Image, List, Spacer, Text, VStack } from '@expo/ui/swift-ui';
-import { buttonStyle, contentShape, font, foregroundStyle, shapes } from '@expo/ui/swift-ui/modifiers';
+import { Button, Column, Icon, Row, Spacer, Text } from '@expo/ui';
+import { Host } from '@expo/ui/swift-ui';
 import { Stack, useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
-import { useColorScheme } from 'react-native';
+import { FlatList, StyleSheet, useColorScheme, View } from 'react-native';
 
 import { useFavourites } from '@/context/FavouritesContext';
 import { FlavourList, LocationList } from '@/model';
@@ -62,17 +62,29 @@ function isOpenNow(hoursStr: string): boolean {
 
   const lower = hoursStr.toLowerCase();
   const dayNames = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  const fullDayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const fullDayNames = [
+    'sunday',
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+  ];
   const currentDayName = dayNames[currentDay];
   const currentFullDayName = fullDayNames[currentDay];
 
-  if (lower.includes(`closed ${currentDayName}`) ||
-      lower.includes(`closed ${currentFullDayName}`) ||
-      lower.includes(`closed on ${currentDayName}`)) {
+  if (
+    lower.includes(`closed ${currentDayName}`) ||
+    lower.includes(`closed ${currentFullDayName}`) ||
+    lower.includes(`closed on ${currentDayName}`)
+  ) {
     return false;
   }
 
-  const timeRangeMatch = hoursStr.match(/(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))\s*(?:–|-|to)\s*(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))/i);
+  const timeRangeMatch = hoursStr.match(
+    /(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))\s*(?:–|-|to)\s*(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))/i
+  );
 
   if (timeRangeMatch) {
     const openTime = parseTime(timeRangeMatch[1]);
@@ -112,8 +124,7 @@ export default function Index() {
       result = result.filter((item) => {
         const location = LocationList.find((l) => l.id === item.location);
         return (
-          item.name.toLowerCase().includes(query) ||
-          location?.name.toLowerCase().includes(query)
+          item.name.toLowerCase().includes(query) || location?.name.toLowerCase().includes(query)
         );
       });
     }
@@ -212,40 +223,49 @@ export default function Index() {
             Show Alcohol Free Only
           </Stack.Toolbar.MenuAction>
           {activeFilterCount > 0 && (
-            <Stack.Toolbar.MenuAction
-              destructive
-              onPress={() => setFilters(defaultFilters)}>
+            <Stack.Toolbar.MenuAction destructive onPress={() => setFilters(defaultFilters)}>
               Clear All Filters
             </Stack.Toolbar.MenuAction>
           )}
         </Stack.Toolbar.Menu>
       </Stack.Toolbar>
-      <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-        <List>
-          {filteredFlavours.map((item) => (
-            <Button
-              key={item.id}
-              onPress={() => router.push(`/flavours/${item.id}`)}
-              modifiers={[buttonStyle('plain')]}>
-              <HStack modifiers={[contentShape(shapes.rectangle())]} alignment="center">
-                <VStack alignment="leading" spacing={2}>
-                  <HStack spacing={0}>
-                    <Text modifiers={[foregroundStyle({ type: 'color', color: 'gray' })]}>{`#${item.id}: `}</Text>
+      <FlatList
+        contentInsetAdjustmentBehavior="automatic"
+        data={filteredFlavours}
+        keyExtractor={(item) => String(item.id)}
+        ItemSeparatorComponent={Separator}
+        renderItem={({ item }) => (
+          <Host matchContents colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
+            <Button variant="text" onPress={() => router.push(`/flavours/${item.id}`)}>
+              <Row alignment="center" style={{ paddingHorizontal: 16, paddingVertical: 10 }}>
+                <Column alignment="start" spacing={2}>
+                  <Row spacing={0}>
+                    <Text textStyle={{ color: 'gray' }}>{`#${item.id}: `}</Text>
                     <Text>{item.name}</Text>
-                  </HStack>
+                  </Row>
                   {item.tags.length > 0 && (
-                    <Text modifiers={[font({ size: 13 }), foregroundStyle({ type: 'color', color: 'gray' })]}>
-                      {item.tags.join(', ')}
-                    </Text>
+                    <Text textStyle={{ fontSize: 13, color: 'gray' }}>{item.tags.join(', ')}</Text>
                   )}
-                </VStack>
+                </Column>
                 <Spacer />
-                <Image systemName="chevron.right" size={14} color="secondary" />
-              </HStack>
+                <Icon name="chevron.right" size={14} color="secondary" />
+              </Row>
             </Button>
-          ))}
-        </List>
-      </Host>
+          </Host>
+        )}
+      />
     </>
   );
 }
+
+function Separator() {
+  return <View style={styles.separator} />;
+}
+
+const styles = StyleSheet.create({
+  separator: {
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#3C3C4329',
+    marginLeft: 16,
+  },
+});

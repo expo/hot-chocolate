@@ -1,5 +1,9 @@
-import { BottomSheet, Button, Form, Group, Host, HStack, Image, Spacer, Text, VStack } from '@expo/ui/swift-ui';
-import { background, font, foregroundStyle, onTapGesture, padding, presentationBackgroundInteraction, presentationDetents, presentationDragIndicator } from '@expo/ui/swift-ui/modifiers';
+import { BottomSheet, Column, FieldGroup, Icon, Row, Spacer, Text } from '@expo/ui';
+import { Host } from '@expo/ui/swift-ui';
+import {
+  presentationBackgroundInteraction,
+  presentationDetents,
+} from '@expo/ui/swift-ui/modifiers';
 import * as Haptics from 'expo-haptics';
 import { AppleMaps } from 'expo-maps';
 import { useState } from 'react';
@@ -35,17 +39,29 @@ function isOpenNow(hoursStr: string): boolean {
 
   const lower = hoursStr.toLowerCase();
   const dayNames = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  const fullDayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const fullDayNames = [
+    'sunday',
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+  ];
   const currentDayName = dayNames[currentDay];
   const currentFullDayName = fullDayNames[currentDay];
 
-  if (lower.includes(`closed ${currentDayName}`) ||
-      lower.includes(`closed ${currentFullDayName}`) ||
-      lower.includes(`closed on ${currentDayName}`)) {
+  if (
+    lower.includes(`closed ${currentDayName}`) ||
+    lower.includes(`closed ${currentFullDayName}`) ||
+    lower.includes(`closed on ${currentDayName}`)
+  ) {
     return false;
   }
 
-  const timeRangeMatch = hoursStr.match(/(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))\s*(?:–|-|to)\s*(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))/i);
+  const timeRangeMatch = hoursStr.match(
+    /(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))\s*(?:–|-|to)\s*(\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?))/i
+  );
 
   if (timeRangeMatch) {
     const openTime = parseTime(timeRangeMatch[1]);
@@ -156,47 +172,41 @@ export default function Tab() {
       <Host>
         <BottomSheet
           isPresented={!!selectedStore}
-          onIsPresentedChange={(isPresented) => setSelectedStore(isPresented ? selectedStore : null)}>
-          <Group
-            modifiers={[
-              presentationDetents(['medium', 'large']),
-              presentationDragIndicator('visible'),
-              presentationBackgroundInteraction('enabled'),
-            ]}>
-            <VStack alignment="leading" spacing={16}>
-              <HStack modifiers={[padding({ top: 16, trailing: 16 })]}>
-                <Spacer />
-                <Image
-                  systemName="xmark.circle.fill"
-                  color="secondary"
-                  size={28}
-                  onPress={() => setSelectedStore(null)}
-                />
-              </HStack>
-              <VStack
-                alignment="leading"
-                spacing={4}
-                modifiers={[padding({ leading: 16, trailing: 16 })]}>
-                <Text modifiers={[font({ size: 26, weight: 'semibold' })]}>{selectedStore?.locationName ?? ''}</Text>
-                <HStack
-                  modifiers={[
-                    onTapGesture(() =>
-                      Linking.openURL(
-                        `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
-                      )
-                    ),
-                  ]}>
-                  <Text modifiers={[foregroundStyle('#007AFF')]}>{selectedStore?.address ?? ''}</Text>
-                </HStack>
-                <Text>{selectedStore?.hours ?? ''}</Text>
-              </VStack>
-              <Form>
-                {selectedStore?.locationFlavours.map((flavour) => (
-                  <FlavourGroup key={flavour.id} flavour={flavour} />
-                ))}
-              </Form>
-            </VStack>
-          </Group>
+          onDismiss={() => setSelectedStore(null)}
+          modifiers={[
+            presentationDetents(['medium', 'large']),
+            presentationBackgroundInteraction('enabled'),
+          ]}>
+          <Column alignment="start" spacing={16}>
+            <Row>
+              <Spacer />
+              <Icon
+                name="xmark.circle.fill"
+                color="secondary"
+                size={28}
+                onPress={() => setSelectedStore(null)}
+              />
+            </Row>
+            <Column alignment="start" spacing={4}>
+              <Text textStyle={{ fontSize: 26, fontWeight: '600' }}>
+                {selectedStore?.locationName ?? ''}
+              </Text>
+              <Row
+                onPress={() =>
+                  Linking.openURL(
+                    `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
+                  )
+                }>
+                <Text textStyle={{ color: '#007AFF' }}>{selectedStore?.address ?? ''}</Text>
+              </Row>
+              <Text>{selectedStore?.hours ?? ''}</Text>
+            </Column>
+            <FieldGroup>
+              {selectedStore?.locationFlavours.map((flavour) => (
+                <FlavourGroup key={flavour.id} flavour={flavour} />
+              ))}
+            </FieldGroup>
+          </Column>
         </BottomSheet>
       </Host>
     </>
