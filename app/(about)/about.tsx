@@ -1,5 +1,4 @@
-import { Button, Column, FieldGroup, Text } from '@expo/ui';
-import { Host } from '@expo/ui/swift-ui';
+import { Button, Column, FieldGroup, Host, Text } from '@expo/ui';
 import * as Linking from 'expo-linking';
 import { Stack } from 'expo-router';
 import { useColorScheme } from 'react-native';

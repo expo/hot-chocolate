@@ -1,3 +1,5 @@
+import 'expo-sqlite/localStorage/install';
+
 import { isLiquidGlassAvailable } from 'expo-glass-effect';
 import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
@@ -23,19 +25,19 @@ export default function RootLayout() {
           backgroundColor={backgroundColor}
           disableTransparentOnScrollEdge={!hasLiquidGlass}>
           <NativeTabs.Trigger name="(flavours)">
-            <NativeTabs.Trigger.Icon sf="cup.and.saucer" />
+            <NativeTabs.Trigger.Icon sf="cup.and.saucer" md="local_cafe" />
             <NativeTabs.Trigger.Label>Flavours</NativeTabs.Trigger.Label>
           </NativeTabs.Trigger>
           <NativeTabs.Trigger name="(locations)">
-            <NativeTabs.Trigger.Icon sf="mappin.and.ellipse" />
+            <NativeTabs.Trigger.Icon sf="mappin.and.ellipse" md="location_on" />
             <NativeTabs.Trigger.Label>Locations</NativeTabs.Trigger.Label>
           </NativeTabs.Trigger>
           <NativeTabs.Trigger name="(map)" disableTransparentOnScrollEdge>
-            <NativeTabs.Trigger.Icon sf="map" />
+            <NativeTabs.Trigger.Icon sf="map" md="map" />
             <NativeTabs.Trigger.Label>Map</NativeTabs.Trigger.Label>
           </NativeTabs.Trigger>
           <NativeTabs.Trigger name="(about)">
-            <NativeTabs.Trigger.Icon sf="info.circle" />
+            <NativeTabs.Trigger.Icon sf="info.circle" md="info" />
             <NativeTabs.Trigger.Label>About</NativeTabs.Trigger.Label>
           </NativeTabs.Trigger>
         </NativeTabs>

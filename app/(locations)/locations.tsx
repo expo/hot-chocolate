@@ -1,11 +1,16 @@
-import { Button, Icon, Row, Spacer, Text } from '@expo/ui';
-import { Host } from '@expo/ui/swift-ui';
+import { Host, Icon, List, ListItem, Row, Text } from '@expo/ui';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { FlatList, RefreshControl, StyleSheet, useColorScheme, View } from 'react-native';
+import { useColorScheme } from 'react-native';
 
+import { useToolbarIcon } from '@/components/useToolbarIcon';
 import { LocationList } from '@/model';
+
+const CHEVRON = Icon.select({
+  ios: 'chevron.right',
+  android: require('@expo/material-symbols/chevron_right.xml'),
+});
 
 const DEFAULT_LOCATION = {
   latitude: 49.282729,
@@ -114,29 +119,38 @@ const SORT_OPTIONS = ['Name', 'Distance'] as const;
 export default function Locations() {
   const colorScheme = useColorScheme();
   const router = useRouter();
+  const sortIcon = useToolbarIcon({
+    ios: 'arrow.up.arrow.down.circle',
+    android: 'swap_vert',
+    color: '#007AFF',
+  });
+  const filterIconActive = useToolbarIcon({
+    ios: 'line.3.horizontal.decrease.circle.fill',
+    android: 'filter_alt',
+    color: '#007AFF',
+  });
+  const filterIconInactive = useToolbarIcon({
+    ios: 'line.3.horizontal.decrease.circle',
+    android: 'filter_list',
+    color: '#007AFF',
+  });
   const [sortBy, setSortBy] = useState<(typeof SORT_OPTIONS)[number]>('Name');
   const [searchText, setSearchText] = useState('');
   const [showOpenOnly, setShowOpenOnly] = useState(false);
-  const [isRefreshing, setIsRefreshing] = useState(false);
   const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>(
     DEFAULT_LOCATION
   );
 
   const updateLocation = useCallback(async () => {
-    setIsRefreshing(true);
-    try {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        return;
-      }
-      const location = await Location.getCurrentPositionAsync({});
-      setUserLocation({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-      });
-    } finally {
-      setIsRefreshing(false);
+    const { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== 'granted') {
+      return;
     }
+    const location = await Location.getCurrentPositionAsync({});
+    setUserLocation({
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude,
+    });
   }, []);
 
   useEffect(() => {
@@ -195,7 +209,7 @@ export default function Locations() {
         }}
       />
       <Stack.Toolbar placement="right">
-        <Stack.Toolbar.Menu icon="arrow.up.arrow.down.circle" tintColor="#007AFF">
+        <Stack.Toolbar.Menu icon={sortIcon} tintColor="#007AFF">
           {SORT_OPTIONS.map((option) => (
             <Stack.Toolbar.MenuAction
               key={option}
@@ -207,11 +221,7 @@ export default function Locations() {
         </Stack.Toolbar.Menu>
         <Stack.Toolbar.Menu
           tintColor="#007AFF"
-          icon={
-            showOpenOnly
-              ? 'line.3.horizontal.decrease.circle.fill'
-              : 'line.3.horizontal.decrease.circle'
-          }>
+          icon={showOpenOnly ? filterIconActive : filterIconInactive}>
           <Stack.Toolbar.MenuAction
             isOn={showOpenOnly}
             onPress={() => setShowOpenOnly(!showOpenOnly)}>
@@ -219,18 +229,13 @@ export default function Locations() {
           </Stack.Toolbar.MenuAction>
         </Stack.Toolbar.Menu>
       </Stack.Toolbar>
-      <FlatList
-        contentInsetAdjustmentBehavior="automatic"
-        data={filteredAndSortedLocations}
-        keyExtractor={(item) => String(item.id)}
-        ItemSeparatorComponent={Separator}
-        refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={updateLocation} />}
-        renderItem={({ item }) => (
-          <Host matchContents colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-            <Button variant="text" onPress={() => router.push(`/locations/${item.id}`)}>
-              <Row style={{ paddingHorizontal: 16, paddingVertical: 12 }}>
-                <Text>{item.name}</Text>
-                <Spacer />
+      <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
+        <List onRefresh={updateLocation}>
+          {filteredAndSortedLocations.map((item) => (
+            <ListItem
+              key={item.id}
+              onPress={() => router.push(`/locations/${item.id}`)}
+              trailing={
                 <Row spacing={8} alignment="center">
                   <Text textStyle={{ fontSize: 14, color: '#8E8E93' }}>
                     {formatDistance(
@@ -240,25 +245,14 @@ export default function Locations() {
                       })
                     )}
                   </Text>
-                  <Icon name="chevron.right" size={14} color="secondary" />
+                  <Icon name={CHEVRON} size={14} color="secondary" />
                 </Row>
-              </Row>
-            </Button>
-          </Host>
-        )}
-      />
+              }>
+              {item.name}
+            </ListItem>
+          ))}
+        </List>
+      </Host>
     </>
   );
 }
-
-function Separator() {
-  return <View style={styles.separator} />;
-}
-
-const styles = StyleSheet.create({
-  separator: {
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: '#3C3C4329',
-    marginLeft: 16,
-  },
-});

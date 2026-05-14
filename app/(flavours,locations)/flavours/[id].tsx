@@ -1,8 +1,8 @@
-import { Button, Column, Icon, Row, Spacer, Text } from '@expo/ui';
-import { Host } from '@expo/ui/swift-ui';
+import { Button, Column, Host, Icon, Row, Spacer, Text } from '@expo/ui';
 import { Link, Stack, useLocalSearchParams } from 'expo-router';
 import { useColorScheme } from 'react-native';
 
+import { SEAL_FILLED, SEAL_OUTLINE, STAR_FILLED, STAR_OUTLINE } from '@/components/icons';
 import { useFavourites } from '@/context/FavouritesContext';
 import { FlavourList, LocationList } from '@/model';
 
@@ -36,7 +36,7 @@ export default function FlavourDetails() {
             <Link
               href={`/locations/${location.id}?title=${encodeURIComponent(location.name)}`}
               asChild>
-              <Button>
+              <Button variant="text">
                 <Text textStyle={{ fontSize: 17, color: '#007AFF' }}>{location.name}</Text>
               </Button>
             </Link>
@@ -46,13 +46,13 @@ export default function FlavourDetails() {
             <Text textStyle={{ fontSize: 26, fontWeight: 'bold' }}>{label}</Text>
             <Spacer />
             <Icon
-              name={isFavourite(flavourId) ? 'star.fill' : 'star'}
+              name={isFavourite(flavourId) ? STAR_FILLED : STAR_OUTLINE}
               size={22}
               color={isFavourite(flavourId) ? '#FFD700' : 'secondary'}
               onPress={() => toggleFavourite(flavourId)}
             />
             <Icon
-              name={isTasted(flavourId) ? 'checkmark.seal.fill' : 'checkmark.seal'}
+              name={isTasted(flavourId) ? SEAL_FILLED : SEAL_OUTLINE}
               size={22}
               color={isTasted(flavourId) ? '#007AFF' : 'secondary'}
               onPress={() => toggleTasted(flavourId)}

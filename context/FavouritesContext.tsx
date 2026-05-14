@@ -1,8 +1,7 @@
-import Storage from 'expo-sqlite/kv-store';
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 
 function getStoredSet(key: string): Set<number> {
-  const value = Storage.getItemSync(key);
+  const value = globalThis.localStorage.getItem(key);
   if (value) {
     try {
       return new Set(JSON.parse(value));
@@ -14,7 +13,7 @@ function getStoredSet(key: string): Set<number> {
 }
 
 function storeSet(key: string, value: Set<number>) {
-  Storage.setItem(key, JSON.stringify([...value]));
+  globalThis.localStorage.setItem(key, JSON.stringify([...value]));
 }
 
 type FavouritesContextType = {

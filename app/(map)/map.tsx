@@ -1,17 +1,23 @@
-import { BottomSheet, Column, FieldGroup, Icon, Row, Spacer, Text } from '@expo/ui';
-import { Host } from '@expo/ui/swift-ui';
-import {
-  presentationBackgroundInteraction,
-  presentationDetents,
-} from '@expo/ui/swift-ui/modifiers';
+import { BottomSheet, Column, FieldGroup, Host, Icon, Row, Spacer, Text } from '@expo/ui';
 import * as Haptics from 'expo-haptics';
-import { AppleMaps } from 'expo-maps';
 import { useState } from 'react';
 import { ActivityIndicator, Linking, StyleSheet, View } from 'react-native';
 
 import FlavourGroup from '@/components/FlavourGroup';
+import StoreMap from '@/components/StoreMap';
 import { useFavourites } from '@/context/FavouritesContext';
 import { type Flavour, FlavourList, LocationList, type Store } from '@/model';
+
+// iOS-only swift-ui escape hatch; tree-shaken on other platforms.
+const BOTTOM_SHEET_MODIFIERS =
+  process.env.EXPO_OS === 'ios'
+    ? [require('@expo/ui/swift-ui/modifiers').presentationBackgroundInteraction('enabled')]
+    : [];
+
+const XMARK_CIRCLE_FILLED = Icon.select({
+  ios: 'xmark.circle.fill',
+  android: require('@expo/material-symbols/cancel.xml'),
+});
 
 function parseTime(timeStr: string): { hours: number; minutes: number } | null {
   const lower = timeStr.toLowerCase().trim();
@@ -139,30 +145,14 @@ export default function Tab() {
 
   return (
     <>
-      <AppleMaps.View
-        style={{ flex: 1 }}
+      <StoreMap
         markers={markers}
-        onMarkerClick={(e) => {
+        onMarkerClick={(id) => {
           Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
           setIsLoading(true);
-          setSelectedStore(STORES.find((store) => String(store.locationId) === e.id));
+          setSelectedStore(STORES.find((store) => String(store.locationId) === id));
           setTimeout(() => setIsLoading(false), 500);
         }}
-        cameraPosition={{
-          // At proper place to cover most of the stores
-          coordinates: {
-            latitude: 49.2204375,
-            longitude: -123.1236355,
-          },
-          zoom: 10,
-        }}
-        uiSettings={{
-          myLocationButtonEnabled: true,
-          compassEnabled: true,
-          scaleBarEnabled: true,
-          togglePitchEnabled: true,
-        }}
-        properties={{ isMyLocationEnabled: true }}
       />
       {isLoading && (
         <View style={styles.loadingOverlay}>
@@ -173,15 +163,13 @@ export default function Tab() {
         <BottomSheet
           isPresented={!!selectedStore}
           onDismiss={() => setSelectedStore(null)}
-          modifiers={[
-            presentationDetents(['medium', 'large']),
-            presentationBackgroundInteraction('enabled'),
-          ]}>
+          snapPoints={['half', 'full']}
+          modifiers={BOTTOM_SHEET_MODIFIERS}>
           <Column alignment="start" spacing={16}>
             <Row>
               <Spacer />
               <Icon
-                name="xmark.circle.fill"
+                name={XMARK_CIRCLE_FILLED}
                 color="secondary"
                 size={28}
                 onPress={() => setSelectedStore(null)}

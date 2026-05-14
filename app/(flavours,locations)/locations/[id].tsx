@@ -1,6 +1,4 @@
-import { Column, FieldGroup, Row, Text } from '@expo/ui';
-import { Host, Picker } from '@expo/ui/swift-ui';
-import { pickerStyle, tag } from '@expo/ui/swift-ui/modifiers';
+import { Column, FieldGroup, Host, Picker, Row, Text } from '@expo/ui';
 import * as Linking from 'expo-linking';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -59,17 +57,15 @@ export default function LocationDetails() {
             {!title ? (
               <Text textStyle={{ fontSize: 26, fontWeight: '600' }}>{location.name}</Text>
             ) : null}
-            {location.stores.length > 1 ? (
+            {location.stores.length > 1 && selectedStoreName != null ? (
               <Row>
                 <Text>Store: </Text>
                 <Picker
-                  selection={selectedStoreName}
-                  onSelectionChange={(value) => setSelectedStoreName(value as string)}
-                  modifiers={[pickerStyle('menu')]}>
+                  appearance="menu"
+                  selectedValue={selectedStoreName}
+                  onValueChange={(value) => setSelectedStoreName(String(value))}>
                   {location.stores.map((store) => (
-                    <Text key={store.name} modifiers={[tag(store.name)]}>
-                      {store.name}
-                    </Text>
+                    <Picker.Item key={store.name} label={store.name} value={store.name} />
                   ))}
                 </Picker>
               </Row>

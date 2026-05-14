@@ -1,11 +1,16 @@
-import { Button, Column, Icon, Row, Spacer, Text } from '@expo/ui';
-import { Host } from '@expo/ui/swift-ui';
+import { Host, Icon, List, ListItem, Row, Text } from '@expo/ui';
 import { Stack, useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
-import { FlatList, StyleSheet, useColorScheme, View } from 'react-native';
+import { useColorScheme } from 'react-native';
 
+import { useToolbarIcon } from '@/components/useToolbarIcon';
 import { useFavourites } from '@/context/FavouritesContext';
 import { FlavourList, LocationList } from '@/model';
+
+const CHEVRON = Icon.select({
+  ios: 'chevron.right',
+  android: require('@expo/material-symbols/chevron_right.xml'),
+});
 
 interface Filters {
   showFavouritesOnly: boolean;
@@ -106,6 +111,16 @@ export default function Index() {
   const colorScheme = useColorScheme();
   const router = useRouter();
   const { favourites } = useFavourites();
+  const filterIconActive = useToolbarIcon({
+    ios: 'line.3.horizontal.decrease.circle.fill',
+    android: 'filter_alt',
+    color: '#007AFF',
+  });
+  const filterIconInactive = useToolbarIcon({
+    ios: 'line.3.horizontal.decrease.circle',
+    android: 'filter_list',
+    color: '#007AFF',
+  });
   const [searchText, setSearchText] = useState('');
   const [filters, setFilters] = useState<Filters>(defaultFilters);
 
@@ -177,11 +192,7 @@ export default function Index() {
       <Stack.Toolbar placement="right">
         <Stack.Toolbar.Menu
           tintColor="#007AFF"
-          icon={
-            activeFilterCount > 0
-              ? 'line.3.horizontal.decrease.circle.fill'
-              : 'line.3.horizontal.decrease.circle'
-          }>
+          icon={activeFilterCount > 0 ? filterIconActive : filterIconInactive}>
           <Stack.Toolbar.MenuAction
             isOn={filters.showFavouritesOnly}
             onPress={() => toggleFilter('showFavouritesOnly')}>
@@ -229,43 +240,22 @@ export default function Index() {
           )}
         </Stack.Toolbar.Menu>
       </Stack.Toolbar>
-      <FlatList
-        contentInsetAdjustmentBehavior="automatic"
-        data={filteredFlavours}
-        keyExtractor={(item) => String(item.id)}
-        ItemSeparatorComponent={Separator}
-        renderItem={({ item }) => (
-          <Host matchContents colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-            <Button variant="text" onPress={() => router.push(`/flavours/${item.id}`)}>
-              <Row alignment="center" style={{ paddingHorizontal: 16, paddingVertical: 10 }}>
-                <Column alignment="start" spacing={2}>
-                  <Row spacing={0}>
-                    <Text textStyle={{ color: 'gray' }}>{`#${item.id}: `}</Text>
-                    <Text>{item.name}</Text>
-                  </Row>
-                  {item.tags.length > 0 && (
-                    <Text textStyle={{ fontSize: 13, color: 'gray' }}>{item.tags.join(', ')}</Text>
-                  )}
-                </Column>
-                <Spacer />
-                <Icon name="chevron.right" size={14} color="secondary" />
+      <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
+        <List>
+          {filteredFlavours.map((item) => (
+            <ListItem
+              key={item.id}
+              onPress={() => router.push(`/flavours/${item.id}`)}
+              supportingText={item.tags.length > 0 ? item.tags.join(', ') : undefined}
+              trailing={<Icon name={CHEVRON} size={14} color="secondary" />}>
+              <Row spacing={0}>
+                <Text textStyle={{ color: 'gray' }}>{`#${item.id}: `}</Text>
+                <Text>{item.name}</Text>
               </Row>
-            </Button>
-          </Host>
-        )}
-      />
+            </ListItem>
+          ))}
+        </List>
+      </Host>
     </>
   );
 }
-
-function Separator() {
-  return <View style={styles.separator} />;
-}
-
-const styles = StyleSheet.create({
-  separator: {
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: '#3C3C4329',
-    marginLeft: 16,
-  },
-});

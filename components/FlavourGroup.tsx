@@ -1,7 +1,7 @@
-import { Column, Icon, Row, Text } from '@expo/ui';
-import { DisclosureGroup } from '@expo/ui/swift-ui';
+import { Collapsible, Column, Icon, Row, Text } from '@expo/ui';
 import { useState } from 'react';
 
+import { SEAL_FILLED, SEAL_OUTLINE, STAR_FILLED, STAR_OUTLINE } from '@/components/icons';
 import { useFavourites } from '@/context/FavouritesContext';
 import { type Flavour } from '@/model';
 
@@ -27,20 +27,20 @@ export default function FlavourGroup({ flavour }: { flavour: Flavour }) {
   const date = formatDateRange(flavour.startDate, flavour.endDate);
 
   return (
-    <DisclosureGroup label={label} isExpanded={isExpanded} onIsExpandedChange={setIsExpanded}>
+    <Collapsible label={label} isOpen={isExpanded} onOpenChange={setIsExpanded}>
       <Column
         spacing={6}
         alignment="start"
         style={{ paddingTop: 16, paddingRight: 16, paddingBottom: 32 }}>
         <Row spacing={8} alignment="center">
           <Icon
-            name={isFavourite(flavour.id) ? 'star.fill' : 'star'}
+            name={isFavourite(flavour.id) ? STAR_FILLED : STAR_OUTLINE}
             size={18}
             color={isFavourite(flavour.id) ? '#FFD700' : 'secondary'}
             onPress={() => toggleFavourite(flavour.id)}
           />
           <Icon
-            name={isTasted(flavour.id) ? 'checkmark.seal.fill' : 'checkmark.seal'}
+            name={isTasted(flavour.id) ? SEAL_FILLED : SEAL_OUTLINE}
             size={18}
             color={isTasted(flavour.id) ? '#007AFF' : 'secondary'}
             onPress={() => toggleTasted(flavour.id)}
@@ -51,6 +51,6 @@ export default function FlavourGroup({ flavour }: { flavour: Flavour }) {
           <Text textStyle={{ fontSize: 15 }}>{flavour.description}</Text>
         ) : null}
       </Column>
-    </DisclosureGroup>
+    </Collapsible>
   );
 }
