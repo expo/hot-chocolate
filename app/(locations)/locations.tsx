@@ -4,7 +4,12 @@ import { Stack, useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useColorScheme } from 'react-native';
 
-import { useToolbarIcon } from '@/components/useToolbarIcon';
+import {
+  SECONDARY_ICON_COLOR,
+  TOOLBAR_FILTER_ACTIVE_ICON,
+  TOOLBAR_FILTER_INACTIVE_ICON,
+  TOOLBAR_SORT_ICON,
+} from '@/components/icons';
 import { LocationList } from '@/model';
 
 const CHEVRON = Icon.select({
@@ -119,21 +124,6 @@ const SORT_OPTIONS = ['Name', 'Distance'] as const;
 export default function Locations() {
   const colorScheme = useColorScheme();
   const router = useRouter();
-  const sortIcon = useToolbarIcon({
-    ios: 'arrow.up.arrow.down.circle',
-    android: 'swap_vert',
-    color: '#007AFF',
-  });
-  const filterIconActive = useToolbarIcon({
-    ios: 'line.3.horizontal.decrease.circle.fill',
-    android: 'filter_alt',
-    color: '#007AFF',
-  });
-  const filterIconInactive = useToolbarIcon({
-    ios: 'line.3.horizontal.decrease.circle',
-    android: 'filter_list',
-    color: '#007AFF',
-  });
   const [sortBy, setSortBy] = useState<(typeof SORT_OPTIONS)[number]>('Name');
   const [searchText, setSearchText] = useState('');
   const [showOpenOnly, setShowOpenOnly] = useState(false);
@@ -209,7 +199,7 @@ export default function Locations() {
         }}
       />
       <Stack.Toolbar placement="right">
-        <Stack.Toolbar.Menu icon={sortIcon} tintColor="#007AFF">
+        <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor="#007AFF">
           {SORT_OPTIONS.map((option) => (
             <Stack.Toolbar.MenuAction
               key={option}
@@ -221,7 +211,7 @@ export default function Locations() {
         </Stack.Toolbar.Menu>
         <Stack.Toolbar.Menu
           tintColor="#007AFF"
-          icon={showOpenOnly ? filterIconActive : filterIconInactive}>
+          icon={showOpenOnly ? TOOLBAR_FILTER_ACTIVE_ICON : TOOLBAR_FILTER_INACTIVE_ICON}>
           <Stack.Toolbar.MenuAction
             isOn={showOpenOnly}
             onPress={() => setShowOpenOnly(!showOpenOnly)}>
@@ -245,7 +235,7 @@ export default function Locations() {
                       })
                     )}
                   </Text>
-                  <Icon name={CHEVRON} size={14} color="secondary" />
+                  <Icon name={CHEVRON} size={14} color={SECONDARY_ICON_COLOR} />
                 </Row>
               }>
               {item.name}

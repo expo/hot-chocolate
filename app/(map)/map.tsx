@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ActivityIndicator, Linking, StyleSheet, View } from 'react-native';
 
 import FlavourGroup from '@/components/FlavourGroup';
+import { SECONDARY_ICON_COLOR } from '@/components/icons';
 import StoreMap from '@/components/StoreMap';
 import { useFavourites } from '@/context/FavouritesContext';
 import { type Flavour, FlavourList, LocationList, type Store } from '@/model';
@@ -170,7 +171,7 @@ export default function Tab() {
               <Spacer />
               <Icon
                 name={XMARK_CIRCLE_FILLED}
-                color="secondary"
+                color={SECONDARY_ICON_COLOR}
                 size={28}
                 onPress={() => setSelectedStore(null)}
               />

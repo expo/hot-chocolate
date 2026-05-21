@@ -31,7 +31,12 @@
           }
         }
       ],
-      "expo-maps",
+      [
+        "expo-maps",
+        {
+          "requestLocationPermission": true
+        }
+      ],
       [
         "expo-location",
         {

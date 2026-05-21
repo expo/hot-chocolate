@@ -3,7 +3,11 @@ import { Stack, useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { useColorScheme } from 'react-native';
 
-import { useToolbarIcon } from '@/components/useToolbarIcon';
+import {
+  SECONDARY_ICON_COLOR,
+  TOOLBAR_FILTER_ACTIVE_ICON,
+  TOOLBAR_FILTER_INACTIVE_ICON,
+} from '@/components/icons';
 import { useFavourites } from '@/context/FavouritesContext';
 import { FlavourList, LocationList } from '@/model';
 
@@ -111,16 +115,6 @@ export default function Index() {
   const colorScheme = useColorScheme();
   const router = useRouter();
   const { favourites } = useFavourites();
-  const filterIconActive = useToolbarIcon({
-    ios: 'line.3.horizontal.decrease.circle.fill',
-    android: 'filter_alt',
-    color: '#007AFF',
-  });
-  const filterIconInactive = useToolbarIcon({
-    ios: 'line.3.horizontal.decrease.circle',
-    android: 'filter_list',
-    color: '#007AFF',
-  });
   const [searchText, setSearchText] = useState('');
   const [filters, setFilters] = useState<Filters>(defaultFilters);
 
@@ -192,7 +186,7 @@ export default function Index() {
       <Stack.Toolbar placement="right">
         <Stack.Toolbar.Menu
           tintColor="#007AFF"
-          icon={activeFilterCount > 0 ? filterIconActive : filterIconInactive}>
+          icon={activeFilterCount > 0 ? TOOLBAR_FILTER_ACTIVE_ICON : TOOLBAR_FILTER_INACTIVE_ICON}>
           <Stack.Toolbar.MenuAction
             isOn={filters.showFavouritesOnly}
             onPress={() => toggleFilter('showFavouritesOnly')}>
@@ -247,7 +241,7 @@ export default function Index() {
               key={item.id}
               onPress={() => router.push(`/flavours/${item.id}`)}
               supportingText={item.tags.length > 0 ? item.tags.join(', ') : undefined}
-              trailing={<Icon name={CHEVRON} size={14} color="secondary" />}>
+              trailing={<Icon name={CHEVRON} size={14} color={SECONDARY_ICON_COLOR} />}>
               <Row spacing={0}>
                 <Text textStyle={{ color: 'gray' }}>{`#${item.id}: `}</Text>
                 <Text>{item.name}</Text>

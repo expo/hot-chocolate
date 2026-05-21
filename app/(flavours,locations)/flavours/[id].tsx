@@ -2,7 +2,13 @@ import { Button, Column, Host, Icon, Row, Spacer, Text } from '@expo/ui';
 import { Link, Stack, useLocalSearchParams } from 'expo-router';
 import { useColorScheme } from 'react-native';
 
-import { SEAL_FILLED, SEAL_OUTLINE, STAR_FILLED, STAR_OUTLINE } from '@/components/icons';
+import {
+  SEAL_FILLED,
+  SEAL_OUTLINE,
+  SECONDARY_ICON_COLOR,
+  STAR_FILLED,
+  STAR_OUTLINE,
+} from '@/components/icons';
 import { useFavourites } from '@/context/FavouritesContext';
 import { FlavourList, LocationList } from '@/model';
 
@@ -48,13 +54,13 @@ export default function FlavourDetails() {
             <Icon
               name={isFavourite(flavourId) ? STAR_FILLED : STAR_OUTLINE}
               size={22}
-              color={isFavourite(flavourId) ? '#FFD700' : 'secondary'}
+              color={isFavourite(flavourId) ? '#FFD700' : SECONDARY_ICON_COLOR}
               onPress={() => toggleFavourite(flavourId)}
             />
             <Icon
               name={isTasted(flavourId) ? SEAL_FILLED : SEAL_OUTLINE}
               size={22}
-              color={isTasted(flavourId) ? '#007AFF' : 'secondary'}
+              color={isTasted(flavourId) ? '#007AFF' : SECONDARY_ICON_COLOR}
               onPress={() => toggleTasted(flavourId)}
             />
           </Row>
