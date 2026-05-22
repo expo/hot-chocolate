@@ -190,7 +190,7 @@ export default function Tab() {
               </Row>
               <Text>{selectedStore?.hours ?? ''}</Text>
             </Column>
-            <FieldGroup style={{ width: '100%' }}>
+            <FieldGroup style={process.env.EXPO_OS === 'web' ? { width: '100%' } : undefined}>
               {selectedStore?.locationFlavours.map((flavour) => (
                 <FlavourGroup key={flavour.id} flavour={flavour} />
               ))}
