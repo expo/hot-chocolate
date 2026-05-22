@@ -11,7 +11,7 @@ export default function RootLayout() {
         headerLargeTitle: false,
         title: 'Hot Chocolate App',
         headerStyle: {
-          backgroundColor: systemGroupedBackground as unknown as string,
+          backgroundColor: systemGroupedBackground,
         },
       }}
     />

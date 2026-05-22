@@ -133,7 +133,7 @@ export default function Tab() {
         : undefined;
 
     return {
-      id: String(store.locationId),
+      id: `${store.locationId}-${store.name}`,
       coordinates: {
         latitude: store.point[0],
         longitude: store.point[1],
@@ -151,7 +151,7 @@ export default function Tab() {
         onMarkerClick={(id) => {
           Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
           setIsLoading(true);
-          setSelectedStore(STORES.find((store) => String(store.locationId) === id));
+          setSelectedStore(STORES.find((store) => `${store.locationId}-${store.name}` === id));
           setTimeout(() => setIsLoading(false), 500);
         }}
       />
@@ -190,7 +190,7 @@ export default function Tab() {
               </Row>
               <Text>{selectedStore?.hours ?? ''}</Text>
             </Column>
-            <FieldGroup>
+            <FieldGroup style={{ width: '100%' }}>
               {selectedStore?.locationFlavours.map((flavour) => (
                 <FlavourGroup key={flavour.id} flavour={flavour} />
               ))}

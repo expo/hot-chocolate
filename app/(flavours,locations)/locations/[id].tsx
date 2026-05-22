@@ -80,7 +80,7 @@ export default function LocationDetails() {
             </Row>
             <Text>{selectedStore?.hours ?? ''}</Text>
           </Column>
-          <FieldGroup>
+          <FieldGroup style={{ width: '100%' }}>
             {flavours.map((flavour) => (
               <FlavourGroup key={flavour.id} flavour={flavour} />
             ))}

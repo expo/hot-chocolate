@@ -186,6 +186,7 @@ export default function Index() {
       <Stack.Toolbar placement="right">
         <Stack.Toolbar.Menu
           tintColor="#007AFF"
+          separateBackground
           icon={activeFilterCount > 0 ? TOOLBAR_FILTER_ACTIVE_ICON : TOOLBAR_FILTER_INACTIVE_ICON}>
           <Stack.Toolbar.MenuAction
             isOn={filters.showFavouritesOnly}

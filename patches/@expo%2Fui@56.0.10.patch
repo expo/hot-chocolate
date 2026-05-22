@@ -1,0 +1,13 @@
+diff --git a/src/universal/List/index.tsx b/src/universal/List/index.tsx
+index 26474b04bf0898f12f2881027374954534bf807b..70e604546810fc079f33acc7165c20d39c9d1ae4 100644
+--- a/src/universal/List/index.tsx
++++ b/src/universal/List/index.tsx
+@@ -16,6 +16,8 @@ export function List({ children, testID }: ListProps) {
+ 
+ const styles = StyleSheet.create({
+   container: {
++    flex: 1,
++    minHeight: 0,
+     flexDirection: 'column',
+     width: '100%',
+     overflowX: 'auto',

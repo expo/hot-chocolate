@@ -14,6 +14,7 @@
     "@expo/material-symbols": "^0.1.1",
     "@expo/ui": "~56.0.10",
     "@expo/vector-icons": "^15.0.2",
+    "@googlemaps/react-wrapper": "^1.2.0",
     "expo": "~56.0.0",
     "expo-asset": "~56.0.12",
     "expo-blur": "~56.0.3",
@@ -43,15 +44,20 @@
     "react-native-worklets": "0.8.3"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.64.1",
     "@types/react": "~19.2.14",
     "cheerio": "^1.2.0",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~56.0.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "expo-mcp": "~0.2.1",
     "prettier": "^3.6.2",
     "tsx": "^4.21.0",
     "typescript": "~6.0.3"
   },
-  "private": true
+  "private": true,
+  "patchedDependencies": {
+    "@expo/ui@56.0.10": "patches/@expo%2Fui@56.0.10.patch"
+  }
 }

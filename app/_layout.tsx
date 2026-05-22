@@ -1,4 +1,5 @@
 import 'expo-sqlite/localStorage/install';
+import '@/styles/tabs.css';
 
 import { isLiquidGlassAvailable } from 'expo-glass-effect';
 import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';

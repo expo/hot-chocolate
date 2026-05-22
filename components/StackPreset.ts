@@ -1,3 +1,4 @@
+import { systemGroupedBackground } from '@bacons/apple-colors';
 import { isLiquidGlassAvailable } from 'expo-glass-effect';
 import { Stack } from 'expo-router';
 
@@ -12,5 +13,5 @@ export const SystemScreenStackPreset: StackScreenOptions = {
   headerTransparent: hasLiquidGlass,
   headerBlurEffect: hasLiquidGlass ? undefined : 'systemMaterial',
   headerLargeTitleShadowVisible: false,
-  sharesBackground: false,
+  contentStyle: { backgroundColor: systemGroupedBackground },
 };

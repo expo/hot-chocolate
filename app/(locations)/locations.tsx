@@ -132,15 +132,19 @@ export default function Locations() {
   );
 
   const updateLocation = useCallback(async () => {
-    const { status } = await Location.requestForegroundPermissionsAsync();
-    if (status !== 'granted') {
-      return;
+    try {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        return;
+      }
+      const location = await Location.getCurrentPositionAsync({});
+      setUserLocation({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      });
+    } catch (error) {
+      console.warn('Failed to get current location, falling back to default:', error);
     }
-    const location = await Location.getCurrentPositionAsync({});
-    setUserLocation({
-      latitude: location.coords.latitude,
-      longitude: location.coords.longitude,
-    });
   }, []);
 
   useEffect(() => {
@@ -199,7 +203,7 @@ export default function Locations() {
         }}
       />
       <Stack.Toolbar placement="right">
-        <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor="#007AFF">
+        <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor="#007AFF" separateBackground>
           {SORT_OPTIONS.map((option) => (
             <Stack.Toolbar.MenuAction
               key={option}
@@ -211,6 +215,7 @@ export default function Locations() {
         </Stack.Toolbar.Menu>
         <Stack.Toolbar.Menu
           tintColor="#007AFF"
+          separateBackground
           icon={showOpenOnly ? TOOLBAR_FILTER_ACTIVE_ICON : TOOLBAR_FILTER_INACTIVE_ICON}>
           <Stack.Toolbar.MenuAction
             isOn={showOpenOnly}
