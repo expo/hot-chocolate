@@ -7,3 +7,14 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
+
+@media (prefers-color-scheme: light) {
+  [role='tablist'] {
+    background-color: rgba(245, 245, 247, 0.7) !important;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    --expo-router-tabs-text-color: #3c3c43;
+    --expo-router-tabs-active-text-color: #000;
+    --expo-router-tabs-active-background-color: rgba(0, 0, 0, 0.08);
+  }
+}
