@@ -7,7 +7,6 @@
     "icon": "./assets/images/icon.png",
     "scheme": "hot-chocolate",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.brents.hot-chocolate",
@@ -48,7 +47,8 @@
       "expo-image",
       "expo-sqlite",
       "expo-asset",
-      "@bacons/apple-colors"
+      "@bacons/apple-colors",
+      "expo-status-bar"
     ],
     "experiments": {
       "typedRoutes": true,
